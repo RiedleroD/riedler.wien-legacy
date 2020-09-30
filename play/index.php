@@ -100,6 +100,10 @@
 				content:url("/favicon.svg");}
 			a.btn.dl{
 				content:url("/sfto/download.svg");}
+			.verweis{
+				display:flex;
+				align-items:center;
+				padding-bottom:0.2em;}
 		</style>
 	</head>
 	<body>
@@ -145,15 +149,15 @@
 			echo "<br/>";
 			foreach($track[5] as $type => $lnk){
 				if($type=="yt"){
-					echo "<a class=\"btn yt\" href=\"https://youtu.be/$lnk\"></a>";
+					echo "<span class=\"verweis\"><a class=\"btn yt\" href=\"https://youtu.be/$lnk\"></a> <a>Watch on YouTube</a></span>";
 				}else if($type=="lmms"){
-					echo "<a class=\"btn lmms\" href=\"https://lmms.io/lsp/?action=show&file=$lnk\"></a>";
+					echo "<span class=\"verweis\"><a class=\"btn lmms\" href=\"https://lmms.io/lsp/?action=show&file=$lnk\"></a> Get the project file</span>";
 				}else if ($type=="sc"){
-					echo "<a class=\"btn sc\" href=\"https://soundcloud.com/riedler-musics/$lnk\"></a>";
+					echo "<span class=\"verweis\"><a class=\"btn sc\" href=\"https://soundcloud.com/riedler-musics/$lnk\"></a> Listen to on SoundCloud</span>";
 				}else if ($type=="bl"){
-					echo "<a class=\"btn bl\" href=\"https://www.bandlab.com/riedler/$lnk\"></a>";
-				}if($type=="dl"){
-					echo "<a class=\"btn dl\" title=\"$lnk\" href=\"../download/?id=$id\"></a>";
+					echo "<span class=\"verweis\"><a class=\"btn bl\" href=\"https://www.bandlab.com/riedler/$lnk\"></a> Listen to on BandCamp</span>";
+				}else if(substr($type,0,2)==="dl"){
+					echo "<span class=\"verweis\"><a class=\"btn dl\" title=\"$lnk\" href=\"../download/?id=$id&dlt=$type\"></a> Download .".pathinfo($lnk,PATHINFO_EXTENSION)." File</span>";
 				}
 			}
 		}
