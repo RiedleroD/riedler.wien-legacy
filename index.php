@@ -86,20 +86,39 @@
 				content:url("/sfto/bandlab.svg");}
 			a.btn.rw{
 				content:url("/favicon.svg");}
+			a.patreon{
+				background-color:#E34;
+				color:#FFF !important;
+				text-decoration:none;
+				border-radius:1em;
+				padding:0.2em 0.5em 0.2em 0.5em;
+				font-weight:bold;
+			}
+			.patreon>svg{
+				vertical-align:middle;
+				fill:#FFF;
+				stroke-width:1.2px;
+				height:1em;
+				width:1em;
+				padding-right:0.2em;
+				display:inline-block;}
 		</style>
 	</head>
 	<body>
 		<h1>Riedler's Music</h1>
 		<p>
 			You can request any song for Riedlerfiziert <a href="https://forms.gle/poA5LsSr8HwNEV3a9">here</a>. It's completely free! <br/>
-			You can also comission me to make original music, but in that case, please email me at comm@riedler.wien and describe precisely what you want. I usually respond within 1 to 3 days. If I don't, please re–send the mail.
+			You can also comission me to make original music, but in that case, please email me at comm@riedler.wien and describe precisely what you want. I usually respond within 1 to 3 days. If I don't, please re–send the mail.<br/>
+			I've also got a patreon page now: <a class="patreon" href="https://www.patreon.com/bePatron?u=36947670"><svg viewBox="0 0 569 546" xmlns="http://www.w3.org/2000/svg"><g><circle cx="362.589996" cy="204.589996" data-fill="1" id="Oval" r="204.589996"></circle><rect data-fill="2" height="545.799988" id="Rectangle" width="100" x="0" y="0"></rect></g></svg>Become a patreon</a>
 		</p>
-		<p>Here's a queue for you – it's updated by me personally once something changes.<br/>
-		<a class="btn rw"></a> Riedler.wien<br/>
-		<a class="btn yt"></a> YouTube<br/>
-		<a class="btn lmms"></a> LMMS Sharing Platform<br/>
-		<a class="btn bl"></a> BandLab<br/>
-		<a class="btn sc"></a> SoundCloud</p>
+		<p>
+			Here's a queue for you – it's updated by me personally once something changes.<br/>
+			<a class="btn rw"></a> Riedler.wien<br/>
+			<a class="btn yt"></a> YouTube<br/>
+			<a class="btn lmms"></a> LMMS Sharing Platform<br/>
+			<a class="btn bl"></a> BandLab<br/>
+			<a class="btn sc"></a> SoundCloud
+		</p>
 		<input type="checkbox" checked id="rcb"/><label for="rcb" class="r">Riedlerfiziert</label>
 		<input type="checkbox" checked id="rcommcb"/><label for="rcommcb" class="rcomm">Riedlerfiziert Requests</label>
 		<input type="checkbox" checked id="ocb"/><label for="ocb" class="o">Originals</label>
