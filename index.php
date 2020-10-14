@@ -56,6 +56,11 @@
 			tr>:last-child{
 				border-left:none;
 			}
+			tr:hover{
+				filter:brightness(1.2);
+				box-shadow:-0.5em 0 0.5em 0 #000;}
+			tr:hover>*{
+				filter:brightness(0.9);}
 			a.btn{
 				height:1em;
 				vertical-align:sub;
@@ -65,7 +70,8 @@
 			a.btn:last-child{
 				padding-right:0.2em;}
 			td{
-				padding:0;}
+				padding:0;
+				border-color:#0000;}
 			td>a:not(.btn){
 				cursor:pointer;
 				color:#000;
@@ -102,10 +108,21 @@
 				width:1em;
 				padding-right:0.2em;
 				display:inline-block;}
-			audio{
-				display:inline;
-				width:3em;
+			.miniplayer audio{
 				height:1em;
+				width:10em;
+				margin-left:-1em;
+				cursor:pointer;}
+			.miniplayer{
+				display:inline-block;
+				width:1em;
+				height:1em;
+				margin-right:0.2em;
+				vertical-align:sub;
+				overflow:hidden;}
+			.nominiplayer{
+				display:inline-block;
+				width:1em;
 				margin-right:0.2em;}
 		</style>
 	</head>
@@ -170,17 +187,17 @@
 						$stat=$row[2];
 						$anysource=false;
 						if(array_key_exists("dl",$row[5])){
-							$sources="<audio controls preload=none>";
+							$sources="<span class=\"miniplayer\"><audio controls preload=none>";
 							foreach($row[5]["dl"] as $fn => $fexts){
 								foreach($fexts as $fext){
 									$sources.="<source src=\"./download/?id=$i&fn=$fn&ext=$fext\"/>";
 									$anysource=true;
 								}
 							}
-							$sources.="</audio>";
+							$sources.="</audio></span>";
 						}
 						if(!$anysource){
-							$sources="<span style=\"margin-right:3.2em\"></span>";
+							$sources="<span class=\"nominiplayer\"></span>";
 						}
 						echo "<tr class=\"$row[0] stat$stat\"><td><a href=\"./play/?id=$i\">$sources$row[1]</a></td><td><a href=\"./play/?id=$i\">$stati[$stat]</a></td><td><a href=\"./play/?id=$i\">$row[3]&nbsp;</a></td><td><a href=\"./play/?id=$i\">$row[4]&nbsp;</a></td><td>$lnks</td></tr>";
 					}
