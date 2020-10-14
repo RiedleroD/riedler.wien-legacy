@@ -147,19 +147,47 @@
 				}
 			}
 			echo "<br/>";
+			$flinks=array();
+			$links="";
 			foreach($track[5] as $type => $lnk){
 				if($type=="yt"){
-					echo "<span class=\"verweis\"><a class=\"btn yt\" href=\"https://youtu.be/$lnk\"></a> <a>Watch on YouTube</a></span>";
+					$links.="<span class=\"verweis\"><a class=\"btn yt\" href=\"https://youtu.be/$lnk\"></a> <a>Watch on YouTube</a></span>";
 				}else if($type=="lmms"){
-					echo "<span class=\"verweis\"><a class=\"btn lmms\" href=\"https://lmms.io/lsp/?action=show&file=$lnk\"></a> Get the project file</span>";
-				}else if ($type=="sc"){
-					echo "<span class=\"verweis\"><a class=\"btn sc\" href=\"https://soundcloud.com/riedler-musics/$lnk\"></a> Listen to on SoundCloud</span>";
-				}else if ($type=="bl"){
-					echo "<span class=\"verweis\"><a class=\"btn bl\" href=\"https://www.bandlab.com/riedler/$lnk\"></a> Listen to on BandCamp</span>";
-				}else if(substr($type,0,2)==="dl"){
-					echo "<span class=\"verweis\"><a class=\"btn dl\" title=\"$lnk\" href=\"../download/?id=$id&dlt=$type\"></a> Download .".pathinfo($lnk,PATHINFO_EXTENSION)." File</span>";
+					$links.="<span class=\"verweis\"><a class=\"btn lmms\" href=\"https://lmms.io/lsp/?action=show&file=$lnk\"></a> Get the project file</span>";
+				}else if($type=="sc"){
+					$links.="<span class=\"verweis\"><a class=\"btn sc\" href=\"https://soundcloud.com/riedler-musics/$lnk\"></a> Listen to on SoundCloud</span>";
+				}else if($type=="bl"){
+					$links.="<span class=\"verweis\"><a class=\"btn bl\" href=\"https://www.bandlab.com/riedler/$lnk\"></a> Listen to on BandCamp</span>";
+				}else if($type=="dl"){
+					foreach($lnk as $fn => $fexts){
+						foreach($fexts as $fext){
+							$flink="../download/?id=$id&fn=$fn&ext=$fext";
+							$links.="<span class=\"verweis\"><a class=\"btn dl\" title=\"$fn.$fext\" href=\"$flink\"></a> Download .$fext File</span>";
+							$flinks[$flink]=$fext;
+						}
+					}
 				}
 			}
+			if(!empty($flinks)){
+				echo "<audio controls>";
+				foreach($flinks as $flink => $ext){
+					$type="audio";
+					if($ext=="opus"){
+						$type.="/opus";
+					}elseif($ext=="flac"){
+						$type.="/flac";
+					}elseif($ext=="wav"){
+						$type.="/wav";
+					}elseif($ext=="mp3"){
+						$type.="/mpeg";//this is the only reason I had to do this huge if/else
+					}elseif($ext=="ogg"){
+						$type.="/ogg";
+					}
+					echo "<source src=\"$flink\" type=\"$type\"/>";
+				}
+				echo "</audio>";
+			}
+			echo $links;
 		}
 		?>
 	</body>
