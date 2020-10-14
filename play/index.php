@@ -156,8 +156,12 @@
 					echo "<span class=\"verweis\"><a class=\"btn sc\" href=\"https://soundcloud.com/riedler-musics/$lnk\"></a> Listen to on SoundCloud</span>";
 				}else if ($type=="bl"){
 					echo "<span class=\"verweis\"><a class=\"btn bl\" href=\"https://www.bandlab.com/riedler/$lnk\"></a> Listen to on BandCamp</span>";
-				}else if(substr($type,0,2)==="dl"){
-					echo "<span class=\"verweis\"><a class=\"btn dl\" title=\"$lnk\" href=\"../download/?id=$id&dlt=$type\"></a> Download .".pathinfo($lnk,PATHINFO_EXTENSION)." File</span>";
+				}else if($type=="dl"){
+					foreach($lnk as $fn => $fexts){
+						foreach($fexts as $fext){
+							echo "<span class=\"verweis\"><a class=\"btn dl\" title=\"$fn.$fext\" href=\"../download/?id=$id&fn=$fn&ext=$fext\"></a> Download .$fext File</span>";
+						}
+					}
 				}
 			}
 		}
