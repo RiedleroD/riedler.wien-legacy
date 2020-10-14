@@ -102,6 +102,11 @@
 				width:1em;
 				padding-right:0.2em;
 				display:inline-block;}
+			audio{
+				display:inline;
+				width:3em;
+				height:1em;
+				margin-right:0.2em;}
 		</style>
 	</head>
 	<body>
@@ -139,7 +144,7 @@
 			</tr>
 			<?php
 				$json=file_get_contents("./data.json");
-				$data=json_decode($json);
+				$data=json_decode($json,true);
 				if($data==NULL){
 					echo "<tr><td><b style='color:red'>Error reading json file, please be patient until this is fixed</b></td></tr>\n";
 				}else{
@@ -163,7 +168,21 @@
 							$lnks="<a class=\"btn rw\" href=\"./play/?id=$i\"></a>".$lnks;
 						}
 						$stat=$row[2];
-						echo "<tr class=\"$row[0] stat$stat\"><td><a href=\"./play/?id=$i\">$row[1]</a></td><td><a href=\"./play/?id=$i\">$stati[$stat]</a></td><td><a href=\"./play/?id=$i\">$row[3]&nbsp;</a></td><td><a href=\"./play/?id=$i\">$row[4]&nbsp;</a></td><td>$lnks</td></tr>";
+						$anysource=false;
+						if(array_key_exists("dl",$row[5])){
+							$sources="<audio controls preload=none>";
+							foreach($row[5]["dl"] as $fn => $fexts){
+								foreach($fexts as $fext){
+									$sources.="<source src=\"./download/?id=$i&fn=$fn&ext=$fext\"/>";
+									$anysource=true;
+								}
+							}
+							$sources.="</audio>";
+						}
+						if(!$anysource){
+							$sources="<span style=\"margin-right:3.2em\"></span>";
+						}
+						echo "<tr class=\"$row[0] stat$stat\"><td><a href=\"./play/?id=$i\">$sources$row[1]</a></td><td><a href=\"./play/?id=$i\">$stati[$stat]</a></td><td><a href=\"./play/?id=$i\">$row[3]&nbsp;</a></td><td><a href=\"./play/?id=$i\">$row[4]&nbsp;</a></td><td>$lnks</td></tr>";
 					}
 				}
 			?>
