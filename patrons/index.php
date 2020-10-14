@@ -34,6 +34,13 @@
 			ul.tier.S>li::after{
 				content:"\A";
 				white-space:pre;}
+			ul.tier.B{
+				display:flex;
+				line-height:1.6em;
+			}
+			ul.tier.B>li{
+				line-height:1em;
+			}
 			h2{
 				display:inline-block;
 				padding-right:0.2em;
@@ -72,61 +79,61 @@
 		</style>
 	</head>
 	<body>
-		<?php
-			$json=file_get_contents("./data.json");
-			$data=json_decode($json,true);
-			if($data==NULL){
-				$S=NULL;
-				$A=NULL;
-				$B=NULL;
-			}else{
-				$S=$data["S"];
-				$A=$data["A"];
-				$B=$data["B"];
-			}
-		?>
+<?php
+	$json=file_get_contents("./data.json");
+	$data=json_decode($json,true);
+	if($data==NULL){
+		$S=NULL;
+		$A=NULL;
+		$B=NULL;
+	}else{
+		$S=$data["S"];
+		$A=$data["A"];
+		$B=$data["B"];
+	}
+?>
 		<div class="card">
 			<a class="btn" href="..">←Back</a>
 			<h1>My Patrons :)</h1>
 		</div>
 		<div class="card">
-			<h2>Riedler Muses</h2><sub>20€+</sub>
+			<h2>Riedler Muses</h2><sub>30€+</sub>
 			<ul class="tier S">
-				<?php
-					if($S==NULL){
-						echo "<li><a class=\"err\">couldn't get tier S patrons</a></li>";
-					}else{
-						foreach($S as $name => $desc){
-							echo "<li><a>$name</a><sub>$desc</sub></li>";
-						}
-					}
-				?>
+<?php
+	if($S==NULL){
+		echo "\t\t\t\t<li><a class=\"err\">couldn't get tier S patrons</a></li>\n";
+	}else{
+		foreach($S as $name => $desc){
+			echo "\t\t\t\t<li><a>$name</a><sub>$desc</sub></li>\n";
+		}
+	}
+?>
 			</ul>
 			<hr/>
 			<h2>Riedler Enthusiasts</h2><sub>10€+</sub>
 			<ul class="tier A">
-				<?php
-					if($A==NULL){
-						echo "<li><a class=\"err\">couldn't get tier A patrons</a></li>";
-					}else{
-						foreach($A as $name => $desc){
-							echo "<li><a>$name</a><sub>$desc</sub></li>";
-						}
-					}
-				?>
+<?php
+	if($A==NULL){
+		echo "\t\t\t\t<li><a class=\"err\">couldn't get tier A patrons</a></li>\n";
+	}else{
+		foreach($A as $name => $desc){
+			echo "\t\t\t\t<li><a>$name</a><sub>$desc</sub></li>\n";
+		}
+	}
+?>
 			</ul>
 			<hr/>
 			<h2>Riedler Supporters</h2><sub>5€+</sub>
 			<ul class="tier B">
-				<?php
-					if($B==NULL){
-						echo "<li class=\"err\">couldn't get tier B patrons</li>";
-					}else{
-						foreach($B as $name){
-							echo "<li>$name</li>";
-						}
-					}
-				?>
+<?php
+	if($B==NULL){
+		echo "\t\t\t\t<li class=\"err\">couldn't get tier B patrons</li>\n";
+	}else{
+		foreach($B as $name){
+			echo "\t\t\t\t<li>$name</li>\n";
+		}
+	}
+?>
 			</ul>
 			<hr/>
 		</div>
