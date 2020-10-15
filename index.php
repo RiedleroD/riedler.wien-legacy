@@ -70,8 +70,7 @@
 			a.btn:last-child{
 				padding-right:0.2em;}
 			td{
-				padding:0;
-				border-color:#0000;}
+				padding:0 0 0.1em 0;}
 			td>a:not(.btn){
 				cursor:pointer;
 				color:#000;
@@ -151,7 +150,7 @@
 		<input type="checkbox" checked id="stat2cb"/><label for="stat2cb">Drafted</label>
 		<input type="checkbox" checked id="stat3cb"/><label for="stat3cb">Finished</label>
 		<input type="checkbox" checked id="stat4cb"/><label for="stat4cb">Uploaded</label>
-		<table border=1>
+		<table>
 			<tr>
 				<th>Name</th>
 				<th>Status</th>
