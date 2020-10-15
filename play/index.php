@@ -55,7 +55,8 @@
 			button:hover{
 				cursor:pointer;/*because it isn't by standard for some reason*/}
 			iframe{
-				padding-right:0.2em;}
+				padding-right:0.2em;
+				border:none;}
 			iframe.invers{
 				filter:invert(1) hue-rotate(180deg) brightness(0.6) saturate(1.5);}
 			.wtyp{
@@ -139,11 +140,11 @@
 			}
 			foreach($track[5] as $type => $lnk){
 				if($type=="yt"){
-					echo "<iframe width=\"560\" height=\"315\" src=\"https://www.youtube-nocookie.com/embed/$lnk\" frameborder=\"0\" allow=\"accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture\" allowfullscreen></iframe>";
+					echo "<iframe width=\"560\" height=\"315\" src=\"https://www.youtube-nocookie.com/embed/$lnk\" allowfullscreen></iframe>";
 				}else if ($type=="sci"){
-					echo "<button onclick=\"document.getElementById('scl').outerHTML='<iframe class=\\'invers\\' width=\\'560\\' height=\\'180\\' scrolling=\\'no\\' frameborder=\\'no\\' src=\\'https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/$lnk&color=%23ff5500&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true\\'></iframe>'\" id=\"scl\">Soundcloud – Open if you want cookies only</button>";
+					echo "<button onclick=\"document.getElementById('scl').outerHTML='<iframe class=\\'invers\\' width=\\'560\\' height=\\'180\\' scrolling=\\'no\\' src=\\'https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/$lnk&color=%23ff5500&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true\\'></iframe>'\" id=\"scl\">Soundcloud – Open if you want cookies only</button>";
 				}else if ($type=="bli"){
-					echo "<iframe class=\"invers\" width=\"560\" height=\"315\" src=\"https://www.bandlab.com/embed/?id=$lnk&blur=true\" frameborder=\"0\" allowfullscreen></iframe>";
+					echo "<iframe class=\"invers\" width=\"560\" height=\"315\" src=\"https://www.bandlab.com/embed/?id=$lnk&blur=true\" allowfullscreen></iframe>";
 				}
 			}
 			echo "<br/>";
