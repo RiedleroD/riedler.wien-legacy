@@ -189,7 +189,8 @@
 							$sources="<span class=\"miniplayer\"><audio controls preload=none>";
 							foreach($row[5]["dl"] as $fn => $fexts){
 								foreach($fexts as $fext){
-									$sources.="<source src=\"./download/?id=$i&fn=$fn&ext=$fext\"/>";
+									$urlfn=urlencode($fn);
+									$sources.="<source src=\"./download/?id=$i&fn=$urlfn&ext=$fext\"/>";
 									$anysource=true;
 								}
 							}
