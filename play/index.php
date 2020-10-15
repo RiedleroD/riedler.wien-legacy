@@ -161,7 +161,7 @@
 				}else if($type=="dl"){
 					foreach($lnk as $fn => $fexts){
 						foreach($fexts as $fext){
-							$flink="../download/?id=$id&fn=$fn&ext=$fext";
+							$flink="../download/?id=$id&fn=".urlencode($fn)."&ext=$fext";
 							$links.="<span class=\"verweis\"><a class=\"btn dl\" title=\"$fn.$fext\" href=\"$flink\"></a> Download .$fext File</span>";
 							$flinks[$flink]=$fext;
 						}
@@ -183,7 +183,7 @@
 					}elseif($ext=="ogg"){
 						$type.="/ogg";
 					}
-					echo "<source src=\"$flink\" type=\"$type\"/>";
+					echo "<source src=\"".urlencode($flink)."\" type=\"$type\"/>";
 				}
 				echo "</audio>";
 			}
