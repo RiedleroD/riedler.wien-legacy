@@ -184,7 +184,7 @@
 					}elseif($ext=="ogg"){
 						$type.="/ogg";
 					}
-					echo "<source src=\"".urlencode($flink)."\" type=\"$type\"/>";
+					echo "<source src=\"$flink\" type=\"$type\"/>";
 				}
 				echo "</audio>";
 			}
