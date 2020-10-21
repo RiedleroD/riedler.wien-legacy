@@ -10,11 +10,17 @@
 				padding:0.5rem;
 				background-color:#000;
 				color:#EEE;}
-			table{
-				border-collapse:collapse;
+			#maintable{
+				display:table;
 				width:calc(100% + 1rem);
 				margin-left:-0.5rem;
 				margin-bottom:-0.5rem;
+				color:#000;}
+			#maintable>a{
+				display:table-row;
+				text-decoration:none;
+				color:#000;}
+			#maintable>a:hover{
 				color:#000;}
 			a:link,
 			a:visited{
@@ -28,15 +34,15 @@
 				line-height:2em;
 				color:#000;
 				background-color:#CCC;}
-			#ocb:not(:checked)~table .o,
-			#rcb:not(:checked)~table .r,
-			#rcommcb:not(:checked)~table .rcomm,
-			#ocommcb:not(:checked)~table .ocomm,
-			#stat0cb:not(:checked)~table .stat0,
-			#stat1cb:not(:checked)~table .stat1,
-			#stat2cb:not(:checked)~table .stat2,
-			#stat3cb:not(:checked)~table .stat3,
-			#stat4cb:not(:checked)~table .stat4{
+			#ocb:not(:checked)~#maintable .o,
+			#rcb:not(:checked)~#maintable .r,
+			#rcommcb:not(:checked)~#maintable .rcomm,
+			#ocommcb:not(:checked)~#maintable .ocomm,
+			#stat0cb:not(:checked)~#maintable .stat0,
+			#stat1cb:not(:checked)~#maintable .stat1,
+			#stat2cb:not(:checked)~#maintable .stat2,
+			#stat3cb:not(:checked)~#maintable .stat3,
+			#stat4cb:not(:checked)~#maintable .stat4{
 				display:none;}
 			.o{
 				background:linear-gradient(to right,#383 10vw,#464 90vw,#000 95vw);}
@@ -46,52 +52,53 @@
 				background:linear-gradient(to right,#C60 10vw,#A43 90vw,#000 95vw);}
 			.ocomm{
 				background:linear-gradient(to right,#638 10vw,#436 90vw,#000 95vw);}
-			tr:first-child>th{
+			#maintable>a:first-child>div{
 				background:linear-gradient(to bottom,#151515 0%,#333 10%,#151515 80%,#000 100%);
 				color:#EEE;
 				border:none;}
-			tr>:nth-child(4){
+			#maintable>a>:nth-child(4){
 				border-right:none;
 			}
-			tr>:last-child{
+			#maintable>a>:last-child{
 				border-left:none;
 			}
-			tr:hover{
+			#maintable>a:hover{
 				filter:brightness(1.2);
 				box-shadow:-0.5em 0 0.5em 0 #000;}
-			tr:hover>*{
+			#maintable>a:hover>*{
 				filter:brightness(0.9);}
-			a.btn{
+			.btn{
 				height:1em;
-				vertical-align:sub;
-				display:inline-block;}
-			a.btn:first-child{
-				padding-left:0.2em;}
-			a.btn:last-child{
-				padding-right:0.2em;}
-			td{
+				width:1em;
+				appearance:none;
+				border:none;
+				background-color:#0000;
+				vertical-align:middle;
+				display:inline-block;
+				padding:0;
+				background-size:1em 1em;
+				cursor:pointer;}
+			.btn:first-child{
+				margin-left:0.2em;}
+			.btn:last-child{
+				margin-right:0.2em;}
+			#maintable>a>div{
+				display:table-cell;
 				padding:0 0 0.1em 0;}
-			td>a:not(.btn){
-				cursor:pointer;
-				color:#000;
-				padding-left:0.2em;
-				padding-right:0.2em;
-				text-decoration:none;
-				display:block;}
-			td>a:not(.btn):hover{
-				color:#000;
-			}
-			a.btn.yt{
-				content:url("/sfto/youtube.svg");}
-			a.btn.lmms{
-				content:url("/sfto/lmms.svg");}
-			a.btn.sc{
-				content:url("/sfto/soundcloud.svg");}
-			a.btn.bl{
-				content:url("/sfto/bandlab.svg");}
-			a.btn.rw{
-				content:url("/favicon.svg");}
-			a.patreon{
+			#maintable>a:first-child>div{
+				text-align:center;
+				font-weight:bold;}
+			.btn.yt{
+				background-image:url("/sfto/youtube.svg");}
+			.btn.lmms{
+				background-image:url("/sfto/lmms.svg");}
+			.btn.sc{
+				background-image:url("/sfto/soundcloud.svg");}
+			.btn.bl{
+				background-image:url("/sfto/bandlab.svg");}
+			.btn.rw{
+				background-image:url("/favicon.svg");}
+			.patreon{
 				background-color:#E34;
 				color:#FFF !important;
 				text-decoration:none;
@@ -150,19 +157,19 @@
 		<input type="checkbox" checked id="stat2cb"/><label for="stat2cb">Drafted</label>
 		<input type="checkbox" checked id="stat3cb"/><label for="stat3cb">Finished</label>
 		<input type="checkbox" checked id="stat4cb"/><label for="stat4cb">Uploaded</label>
-		<table>
-			<tr>
-				<th>Name</th>
-				<th>Status</th>
-				<th>Requestor</th>
-				<th>Release Date</th>
-				<th>Links</th>
-			</tr>
+		<div id="maintable">
+			<a>
+				<div>Name</div>
+				<div>Status</div>
+				<div>Requestor</div>
+				<div>Release Date</div>
+				<div>Links</div>
+			</a>
 			<?php
 				$json=file_get_contents("./data.json");
 				$data=json_decode($json,true);
 				if($data==NULL){
-					echo "<tr><td><b style='color:red'>Error reading json file, please be patient until this is fixed</b></td></tr>\n";
+					echo "<a><div><b style='color:red'>Error reading json file, please be patient until this is fixed</b></div></a>\n";
 				}else{
 					$stati=["Requested","Planned","Drafted","Finished","Uploaded"];
 					$i=count($data);
@@ -171,22 +178,22 @@
 						$lnks="";
 						foreach($row[5] as $type => $lnk){
 							if($type=="yt"){
-								$lnks.="<a class=\"btn yt\" href=\"https://youtu.be/$lnk\"></a>";
+								$lnks.="<button class=\"btn yt\" type=\"submit\" formaction=\"https://youtu.be/$lnk\"></button>";
 							}else if($type=="lmms"){
-								$lnks.="<a class=\"btn lmms\" href=\"https://lmms.io/lsp/?action=show&file=$lnk\"></a>";
+								$lnks.="<button class=\"btn lmms\" type=\"submit\" formaction=\"https://lmms.io/lsp/?action=show&file=$lnk\"></button>";
 							}else if ($type=="sc"){
-								$lnks.="<a class=\"btn sc\" href=\"https://soundcloud.com/riedler-musics/$lnk\"></a>";
+								$lnks.="<button class=\"btn sc\" type=\"submit\" formaction=\"https://soundcloud.com/riedler-musics/$lnk\"></button>";
 							}else if ($type=="bl"){
-								$lnks.="<a class=\"btn bl\" href=\"https://www.bandlab.com/riedler/$lnk\"></a>";
+								$lnks.="<button class=\"btn bl\" type=\"submit\" formaction=\"https://www.bandlab.com/riedler/$lnk\"></button>";
 							}
 						}
 						if($lnks!="" or array_key_exists(6,$row)){
-							$lnks="<a class=\"btn rw\" href=\"./play/?id=$i\"></a>".$lnks;
+							$lnks="<button class=\"btn rw\" type=\"submit\" formaction=\"./play/?id=$i\"></button>".$lnks;
 						}
 						$stat=$row[2];
 						$anysource=false;
 						if(array_key_exists("dl",$row[5])){
-							$sources="<span class=\"miniplayer\"><audio controls preload=none>";
+							$sources="<div class=\"miniplayer\"><audio controls preload=none>";
 							foreach($row[5]["dl"] as $fn => $fexts){
 								foreach($fexts as $fext){
 									$urlfn=urlencode($fn);
@@ -194,15 +201,15 @@
 									$anysource=true;
 								}
 							}
-							$sources.="</audio></span>";
+							$sources.="</audio></div>";
 						}
 						if(!$anysource){
-							$sources="<span class=\"nominiplayer\"></span>";
+							$sources="<div class=\"nominiplayer\"></div>";
 						}
-						echo "<tr class=\"$row[0] stat$stat\"><td><a href=\"./play/?id=$i\">$sources$row[1]</a></td><td><a href=\"./play/?id=$i\">$stati[$stat]</a></td><td><a href=\"./play/?id=$i\">$row[3]&nbsp;</a></td><td><a href=\"./play/?id=$i\">$row[4]&nbsp;</a></td><td>$lnks</td></tr>";
+						echo "<a class=\"$row[0] stat$stat\" href=\"./play/?id=$i\"><div>$sources$row[1]</div><div>$stati[$stat]</div><div>$row[3]&nbsp;</div><div>$row[4]&nbsp;</div><div><form>$lnks</form></div></a>";
 					}
 				}
 			?>
-		</table>
+		</div>
 	</body>
 </html>
