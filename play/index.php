@@ -105,6 +105,11 @@
 				display:flex;
 				align-items:center;
 				padding-bottom:0.2em;}
+			.verweis>i{
+				color:#AAA;
+				font-size:0.75em;
+				align-self:end;
+				margin-left:0.3em;}
 		</style>
 	</head>
 	<body>
@@ -163,7 +168,8 @@
 					foreach($lnk as $fn => $fexts){
 						foreach($fexts as $fext){
 							$flink="../download/?id=$id&fn=".urlencode($fn)."&ext=$fext";
-							$links.="<span class=\"verweis\"><a class=\"btn dl\" title=\"$fn.$fext\" href=\"$flink\"></a> Download .$fext File</span>";
+							$fs=number_format(filesize("../HosenToastKönig/".$fn.'.'.$fext)/1048576,2,".","");
+							$links.="<span class=\"verweis\"><a class=\"btn dl\" title=\"$fn.$fext\" href=\"$flink\"></a> Download .$fext File<i>[${fs}MiB]</i></span>";
 							$flinks[$flink]=$fext;
 						}
 					}
