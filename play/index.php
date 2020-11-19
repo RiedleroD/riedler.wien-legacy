@@ -110,6 +110,14 @@
 				font-size:0.75em;
 				align-self:end;
 				margin-left:0.3em;}
+			/*hack to display both chrome and firefox audio players dark*/
+			audio{
+				filter:invert(0.9);}
+			@-moz-document url-prefix(){
+				audio{
+					filter:none;
+				}
+			}
 		</style>
 	</head>
 	<body>
