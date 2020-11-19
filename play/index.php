@@ -186,8 +186,14 @@
 					foreach($lnk as $fn => $fexts){
 						foreach($fexts as $fext){
 							$flink="../download/?id=$id&fn=".urlencode($fn)."&ext=$fext";
-							$fs=number_format(filesize("../HosenToastKönig/".$fn.'.'.$fext)/1048576,2,".","");
-							$links.="<span class=\"verweis\"><a class=\"btn dl\" title=\"$fn.$fext\" href=\"$flink\"></a> Download .$fext File<i>[${fs}MiB]</i></span>";
+							$thisfile="../HosenToastKönig/".$fn.'.'.$fext;
+							if(file_exists($thisfile)){
+								$fs=number_format(filesize($thisfile)/1048576,2,".","");
+								$fss="[${fs}MiB]";
+							}else{
+								$fss="File not found";
+							}
+							$links.="<span class=\"verweis\"><a class=\"btn dl\" title=\"$fn.$fext\" href=\"$flink\"></a> Download .$fext File<i>$fss</i></span>";
 							$flinks[$flink]=$fext;
 						}
 					}
