@@ -221,5 +221,12 @@
 			echo $links;
 		}
 		?>
+		<script>
+			<?php
+				echo "window.addEventListener(\"keyup\", function(event) { if (event.key === \"ArrowLeft\") { location.href = \"./?id=$prv\"; } });";
+				echo "window.addEventListener(\"keyup\", function(event) { if (event.key === \"ArrowRight\") { location.href = \"./?id=$nxt\"; } });";
+				echo "window.addEventListener(\"keyup\", function(event) { if (event.key === \"ArrowUp\") { location.href = \"../\"; } })";
+			?>
+		</script>
 	</body>
 </html>
