@@ -22,6 +22,16 @@
 		?>
 		<link rel="icon" type="image/png" href="/favicon.png"/>
 		<style>
+			/*scrollbar*/
+			::-webkit-scrollbar,
+			::-webkit-scrollbar-track-piece{
+				background-color:#333 !important;}
+			::-webkit-scrollbar-corner,
+			::-webkit-scrollbar-thumb{
+				background-color:#555 !important;}
+			:root{/*Because Firefox doesn't have the ::-moz-scrollbar selectors*/
+				scrollbar-width:thin;
+				scrollbar-color:#555 #333;}
 			#prev,
 			#nxt,
 			#home{
