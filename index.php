@@ -15,6 +15,7 @@
 				width:calc(100% + 1rem);
 				margin-left:-0.5rem;
 				margin-bottom:1em;
+				margin-top:0.5rem;
 				color:#000;}
 			#maintable>a{
 				display:table-row;
@@ -151,11 +152,12 @@
 		</p>
 		<p>
 			Here's a queue for you – it's updated by me personally once something changes.<br/>
-			<a class="btn rw"></a> Riedler.wien<br/>
-			<a class="btn yt"></a> YouTube<br/>
-			<a class="btn lmms"></a> LMMS Sharing Platform<br/>
-			<a class="btn bl"></a> BandLab<br/>
-			<a class="btn sc"></a> SoundCloud
+			<button class="btn rw"></button> Riedler.wien<br/>
+			<button class="btn yt"></button> YouTube<br/>
+			<button class="btn lmms"></button> LMMS Sharing Platform<br/>
+			<button class="btn bl"></button> BandLab<br/>
+			<button class="btn sc"></button> SoundCloud<br/>
+			<button class="btn play" style="background-color:#555"></button> Mini-Player
 		</p>
 		<input type="checkbox" checked id="rcb"/><label for="rcb" class="r">Riedlerfiziert</label>
 		<input type="checkbox" checked id="rcommcb"/><label for="rcommcb" class="rcomm">Riedlerfiziert Requests</label>
