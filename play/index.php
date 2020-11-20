@@ -107,6 +107,8 @@
 				content:url("/sfto/soundcloud.svg");}
 			a.btn.bl{
 				content:url("/sfto/bandlab.svg");}
+			a.btn.vimeo{
+				content:url("/sfto/vimeo.svg");}
 			a.btn.rw{
 				content:url("/favicon.svg");}
 			a.btn.dl{
@@ -168,6 +170,8 @@
 					echo "<button onclick=\"document.getElementById('scl').outerHTML='<iframe class=\\'invers\\' width=\\'560\\' height=\\'180\\' scrolling=\\'no\\' src=\\'https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/$lnk&color=%23ff5500&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true\\'></iframe>'\" id=\"scl\">Soundcloud – Open if you want cookies only</button>";
 				}else if ($type=="bli"){
 					echo "<iframe class=\"invers\" width=\"560\" height=\"315\" src=\"https://www.bandlab.com/embed/?id=$lnk&blur=true\" allowfullscreen></iframe>";
+				}else if ($type=="vimeo"){
+					echo "<iframe src=\"https://player.vimeo.com/video/$lnk\" width=\"560\" height=\"315\" frameborder=\"0\" allow=\"autoplay; fullscreen\" sandbox=\"allow-scripts allow-same-origin allow-popups\" allowfullscreen></iframe>";
 				}
 			}
 			echo "<br/>";
@@ -182,6 +186,8 @@
 					$links.="<span class=\"verweis\"><a class=\"btn sc\" href=\"https://soundcloud.com/riedler-musics/$lnk\"></a> Listen to on SoundCloud</span>";
 				}else if($type=="bl"){
 					$links.="<span class=\"verweis\"><a class=\"btn bl\" href=\"https://www.bandlab.com/riedler/$lnk\"></a> Listen to on BandCamp</span>";
+				}else if($type=="vimeo"){
+					$links.="<span class=\"verweis\"><a class=\"btn vimeo\" href=\"https://vimeo.com/$lnk\"></a> Watch on Vimeo</span>";
 				}else if($type=="dl"){
 					foreach($lnk as $fn => $fexts){
 						foreach($fexts as $fext){

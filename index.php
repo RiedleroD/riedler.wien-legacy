@@ -98,6 +98,8 @@
 				background-image:url("/sfto/soundcloud.svg");}
 			.btn.bl{
 				background-image:url("/sfto/bandlab.svg");}
+			.btn.vimeo{
+				background-image:url("/sfto/vimeo.svg");}
 			.btn.rw{
 				background-image:url("/favicon.svg");}
 			.patreon{
@@ -157,6 +159,7 @@
 			<button class="btn lmms"></button> LMMS Sharing Platform<br/>
 			<button class="btn bl"></button> BandLab<br/>
 			<button class="btn sc"></button> SoundCloud<br/>
+			<button class="btn vimeo"></button> Vimeo<br/>
 			<button class="btn play" style="background-color:#555"></button> Mini-Player
 		</p>
 		<input type="checkbox" checked id="rcb"/><label for="rcb" class="r">Riedlerfiziert</label>
@@ -198,6 +201,8 @@
 								$lnks.="<button class=\"btn sc\" type=\"submit\" formaction=\"https://soundcloud.com/riedler-musics/$lnk\"></button>";
 							}else if ($type=="bl"){
 								$lnks.="<button class=\"btn bl\" type=\"submit\" formaction=\"https://www.bandlab.com/riedler/$lnk\"></button>";
+							}else if ($type=="vimeo"){
+								$lnks.="<button class=\"btn vimeo\" type=\"submit\" formaction=\"https://vimeo.com/$lnk\"></button>";
 							}
 						}
 						if($lnks!="" or array_key_exists(6,$row)){
