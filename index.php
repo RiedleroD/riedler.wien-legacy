@@ -14,14 +14,37 @@
 				display:table;
 				width:calc(100% + 1rem);
 				margin-left:-0.5rem;
-				margin-bottom:-0.5rem;
+				margin-bottom:1em;
+				margin-top:0.5rem;
 				color:#000;}
 			#maintable>a{
 				display:table-row;
 				text-decoration:none;
 				color:#000;}
-			#maintable>a:hover{
-				color:#000;}
+			#maintable>a:first-child>div{
+				background:linear-gradient(to bottom,#151515 0%,#333 10%,#151515 80%,#000 100%);
+				color:#EEE;
+				border:none;}
+			#maintable>a>:nth-child(4){
+				border-right:none;
+			}
+			#maintable>a>:last-child{
+				border-left:none;
+			}
+			#maintable>a:not(:first-child):hover{
+				filter:brightness(1.2);
+				box-shadow:-0.5em 0 0.5em 0 #000;}
+			#maintable>a:not(:first-child):hover>*{
+				filter:brightness(0.9);}
+			#maintable>a>div{
+				display:table-cell;
+				padding:0 0 0.1em 0;
+				white-space:nowrap;}
+			#maintable>a>div:first-child{
+				width:0;}
+			#maintable>a:first-child>div{
+				text-align:center;
+				font-weight:bold;}
 			a:link,
 			a:visited{
 				color:#418BA4;}
@@ -45,28 +68,13 @@
 			#stat4cb:not(:checked)~#maintable .stat4{
 				display:none;}
 			.o{
-				background:linear-gradient(to right,#383 10vw,#464 90vw,#000 95vw);}
+				background:linear-gradient(to right,#383 10vw,#464 90vw,#121 95vw,#000 98vw);}
 			.r{
-				background:linear-gradient(to right,#AA0 10vw,#883 90vw,#000 95vw);}
+				background:linear-gradient(to right,#AA0 10vw,#883 90vw,#331 95vw,#000 98vw);}
 			.rcomm{
-				background:linear-gradient(to right,#C60 10vw,#A43 90vw,#000 95vw);}
+				background:linear-gradient(to right,#C60 10vw,#A43 90vw,#321 95vw,#000 98vw);}
 			.ocomm{
-				background:linear-gradient(to right,#638 10vw,#436 90vw,#000 95vw);}
-			#maintable>a:first-child>div{
-				background:linear-gradient(to bottom,#151515 0%,#333 10%,#151515 80%,#000 100%);
-				color:#EEE;
-				border:none;}
-			#maintable>a>:nth-child(4){
-				border-right:none;
-			}
-			#maintable>a>:last-child{
-				border-left:none;
-			}
-			#maintable>a:hover{
-				filter:brightness(1.2);
-				box-shadow:-0.5em 0 0.5em 0 #000;}
-			#maintable>a:hover>*{
-				filter:brightness(0.9);}
+				background:linear-gradient(to right,#638 10vw,#436 90vw,#112 95vw,#000 98vw);}
 			.btn{
 				height:1em;
 				width:1em;
@@ -82,12 +90,6 @@
 				margin-left:0.2em;}
 			.btn:last-child{
 				margin-right:0.2em;}
-			#maintable>a>div{
-				display:table-cell;
-				padding:0 0 0.1em 0;}
-			#maintable>a:first-child>div{
-				text-align:center;
-				font-weight:bold;}
 			.btn.yt{
 				background-image:url("/sfto/youtube.svg");}
 			.btn.lmms{
@@ -114,18 +116,27 @@
 				width:1em;
 				padding-right:0.2em;
 				display:inline-block;}
+			.btn.play{
+				background-image:url("/sfto/arrleft.svg");
+				margin-top:0;}
 			.miniplayer audio{
 				height:1em;
-				width:10em;
-				margin-left:-1em;
-				cursor:pointer;}
+				width:auto;
+				cursor:pointer;
+				display:none;
+				margin-bottom:0;
+				margin-left:0.2em;}
 			.miniplayer{
-				display:inline-block;
-				width:1em;
-				height:1em;
+				display:inline-flex;
+				width:auto;
 				margin-right:0.2em;
-				vertical-align:sub;
-				overflow:hidden;}
+				vertical-align:middle;}
+			.miniplayer:focus-within>audio{
+				display:inline-block;}
+			.miniplayer:focus-within>.play{
+				display:none;}
+			.miniplayer:focus-within{
+				vertical-align:sub;/*don't ask*/}
 			.nominiplayer{
 				display:inline-block;
 				width:1em;
@@ -141,11 +152,12 @@
 		</p>
 		<p>
 			Here's a queue for you – it's updated by me personally once something changes.<br/>
-			<a class="btn rw"></a> Riedler.wien<br/>
-			<a class="btn yt"></a> YouTube<br/>
-			<a class="btn lmms"></a> LMMS Sharing Platform<br/>
-			<a class="btn bl"></a> BandLab<br/>
-			<a class="btn sc"></a> SoundCloud
+			<button class="btn rw"></button> Riedler.wien<br/>
+			<button class="btn yt"></button> YouTube<br/>
+			<button class="btn lmms"></button> LMMS Sharing Platform<br/>
+			<button class="btn bl"></button> BandLab<br/>
+			<button class="btn sc"></button> SoundCloud<br/>
+			<button class="btn play" style="background-color:#555"></button> Mini-Player
 		</p>
 		<input type="checkbox" checked id="rcb"/><label for="rcb" class="r">Riedlerfiziert</label>
 		<input type="checkbox" checked id="rcommcb"/><label for="rcommcb" class="rcomm">Riedlerfiziert Requests</label>
@@ -159,6 +171,7 @@
 		<input type="checkbox" checked id="stat4cb"/><label for="stat4cb">Uploaded</label>
 		<div id="maintable">
 			<a>
+				<div>▶️</div>
 				<div>Name</div>
 				<div>Status</div>
 				<div>Requestor</div>
@@ -193,7 +206,7 @@
 						$stat=$row[2];
 						$anysource=false;
 						if(array_key_exists("dl",$row[5])){
-							$sources="<div class=\"miniplayer\"><audio controls preload=none>";
+							$sources="<div class=\"miniplayer\"><button class=\"btn play\" type=\"submit\"></button><audio controls preload=none>";
 							foreach($row[5]["dl"] as $fn => $fexts){
 								foreach($fexts as $fext){
 									$urlfn=urlencode($fn);
@@ -201,12 +214,13 @@
 									$anysource=true;
 								}
 							}
-							$sources.="</audio></div>";
 						}
 						if(!$anysource){
-							$sources="<div class=\"nominiplayer\"></div>";
+							$sources="";
+						}else{
+							$sources.="</audio></div>";
 						}
-						echo "<a class=\"$row[0] stat$stat\" href=\"./play/?id=$i\"><div>$sources$row[1]</div><div>$stati[$stat]</div><div>$row[3]&nbsp;</div><div>$row[4]&nbsp;</div><div><form>$lnks</form></div></a>";
+						echo "<a class=\"$row[0] stat$stat\" href=\"./play/?id=$i\"><div>$sources</div><div>$row[1]</div><div>$stati[$stat]</div><div>$row[3]&nbsp;</div><div>$row[4]&nbsp;</div><div><form>$lnks</form></div></a>";
 					}
 				}
 			?>

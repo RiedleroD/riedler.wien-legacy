@@ -22,6 +22,16 @@
 		?>
 		<link rel="icon" type="image/png" href="/favicon.png"/>
 		<style>
+			/*scrollbar*/
+			::-webkit-scrollbar,
+			::-webkit-scrollbar-track-piece{
+				background-color:#333 !important;}
+			::-webkit-scrollbar-corner,
+			::-webkit-scrollbar-thumb{
+				background-color:#555 !important;}
+			:root{/*Because Firefox doesn't have the ::-moz-scrollbar selectors*/
+				scrollbar-width:thin;
+				scrollbar-color:#555 #333;}
 			#prev,
 			#nxt,
 			#home{
@@ -110,6 +120,14 @@
 				font-size:0.75em;
 				align-self:end;
 				margin-left:0.3em;}
+			/*hack to display both chrome and firefox audio players dark*/
+			audio{
+				filter:invert(0.9);}
+			@-moz-document url-prefix(){
+				audio{
+					filter:none;
+				}
+			}
 		</style>
 	</head>
 	<body>
@@ -168,8 +186,14 @@
 					foreach($lnk as $fn => $fexts){
 						foreach($fexts as $fext){
 							$flink="../download/?id=$id&fn=".urlencode($fn)."&ext=$fext";
-							$fs=number_format(filesize("../HosenToastKönig/".$fn.'.'.$fext)/1048576,2,".","");
-							$links.="<span class=\"verweis\"><a class=\"btn dl\" title=\"$fn.$fext\" href=\"$flink\"></a> Download .$fext File<i>[${fs}MiB]</i></span>";
+							$thisfile="../HosenToastKönig/".$fn.'.'.$fext;
+							if(file_exists($thisfile)){
+								$fs=number_format(filesize($thisfile)/1048576,2,".","");
+								$fss="[${fs}MiB]";
+							}else{
+								$fss="File not found";
+							}
+							$links.="<span class=\"verweis\"><a class=\"btn dl\" title=\"$fn.$fext\" href=\"$flink\"></a> Download .$fext File<i>$fss</i></span>";
 							$flinks[$flink]=$fext;
 						}
 					}
@@ -197,5 +221,12 @@
 			echo $links;
 		}
 		?>
+		<script>
+			<?php
+				echo "window.addEventListener(\"keyup\", function(event) { if (event.key === \"ArrowLeft\") { location.href = \"./?id=$prv\"; } });";
+				echo "window.addEventListener(\"keyup\", function(event) { if (event.key === \"ArrowRight\") { location.href = \"./?id=$nxt\"; } });";
+				echo "window.addEventListener(\"keyup\", function(event) { if (event.key === \"ArrowUp\") { location.href = \"../\"; } })";
+			?>
+		</script>
 	</body>
 </html>
