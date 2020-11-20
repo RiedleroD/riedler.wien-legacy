@@ -148,7 +148,8 @@
 		<p>
 			You can request any song for Riedlerfiziert <a href="https://forms.gle/poA5LsSr8HwNEV3a9">here</a>. It's completely free! <br/>
 			You can also comission me to make original music, but in that case, please email me at comm@riedler.wien and describe precisely what you want. I usually respond within 1 to 3 days. If I don't, please re–send the mail.<br/>
-			I've also got a patreon page now: <a class="patreon" href="https://www.patreon.com/bePatron?u=36947670"><svg viewBox="0 0 569 546" xmlns="http://www.w3.org/2000/svg"><g><circle cx="362.589996" cy="204.589996" data-fill="1" id="Oval" r="204.589996"></circle><rect data-fill="2" height="545.799988" id="Rectangle" width="100" x="0" y="0"></rect></g></svg>Become a patreon</a>
+			I've also got a patreon page now: <a class="patreon" href="https://www.patreon.com/bePatron?u=36947670"><svg viewBox="0 0 569 546" xmlns="http://www.w3.org/2000/svg"><g><circle cx="362.589996" cy="204.589996" data-fill="1" id="Oval" r="204.589996"></circle><rect data-fill="2" height="545.799988" id="Rectangle" width="100" x="0" y="0"></rect></g></svg>Become a patreon</a><br/>
+			All patrons are visible <a href="./patrons/">here</a>.
 		</p>
 		<p>
 			Here's a queue for you – it's updated by me personally once something changes.<br/>
