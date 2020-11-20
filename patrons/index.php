@@ -101,7 +101,7 @@
 			<ul class="tier S">
 <?php
 	if($S==NULL){
-		echo "\t\t\t\t<li><a class=\"err\">couldn't get tier S patrons</a></li>\n";
+		echo "\t\t\t\t<li><a class=\"err\">No tier S patrons</a></li>\n";
 	}else{
 		foreach($S as $name => $desc){
 			echo "\t\t\t\t<li><a>$name</a><sub>$desc</sub></li>\n";
@@ -114,7 +114,7 @@
 			<ul class="tier A">
 <?php
 	if($A==NULL){
-		echo "\t\t\t\t<li><a class=\"err\">couldn't get tier A patrons</a></li>\n";
+		echo "\t\t\t\t<li><a class=\"err\">No tier A patrons</a></li>\n";
 	}else{
 		foreach($A as $name => $desc){
 			echo "\t\t\t\t<li><a>$name</a><sub>$desc</sub></li>\n";
@@ -127,7 +127,7 @@
 			<ul class="tier B">
 <?php
 	if($B==NULL){
-		echo "\t\t\t\t<li class=\"err\">couldn't get tier B patrons</li>\n";
+		echo "\t\t\t\t<li class=\"err\">No tier B patrons</li>\n";
 	}else{
 		foreach($B as $name){
 			echo "\t\t\t\t<li>$name</li>\n";
