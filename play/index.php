@@ -111,6 +111,10 @@
 				content:url("/sfto/vimeo.svg");}
 			a.btn.rw{
 				content:url("/favicon.svg");}
+			a.btn.az{
+				content:url("/sfto/amazon.svg")}
+			a.btn.am{
+				content:url("/sfto/amazon_music.svg")}
 			a.btn.dl{
 				content:url("/sfto/download.svg");}
 			.verweis{
@@ -188,6 +192,10 @@
 					$links.="<span class=\"verweis\"><a class=\"btn bl\" href=\"https://www.bandlab.com/riedler/$lnk\"></a> Listen to on BandCamp</span>";
 				}else if($type=="vimeo"){
 					$links.="<span class=\"verweis\"><a class=\"btn vimeo\" href=\"https://vimeo.com/$lnk\"></a> Watch on Vimeo</span>";
+				}else if($type=="az"){
+					$links.="<span class=\"verweis\"><a class=\"btn az\" href=\"https://amazon.com/lolicanwriteanythinghere/dp/$lnk\"></a> Buy on Amazon</span>";
+				}else if($type=="am"){
+					$links.="<span class=\"verweis\"><a class=\"btn am\" href=\"https://music.amazon.com/albums/$lnk\"></a> Listen to on Amazon Music</span>";
 				}else if($type=="dl"){
 					foreach($lnk as $fn => $fexts){
 						foreach($fexts as $fext){

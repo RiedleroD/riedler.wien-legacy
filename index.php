@@ -100,6 +100,10 @@
 				background-image:url("/sfto/bandlab.svg");}
 			.btn.vimeo{
 				background-image:url("/sfto/vimeo.svg");}
+			.btn.az{
+				background-image:url("/sfto/amazon.svg");}
+			.btn.am{
+				background-image:url("/sfto/amazon_music.svg");}
 			.btn.rw{
 				background-image:url("/favicon.svg");}
 			.patreon{
@@ -161,6 +165,7 @@
 			<button class="btn bl"></button> BandLab<br/>
 			<button class="btn sc"></button> SoundCloud<br/>
 			<button class="btn vimeo"></button> Vimeo<br/>
+			<button class="btn am"></button> Amazon Music<br/>
 			<button class="btn play" style="background-color:#555"></button> Mini-Player
 		</p>
 		<input type="checkbox" checked id="rcb"/><label for="rcb" class="r">Riedlerfiziert</label>
@@ -204,6 +209,10 @@
 								$lnks.="<button class=\"btn bl\" type=\"submit\" formaction=\"https://www.bandlab.com/riedler/$lnk\"></button>";
 							}else if ($type=="vimeo"){
 								$lnks.="<button class=\"btn vimeo\" type=\"submit\" formaction=\"https://vimeo.com/$lnk\"></button>";
+							}else if ($type=="az"){
+								$lnks.="<button class=\"btn az\" type=\"submit\" formaction=\"https://amazon.com/lolicanwriteanythinghere/dp/$lnk\"></button>";
+							}else if ($type=="am"){
+								$lnks.="<button class=\"btn am\" type=\"submit\" formaction=\"https://music.amazon.com/albums/$lnk\"></button";
 							}
 						}
 						if($lnks!="" or array_key_exists(6,$row)){
