@@ -104,6 +104,8 @@
 				background-image:url("/sfto/amazon.svg");}
 			.btn.am{
 				background-image:url("/sfto/amazon_music.svg");}
+			.btn.bp{
+				background-image:url("/sfto/boomplay.svg")}
 			.btn.rw{
 				background-image:url("/favicon.svg");}
 			.patreon{
@@ -167,6 +169,7 @@
 			<button class="btn vimeo"></button> Vimeo<br/>
 			<button class="btn az"></button> Amazon<br/>
 			<button class="btn am"></button> Amazon Music<br/>
+			<button class="btn bp"></button> Boomplay<br/>
 			<button class="btn play" style="background-color:#555"></button> Mini-Player
 		</p>
 		<input type="checkbox" checked id="rcb"/><label for="rcb" class="r">Riedlerfiziert</label>
@@ -214,6 +217,8 @@
 								$lnks.="<button class=\"btn az\" type=\"submit\" formaction=\"https://amazon.com/lolicanwriteanythinghere/dp/$lnk\"></button>";
 							}else if ($type=="am"){
 								$lnks.="<button class=\"btn am\" type=\"submit\" formaction=\"https://music.amazon.com/albums/$lnk\"></button";
+							}else if ($type=="bp"){
+								$lnks.="<button class=\"btn bp\" type=\"submit\" formaction=\"https://boomplay.com/songs/$lnk\"></button>";
 							}
 						}
 						if($lnks!="" or array_key_exists(6,$row)){

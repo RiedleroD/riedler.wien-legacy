@@ -115,6 +115,8 @@
 				content:url("/sfto/amazon.svg")}
 			a.btn.am{
 				content:url("/sfto/amazon_music.svg")}
+			a.btn.bp{
+				content:url("/sfto/boomplay.svg");}
 			a.btn.dl{
 				content:url("/sfto/download.svg");}
 			.verweis{
@@ -196,6 +198,8 @@
 					$links.="<span class=\"verweis\"><a class=\"btn az\" href=\"https://amazon.com/lolicanwriteanythinghere/dp/$lnk\"></a> Buy on Amazon</span>";
 				}else if($type=="am"){
 					$links.="<span class=\"verweis\"><a class=\"btn am\" href=\"https://music.amazon.com/albums/$lnk\"></a> Listen to on Amazon Music</span>";
+				}else if($type=="bp"){
+					$links.="<span class=\"verweis\"><a class=\"btn bp\" href=\"https://boomplay.com/songs/$lnk\"></a> Listen to on Boomplay</span>";
 				}else if($type=="dl"){
 					foreach($lnk as $fn => $fexts){
 						foreach($fexts as $fext){
