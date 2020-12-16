@@ -165,6 +165,7 @@
 			<button class="btn bl"></button> BandLab<br/>
 			<button class="btn sc"></button> SoundCloud<br/>
 			<button class="btn vimeo"></button> Vimeo<br/>
+			<button class="btn az"></button> Amazon<br/>
 			<button class="btn am"></button> Amazon Music<br/>
 			<button class="btn play" style="background-color:#555"></button> Mini-Player
 		</p>
