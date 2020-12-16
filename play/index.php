@@ -17,6 +17,8 @@
 				$track=NULL;
 				$title="Play: Invalid";
 			}
+			$json=file_get_contents("../linking_data.json");
+			$linking_data=json_decode($json,true);
 		}
 		echo "<title>$title</title>";
 		?>
@@ -184,23 +186,7 @@
 			$flinks=array();
 			$links="";
 			foreach($track[5] as $type => $lnk){
-				if($type=="yt"){
-					$links.="<span class=\"verweis\"><a class=\"btn yt\" href=\"https://youtu.be/$lnk\"></a> <a>Watch on YouTube</a></span>";
-				}else if($type=="lmms"){
-					$links.="<span class=\"verweis\"><a class=\"btn lmms\" href=\"https://lmms.io/lsp/?action=show&file=$lnk\"></a> Get the project file</span>";
-				}else if($type=="sc"){
-					$links.="<span class=\"verweis\"><a class=\"btn sc\" href=\"https://soundcloud.com/riedler-musics/$lnk\"></a> Listen to on SoundCloud</span>";
-				}else if($type=="bl"){
-					$links.="<span class=\"verweis\"><a class=\"btn bl\" href=\"https://www.bandlab.com/riedler/$lnk\"></a> Listen to on BandCamp</span>";
-				}else if($type=="vimeo"){
-					$links.="<span class=\"verweis\"><a class=\"btn vimeo\" href=\"https://vimeo.com/$lnk\"></a> Watch on Vimeo</span>";
-				}else if($type=="az"){
-					$links.="<span class=\"verweis\"><a class=\"btn az\" href=\"https://amazon.com/lolicanwriteanythinghere/dp/$lnk\"></a> Buy on Amazon</span>";
-				}else if($type=="am"){
-					$links.="<span class=\"verweis\"><a class=\"btn am\" href=\"https://music.amazon.com/albums/$lnk\"></a> Listen to on Amazon Music</span>";
-				}else if($type=="bp"){
-					$links.="<span class=\"verweis\"><a class=\"btn bp\" href=\"https://boomplay.com/songs/$lnk\"></a> Listen to on Boomplay</span>";
-				}else if($type=="dl"){
+				if($type=="dl"){
 					foreach($lnk as $fn => $fexts){
 						foreach($fexts as $fext){
 							$flink="../download/?id=$id&fn=".urlencode($fn)."&ext=$fext";
@@ -215,6 +201,9 @@
 							$flinks[$flink]=$fext;
 						}
 					}
+				}else if(array_key_exists($type,$linking_data)){
+					list($tpre,$tpost,$tdesc)=$linking_data[$type];
+					$links.="<span class=\"verweis\"><a class=\"btn $type\" href=\"https://$tpre$lnk$tpost\"></a> $tdesc</span>";
 				}
 			}
 			if(!empty($flinks)){
