@@ -207,7 +207,7 @@
 							}
 						}
 						if($lnks!="" or array_key_exists(6,$row)){
-							$lnks="<button class=\"btn rw\" type=\"submit\" formaction=\"./play/?id=$i\"></button>".$lnks;
+							$lnks="<button class=\"btn rw\" type=\"submit\" name=\"id\" value=\"$i\" formaction=\"./play/\"></button>".$lnks;
 						}
 						$stat=$row[2];
 						$anysource=false;
