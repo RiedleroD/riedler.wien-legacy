@@ -119,6 +119,8 @@
 				content:url("/sfto/amazon_music.svg")}
 			a.btn.bp{
 				content:url("/sfto/boomplay.svg");}
+			a.btn.dz{
+				content:url("/sfto/deezer.svg");}
 			a.btn.dl{
 				content:url("/sfto/download.svg");}
 			.verweis{
