@@ -42,9 +42,16 @@
 				white-space:nowrap;}
 			#maintable>a>div:first-child{
 				width:0;}
+			#maintable>a>div:last-child{
+				vertical-align:middle;}
 			#maintable>a:first-child>div{
 				text-align:center;
 				font-weight:bold;}
+			#maintable a>div>object{
+				display:flex;
+				align-items:baseline;
+				flex-direction:row-reverse;
+				justify-content:flex-start;}
 			a:link,
 			a:visited{
 				color:#418BA4;}
@@ -78,48 +85,45 @@
 			.btn{
 				height:1em;
 				width:1em;
-				appearance:none;
-				border:none;
-				background-color:#0000;
-				vertical-align:middle;
 				display:inline-block;
 				padding:0;
 				background-size:1em 1em;
 				cursor:pointer;}
-			.btn:first-child{
-				margin-left:0.2em;}
-			.btn:last-child{
+			#maintable .btn:first-child{
 				margin-right:0.2em;}
+			#maintable .btn:last-child{
+				margin-left:0.2em;}
 			.btn.yt{
-				background-image:url("/sfto/youtube.svg");}
+				content:url("/sfto/youtube.svg");}
 			.btn.lmms{
-				background-image:url("/sfto/lmms.svg");}
+				content:url("/sfto/lmms.svg");}
 			.btn.sc{
-				background-image:url("/sfto/soundcloud.svg");}
+				content:url("/sfto/soundcloud.svg");}
 			.btn.bl{
-				background-image:url("/sfto/bandlab.svg");}
+				content:url("/sfto/bandlab.svg");}
 			.btn.vimeo{
-				background-image:url("/sfto/vimeo.svg");}
+				content:url("/sfto/vimeo.svg");}
 			.btn.az{
-				background-image:url("/sfto/amazon.svg");}
+				content:url("/sfto/amazon.svg");}
 			.btn.am{
-				background-image:url("/sfto/amazon_music.svg");}
+				content:url("/sfto/amazon_music.svg");}
 			.btn.bp{
-				background-image:url("/sfto/boomplay.svg")}
+				content:url("/sfto/boomplay.svg");}
 			.btn.dz{
-				background-image:url("/sfto/deezer.svg")}
+				content:url("/sfto/deezer.svg");}
 			.btn.sy{
-				background-image:url("/sfto/spotify.svg");}
+				content:url("/sfto/spotify.svg");}
 			.btn.rw{
-				background-image:url("/favicon.svg");}
+				content:url("/favicon.svg");}
+			.btn.play{
+				background-image:url("/sfto/arrleft.svg");}
 			.patreon{
 				background-color:#E34;
 				color:#FFF !important;
 				text-decoration:none;
 				border-radius:1em;
 				padding:0.2em 0.5em 0.2em 0.5em;
-				font-weight:bold;
-			}
+				font-weight:bold;}
 			.patreon>svg{
 				vertical-align:middle;
 				fill:#FFF;
@@ -128,31 +132,28 @@
 				width:1em;
 				padding-right:0.2em;
 				display:inline-block;}
-			.btn.play{
-				background-image:url("/sfto/arrleft.svg");
-				margin-top:0;}
+			.miniplayer{
+				display:inline-flex;
+				width:auto;
+				margin:0 0.2em;
+				z-index:2;
+				position:relative;
+				vertical-align:super;}
 			.miniplayer audio{
 				height:1em;
 				width:auto;
 				cursor:pointer;
-				display:none;
-				margin-bottom:0;
-				margin-left:0.2em;}
-			.miniplayer{
-				display:inline-flex;
-				width:auto;
-				margin-right:0.2em;
-				vertical-align:middle;}
+				display:none;}
 			.miniplayer:focus-within>audio{
 				display:inline-block;}
 			.miniplayer:focus-within>.play{
 				display:none;}
 			.miniplayer:focus-within{
 				vertical-align:sub;/*don't ask*/}
-			.nominiplayer{
-				display:inline-block;
-				width:1em;
-				margin-right:0.2em;}
+			.miniplayer>.btn{
+				border:none;
+				appearance:none;
+				background-color:#0000;}
 		</style>
 	</head>
 	<body>
@@ -165,17 +166,17 @@
 		</p>
 		<p>
 			Here's a queue for you – it's updated by me personally once something changes.<br/>
-			<button class="btn rw"></button> Riedler.wien<br/>
-			<button class="btn yt"></button> YouTube<br/>
-			<button class="btn lmms"></button> LMMS Sharing Platform<br/>
-			<button class="btn bl"></button> BandLab<br/>
-			<button class="btn sc"></button> SoundCloud<br/>
-			<button class="btn vimeo"></button> Vimeo<br/>
-			<button class="btn az"></button> Amazon<br/>
-			<button class="btn am"></button> Amazon Music<br/>
-			<button class="btn bp"></button> Boomplay<br/>
-			<button class="btn dz"></button> Deezer<br/>
-			<button class="btn play" style="background-color:#555"></button> Mini-Player
+			<a class="btn rw"></a> Riedler.wien<br/>
+			<a class="btn yt"></a> YouTube<br/>
+			<a class="btn lmms"></a> LMMS Sharing Platform<br/>
+			<a class="btn bl"></a> BandLab<br/>
+			<a class="btn sc"></a> SoundCloud<br/>
+			<a class="btn vimeo"></a> Vimeo<br/>
+			<a class="btn az"></a> Amazon<br/>
+			<a class="btn am"></a> Amazon Music<br/>
+			<a class="btn bp"></a> Boomplay<br/>
+			<a class="btn dz"></a> Deezer<br/>
+			<a class="btn play" style="background-color:#555"></a> Mini-Player
 		</p>
 		<input type="checkbox" checked id="rcb"/><label for="rcb" class="r">Riedlerfiziert</label>
 		<input type="checkbox" checked id="rcommcb"/><label for="rcommcb" class="rcomm">Riedlerfiziert Requests</label>
@@ -199,8 +200,12 @@
 			<?php
 				$json=file_get_contents("./data.json");
 				$data=json_decode($json,true);
+				$json=file_get_contents("./linking_data.json");
+				$linking_data=json_decode($json,true);
 				if($data==NULL){
 					echo "<a><div><b style='color:red'>Error reading json file, please be patient until this is fixed</b></div></a>\n";
+				}else if($linking_data==NULL){
+					echo "<a><div><b style='color:red'>Error reading linking information, please be patient until this is fixed</b></div></a>\n";
 				}else{
 					$stati=["Requested","Planned","Drafted","Finished","Uploaded"];
 					$i=count($data);
@@ -208,35 +213,18 @@
 						$i-=1;
 						$lnks="";
 						foreach($row[5] as $type => $lnk){
-							if($type=="yt"){
-								$lnks.="<button class=\"btn yt\" type=\"submit\" formaction=\"https://youtu.be/$lnk\"></button>";
-							}else if($type=="lmms"){
-								$lnks.="<button class=\"btn lmms\" type=\"submit\" formaction=\"https://lmms.io/lsp/?action=show&file=$lnk\"></button>";
-							}else if ($type=="sc"){
-								$lnks.="<button class=\"btn sc\" type=\"submit\" formaction=\"https://soundcloud.com/riedler-musics/$lnk\"></button>";
-							}else if ($type=="bl"){
-								$lnks.="<button class=\"btn bl\" type=\"submit\" formaction=\"https://www.bandlab.com/riedler/$lnk\"></button>";
-							}else if ($type=="vimeo"){
-								$lnks.="<button class=\"btn vimeo\" type=\"submit\" formaction=\"https://vimeo.com/$lnk\"></button>";
-							}else if ($type=="az"){
-								$lnks.="<button class=\"btn az\" type=\"submit\" formaction=\"https://amazon.com/lolicanwriteanythinghere/dp/$lnk\"></button>";
-							}else if ($type=="am"){
-								$lnks.="<button class=\"btn am\" type=\"submit\" formaction=\"https://music.amazon.com/albums/$lnk\"></button>";
-							}else if ($type=="bp"){
-								$lnks.="<button class=\"btn bp\" type=\"submit\" formaction=\"https://boomplay.com/songs/$lnk\"></button>";
-							}else if ($type=="dz"){
-								$lnks.="<button class=\"btn dz\" type=\"submit\" formaction=\"https://www.deezer.com/en/track/$lnk\"></button>";
-							}else if ($type=="sy"){
-								$lnks.="<button class=\"btn sy\" type=\"submit\" formaction=\"https://open.spotify.com/track/$lnk\"></button>";
+							if(array_key_exists($type,$linking_data)){
+								list($tpre,$tpost,$tdesc)=$linking_data[$type];
+								$lnks.="<a class=\"btn $type\" href=\"https://$tpre$lnk$tpost\"></a>";
 							}
 						}
 						if($lnks!="" or array_key_exists(6,$row)){
-							$lnks="<button class=\"btn rw\" type=\"submit\" name=\"id\" value=\"$i\" formaction=\"./play/\"></button>".$lnks;
+							$lnks="<a class=\"btn rw\" href=\"./play?id=$i\"></a>".$lnks;
 						}
 						$stat=$row[2];
 						$anysource=false;
 						if(array_key_exists("dl",$row[5])){
-							$sources="<div class=\"miniplayer\"><button class=\"btn play\" type=\"submit\"></button><audio controls preload=none>";
+							$sources="<div class=\"miniplayer\"><button type=\"submit\" class=\"btn play\"></button><audio controls preload=none>";
 							foreach($row[5]["dl"] as $fn => $fexts){
 								foreach($fexts as $fext){
 									$urlfn=urlencode($fn);
@@ -250,7 +238,7 @@
 						}else{
 							$sources.="</audio></div>";
 						}
-						echo "<a class=\"$row[0] stat$stat\" href=\"./play/?id=$i\"><div>$sources</div><div>$row[1]</div><div>$stati[$stat]</div><div>$row[3]&nbsp;</div><div>$row[4]&nbsp;</div><div><form>$lnks</form></div></a>";
+						echo "<a class=\"$row[0] stat$stat\" href=\"./play/?id=$i\"><div>$sources</div><div>$row[1]</div><div>$stati[$stat]</div><div>$row[3]&nbsp;</div><div>$row[4]&nbsp;</div><div><object>$lnks</object></div></a>";
 					}
 				}
 			?>
