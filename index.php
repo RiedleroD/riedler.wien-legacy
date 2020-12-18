@@ -117,6 +117,23 @@
 				content:url("/favicon.svg");}
 			.btn.play{
 				background-image:url("/sfto/arrleft.svg");}
+			.plaque,
+			a.plaque:link,
+			a.plaque:visited{
+				display:inline-flex;
+				background-color:#333;
+				border-radius:0.2em;
+				overflow:hidden;
+				align-items:center;
+				height:1.25rem;
+				padding-right:0.2em;
+				text-decoration:none;
+				color:#FFF;
+				cursor:pointer;}
+			.plaque>.btn{
+				margin-right:0.2em;
+				height:1.25rem;
+				width:1.25rem;}
 			.patreon{
 				background-color:#E34;
 				color:#FFF !important;
@@ -165,19 +182,20 @@
 			All patrons are visible <a href="./patrons/">here</a>.
 		</p>
 		<p>
-			Here's a queue for you – it's updated by me personally once something changes.<br/>
-			<a class="btn rw"></a> Riedler.wien<br/>
-			<a class="btn yt"></a> YouTube<br/>
-			<a class="btn lmms"></a> LMMS Sharing Platform<br/>
-			<a class="btn bl"></a> BandLab<br/>
-			<a class="btn sy"></a> Spotify<br/>
-			<a class="btn sc"></a> SoundCloud<br/>
-			<a class="btn vimeo"></a> Vimeo<br/>
-			<a class="btn az"></a> Amazon<br/>
-			<a class="btn am"></a> Amazon Music<br/>
-			<a class="btn bp"></a> Boomplay<br/>
-			<a class="btn dz"></a> Deezer<br/>
-			<a class="btn play" style="background-color:#555"></a> Mini-Player
+			<div style="user-select:none;">
+				<a class="plaque" href="#"><b class="btn rw"></b>riedler.wien</a>
+				<a class="plaque" href="https://youtu.be"><b class="btn yt"></b>YouTube</a>
+				<a class="plaque" href="https://lmms.io/lsp"><b class="btn lmms"></b>LMMS Sharing Platform</a>
+				<a class="plaque" href="https://bandlab.com"><b class="btn bl"></b>BandLab</a>
+				<a class="plaque" href="https://open.spotify.com"><b class="btn sy"></b>Spotify</a>
+				<a class="plaque" href="https://soundcloud.com"><b class="btn sc"></b>SoundCloud</a>
+				<a class="plaque" href="https://vimeo.com"><b class="btn vimeo"></b>Vimeo</a>
+				<a class="plaque" href="https://amazon.com"><b class="btn az"></b>Amazon</a>
+				<a class="plaque" href="https://music.amazon.com"><b class="btn am"></b>Amazon Music</a>
+				<a class="plaque" href="https://boomplay.com"><b class="btn bp"></b>Boomplay</a>
+				<a class="plaque" href="https://deezer.com"><b class="btn dz"></b>Deezer</a><br/>
+			</div>
+			These symbols are hand-crafted by me (with inkscape) and are meant to represent the respective services.
 		</p>
 		<input type="checkbox" checked id="rcb"/><label for="rcb" class="r">Riedlerfiziert</label>
 		<input type="checkbox" checked id="rcommcb"/><label for="rcommcb" class="rcomm">Riedlerfiziert Requests</label>
