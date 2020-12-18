@@ -179,7 +179,7 @@
 				if($type=="yt"){
 					echo "<iframe width=\"560\" height=\"315\" src=\"https://www.youtube-nocookie.com/embed/$lnk\" allowfullscreen></iframe>";
 				}else if ($type=="sci"){
-					echo "<button onclick=\"document.getElementById('scl').outerHTML='<iframe class=\\'invers\\' width=\\'560\\' height=\\'180\\' scrolling=\\'no\\' src=\\'https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/$lnk&color=%23ff5500&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true\\'></iframe>'\" id=\"scl\">Soundcloud – Open if you want cookies only</button>";
+					echo "<iframe class=\"invers\" width=\"560\" height=\"315\" scrolling=\"no\" src=\"https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/$lnk\" sandbox=\"allow-scripts allow-same-origin\"></iframe>";
 				}else if ($type=="bli"){
 					echo "<iframe class=\"invers\" width=\"560\" height=\"315\" src=\"https://www.bandlab.com/embed/?id=$lnk&blur=true\" allowfullscreen></iframe>";
 				}else if ($type=="vimeo"){
