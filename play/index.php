@@ -184,6 +184,8 @@
 					echo "<iframe class=\"invers\" width=\"560\" height=\"315\" src=\"https://www.bandlab.com/embed/?id=$lnk&blur=true\" allowfullscreen></iframe>";
 				}else if ($type=="vimeo"){
 					echo "<iframe src=\"https://player.vimeo.com/video/$lnk\" width=\"560\" height=\"315\" frameborder=\"0\" allow=\"autoplay; fullscreen\" sandbox=\"allow-scripts allow-same-origin allow-popups\" allowfullscreen></iframe>";
+				}else if ($type=="sy"){
+					echo "<iframe src=\"https://open.spotify.com/embed/track/$lnk\" width=\"560\" height=\"315\" sandbox=\"allow-scripts\"></iframe>";
 				}
 			}
 			echo "<br/>";
