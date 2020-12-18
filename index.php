@@ -170,6 +170,7 @@
 			<a class="btn yt"></a> YouTube<br/>
 			<a class="btn lmms"></a> LMMS Sharing Platform<br/>
 			<a class="btn bl"></a> BandLab<br/>
+			<a class="btn sy"></a> Spotify<br/>
 			<a class="btn sc"></a> SoundCloud<br/>
 			<a class="btn vimeo"></a> Vimeo<br/>
 			<a class="btn az"></a> Amazon<br/>
