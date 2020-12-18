@@ -121,6 +121,8 @@
 				content:url("/sfto/boomplay.svg");}
 			a.btn.dz{
 				content:url("/sfto/deezer.svg");}
+			a.btn.sy{
+				content:url("/sfto/spotify.svg")}
 			a.btn.dl{
 				content:url("/sfto/download.svg");}
 			.verweis{

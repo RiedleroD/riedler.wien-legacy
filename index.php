@@ -108,6 +108,8 @@
 				background-image:url("/sfto/boomplay.svg")}
 			.btn.dz{
 				background-image:url("/sfto/deezer.svg")}
+			.btn.sy{
+				background-image:url("/sfto/spotify.svg");}
 			.btn.rw{
 				background-image:url("/favicon.svg");}
 			.patreon{
@@ -224,6 +226,8 @@
 								$lnks.="<button class=\"btn bp\" type=\"submit\" formaction=\"https://boomplay.com/songs/$lnk\"></button>";
 							}else if ($type=="dz"){
 								$lnks.="<button class=\"btn dz\" type=\"submit\" formaction=\"https://www.deezer.com/en/track/$lnk\"></button>";
+							}else if ($type=="sy"){
+								$lnks.="<button class=\"btn sy\" type=\"submit\" formaction=\"https://open.spotify.com/track/$lnk\"></button>";
 							}
 						}
 						if($lnks!="" or array_key_exists(6,$row)){
