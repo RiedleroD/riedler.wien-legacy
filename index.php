@@ -113,6 +113,8 @@
 				content:url("/sfto/deezer.svg");}
 			.btn.sy{
 				content:url("/sfto/spotify.svg");}
+			.btn.pt{
+				content:url("/sfto/patreon.svg")}
 			.btn.rw{
 				content:url("/favicon.svg");}
 			.btn.play{
@@ -129,7 +131,8 @@
 				padding-right:0.2em;
 				text-decoration:none;
 				color:#FFF;
-				cursor:pointer;}
+				cursor:pointer;
+				vertical-align:sub;}
 			.plaque>.btn{
 				margin-right:0.2em;
 				height:1.25rem;
@@ -141,12 +144,10 @@
 				border-radius:1em;
 				padding:0.2em 0.5em 0.2em 0.5em;
 				font-weight:bold;}
-			.patreon>svg{
-				vertical-align:middle;
-				fill:#FFF;
-				stroke-width:1.2px;
-				height:1em;
-				width:1em;
+			.patreon>b{
+				vertical-align:sub;
+				height:1.25rem;
+				width:1.25rem;
 				padding-right:0.2em;
 				display:inline-block;}
 			.miniplayer{
@@ -178,8 +179,7 @@
 		<p>
 			You can request any song for Riedlerfiziert <a href="https://forms.gle/poA5LsSr8HwNEV3a9">here</a>. It's completely free! <br/>
 			You can also comission me to make original music, but in that case, please email me at comm@riedler.wien and describe precisely what you want. I usually respond within 1 to 3 days. If I don't, please re–send the mail.<br/>
-			I've also got a patreon page now: <a class="patreon" href="https://www.patreon.com/bePatron?u=36947670"><svg viewBox="0 0 569 546" xmlns="http://www.w3.org/2000/svg"><g><circle cx="362.589996" cy="204.589996" data-fill="1" id="Oval" r="204.589996"></circle><rect data-fill="2" height="545.799988" id="Rectangle" width="100" x="0" y="0"></rect></g></svg>Become a patreon</a><br/>
-			All patrons are visible <a href="./patrons/">here</a>.
+			I've also got a patreon page now, so please <a class="patreon" href="https://www.patreon.com/bePatron?u=36947670"><b class="btn pt"></b>Become a patreon</a>. All patrons are visible in the <a class="plaque" href="./patrons/"><b class="btn pt"></b>patron list</a>.
 		</p>
 		<p>
 			<div style="user-select:none;">
@@ -193,7 +193,7 @@
 				<a class="plaque" href="https://amazon.com"><b class="btn az"></b>Amazon</a>
 				<a class="plaque" href="https://music.amazon.com"><b class="btn am"></b>Amazon Music</a>
 				<a class="plaque" href="https://boomplay.com"><b class="btn bp"></b>Boomplay</a>
-				<a class="plaque" href="https://deezer.com"><b class="btn dz"></b>Deezer</a><br/>
+				<a class="plaque" href="https://deezer.com"><b class="btn dz"></b>Deezer</a>
 			</div>
 			These symbols are hand-crafted by me (with inkscape) and are meant to represent the respective services.
 		</p>
