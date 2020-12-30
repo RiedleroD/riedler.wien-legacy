@@ -63,6 +63,7 @@
 				margin-top:2em;
 				padding:0.2em;
 				padding-bottom:0.1em;
+				font-family:sans-serif;
 				background:linear-gradient(to bottom,#000 0em,#333 0.2em,#333 calc(100% - 0.2em),#000 100%);}
 			button:hover{
 				cursor:pointer;/*because it isn't by standard for some reason*/}

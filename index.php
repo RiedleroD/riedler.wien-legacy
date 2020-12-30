@@ -9,7 +9,8 @@
 				margin:0;
 				padding:0.5rem;
 				background-color:#000;
-				color:#EEE;}
+				color:#EEE;
+				font-family:sans-serif}
 			#maintable{
 				display:table;
 				width:calc(100% + 1rem);

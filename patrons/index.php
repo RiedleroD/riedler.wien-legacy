@@ -8,7 +8,8 @@
 				background-color:#000;
 				color:#CCC;
 				padding:0;
-				margin:0;}
+				margin:0;
+				font-family:sans-serif}
 			h1{
 				margin-top:0.5em;
 				margin-bottom:0.5em;}
