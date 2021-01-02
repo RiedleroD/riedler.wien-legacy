@@ -108,6 +108,8 @@
 				content:url("/sfto/amazon.svg");}
 			.btn.am{
 				content:url("/sfto/amazon_music.svg");}
+			.btn.apm{
+				content:url("/sfto/apple.svg")}
 			.btn.bp{
 				content:url("/sfto/boomplay.svg");}
 			.btn.dz{
@@ -192,6 +194,7 @@
 				<a class="plaque" href="https://soundcloud.com"><b class="btn sc"></b>SoundCloud</a>
 				<a class="plaque" href="https://vimeo.com"><b class="btn vimeo"></b>Vimeo</a>
 				<a class="plaque" href="https://amazon.com"><b class="btn az"></b>Amazon</a>
+				<a class="plaque" href="https://music.apple.com"><b class="btn apm"></b>Apple Music</a>
 				<a class="plaque" href="https://music.amazon.com"><b class="btn am"></b>Amazon Music</a>
 				<a class="plaque" href="https://boomplay.com"><b class="btn bp"></b>Boomplay</a>
 				<a class="plaque" href="https://deezer.com"><b class="btn dz"></b>Deezer</a>

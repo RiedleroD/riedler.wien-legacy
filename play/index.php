@@ -120,6 +120,8 @@
 				content:url("/sfto/amazon.svg")}
 			a.btn.am{
 				content:url("/sfto/amazon_music.svg")}
+			a.btn.apm{
+				content:url("/sfto/apple.svg");}
 			a.btn.bp{
 				content:url("/sfto/boomplay.svg");}
 			a.btn.dz{
