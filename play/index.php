@@ -102,6 +102,8 @@
 				height:2em;
 				display:inline-block;
 				padding-right:0.2em;}
+			a.btn.pt{
+				content:url("/sfto/patreon.svg");}
 			a.btn.yt{
 				content:url("/sfto/youtube.svg");}
 			a.btn.lmms{
