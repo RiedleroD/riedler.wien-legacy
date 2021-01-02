@@ -10,7 +10,7 @@
 				padding:0.5rem;
 				background-color:#000;
 				color:#EEE;
-				font-family:sans-serif}
+				font-family:sans-serif;}
 			#maintable{
 				display:table;
 				width:calc(100% + 1rem);
@@ -27,11 +27,9 @@
 				color:#EEE;
 				border:none;}
 			#maintable>a>:nth-child(4){
-				border-right:none;
-			}
+				border-right:none;}
 			#maintable>a>:last-child{
-				border-left:none;
-			}
+				border-left:none;}
 			#maintable>a:not(:first-child):hover{
 				filter:brightness(1.2);
 				box-shadow:-0.5em 0 0.5em 0 #000;}

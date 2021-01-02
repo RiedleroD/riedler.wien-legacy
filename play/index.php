@@ -117,9 +117,9 @@
 			a.btn.rw{
 				content:url("/favicon.svg");}
 			a.btn.az{
-				content:url("/sfto/amazon.svg")}
+				content:url("/sfto/amazon.svg");}
 			a.btn.am{
-				content:url("/sfto/amazon_music.svg")}
+				content:url("/sfto/amazon_music.svg");}
 			a.btn.apm{
 				content:url("/sfto/apple.svg");}
 			a.btn.bp{
@@ -127,7 +127,7 @@
 			a.btn.dz{
 				content:url("/sfto/deezer.svg");}
 			a.btn.sy{
-				content:url("/sfto/spotify.svg")}
+				content:url("/sfto/spotify.svg");}
 			a.btn.dl{
 				content:url("/sfto/download.svg");}
 			.verweis{
@@ -144,8 +144,7 @@
 				filter:invert(0.9);}
 			@-moz-document url-prefix(){
 				audio{
-					filter:none;
-				}
+					filter:none;}
 			}
 		</style>
 	</head>
