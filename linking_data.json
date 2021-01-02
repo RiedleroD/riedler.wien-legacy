@@ -1,0 +1,13 @@
+{
+"dz":["www.deezer.com/en/track/","","Listen to on Deezer"],
+"bp":["boomplay.com/songs/","","Listen to on Boomplay"],
+"am":["music.amazon.com/albums/","","Listen to on Amazon Music"],
+"az":["amazon.com/lolicanwriteanythinghere/dp/","","Buy on Amazon"],
+"vimeo":["vimeo.com/","","Watch on Vimeo"],
+"pt":["www.patreon.com/posts/","","See on Patreon"],
+"bl":["www.bandlab.com/riedler/","","Listen to on Bandlab"],
+"sc":["soundcloud.com/riedler-musics/","","Listen to on Soundcloud"],
+"lmms":["lmms.io/lsp/?action=show&file=","","Get the project file"],
+"sy":["open.spotify.com/track/","","Listen to on Spotify"],
+"yt":["youtu.be/","","Watch on Youtube"]
+}
