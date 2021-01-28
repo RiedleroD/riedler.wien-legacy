@@ -110,6 +110,8 @@
 				content:url("/sfto/apple.svg")}
 			.btn.bp{
 				content:url("/sfto/boomplay.svg");}
+			.btn.yx{
+				content:url("/sfto/yandex_music.svg");}
 			.btn.dz{
 				content:url("/sfto/deezer.svg");}
 			.btn.sy{
@@ -195,6 +197,7 @@
 				<a class="plaque" href="https://music.apple.com"><b class="btn apm"></b>Apple Music</a>
 				<a class="plaque" href="https://music.amazon.com"><b class="btn am"></b>Amazon Music</a>
 				<a class="plaque" href="https://boomplay.com"><b class="btn bp"></b>Boomplay</a>
+				<a class="plaque" href="https://music.yandex.ru"><b class="btn yx"></b>Yandex Music</a>
 				<a class="plaque" href="https://deezer.com"><b class="btn dz"></b>Deezer</a>
 			</div>
 			These symbols are hand-crafted by me (with inkscape) and are meant to represent the respective services.

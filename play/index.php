@@ -124,6 +124,8 @@
 				content:url("/sfto/apple.svg");}
 			a.btn.bp{
 				content:url("/sfto/boomplay.svg");}
+			a.btn.yx{
+				content:url("/sfto/yandex_music.svg")}
 			a.btn.dz{
 				content:url("/sfto/deezer.svg");}
 			a.btn.sy{
