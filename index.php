@@ -223,27 +223,28 @@
 		<h1>Riedler's Music</h1>
 		<p>
 			You can request any song for Riedlerfiziert <a href="https://forms.gle/poA5LsSr8HwNEV3a9">here</a>. It's completely free! <br/>
-			You can also comission me to make original music, but in that case, please email me at comm@riedler.wien and describe precisely what you want. I usually respond within 1 to 3 days. If I don't, please re–send the mail.<br/>
-			I've also got a patreon page now, so please <a class="patreon" href="https://www.patreon.com/bePatron?u=36947670"><b class="btn pt"></b>Become a patreon</a>. All patrons are visible in the <a class="plaque" href="./patrons/"><b class="btn pt"></b>patron list</a>.
+			You can also comission me to make original music, but in that case, please email me at comm@riedler.wien and describe precisely what you want. I usually respond within 1 to 3 days. If I don't, please re–send the mail.
 		</p>
 		<p>
-			<div style="user-select:none;">
-				<a class="plaque" href="#"><b class="btn rw"></b>riedler.wien</a>
-				<a class="plaque" href="https://www.youtube.com/channel/UC0aIZx6FIHB5Fq_sr0TMXSw"><b class="btn yt"></b>YouTube</a>
-				<a class="plaque" href="https://lmms.io/lsp/?action=browse&user=Riedler"><b class="btn lmms"></b>LMMS Sharing Platform</a>
-				<a class="plaque" href="https://bandlab.com/riedler"><b class="btn bl"></b>BandLab</a>
-				<a class="plaque" href="https://open.spotify.com/artist/7k9sRjqYP68ZI8Bw8BwmuG"><b class="btn sy"></b>Spotify</a>
-				<a class="plaque" href="https://soundcloud.com/riedler-musics"><b class="btn sc"></b>SoundCloud</a>
-				<a class="plaque" href="https://vimeo.com/user125791194"><b class="btn vimeo"></b>Vimeo</a>
-				<a class="plaque" href="https://www.amazon.com/s?k=Riedler&i=digital-music&search-type=ss"><b class="btn az"></b>Amazon</a>
-				<a class="plaque" href="https://music.amazon.com/artists/B08QG41MYN/riedler"><b class="btn am"></b>Amazon Music</a>
-				<a class="plaque" href="https://music.apple.com/gb/artist/riedler/1544612571"><b class="btn apm"></b>Apple Music</a>
-				<a class="plaque" href="https://www.boomplay.com/artists/19145926"><b class="btn bp"></b>Boomplay</a>
-				<a class="plaque" href="https://music.yandex.com/artist/10521437"><b class="btn yx"></b>Yandex Music</a>
-				<a class="plaque" href="https://www.deezer.com/en/artist/116666602"><b class="btn dz"></b>Deezer</a>
-			</div>
-			These symbols are hand-crafted by me (with inkscape) and are meant to represent the respective services.
+			I've also got a patreon page now, so please <a class="patreon" href="https://www.patreon.com/bePatron?u=36947670"><b class="btn pt"></b>Become a patreon</a>. All patrons are visible in the <a class="plaque" href="./patrons/"><b class="btn pt"></b>patron list</a>.
 		</p>
+		<div style="user-select:none;">
+			<a class="plaque" href="#"><b class="btn rw"></b>riedler.wien</a>
+			<a class="plaque" href="https://www.youtube.com/channel/UC0aIZx6FIHB5Fq_sr0TMXSw"><b class="btn yt"></b>YouTube</a>
+			<a class="plaque" href="https://lmms.io/lsp/?action=browse&user=Riedler"><b class="btn lmms"></b>LMMS Sharing Platform</a>
+			<a class="plaque" href="https://bandlab.com/riedler"><b class="btn bl"></b>BandLab</a>
+			<a class="plaque" href="https://open.spotify.com/artist/7k9sRjqYP68ZI8Bw8BwmuG"><b class="btn sy"></b>Spotify</a>
+			<a class="plaque" href="https://soundcloud.com/riedler-musics"><b class="btn sc"></b>SoundCloud</a>
+			<a class="plaque" href="https://vimeo.com/user125791194"><b class="btn vimeo"></b>Vimeo</a>
+			<a class="plaque" href="https://www.amazon.com/s?k=Riedler&i=digital-music&search-type=ss"><b class="btn az"></b>Amazon</a>
+			<a class="plaque" href="https://music.amazon.com/artists/B08QG41MYN/riedler"><b class="btn am"></b>Amazon Music</a>
+			<a class="plaque" href="https://music.apple.com/gb/artist/riedler/1544612571"><b class="btn apm"></b>Apple Music</a>
+			<a class="plaque" href="https://www.boomplay.com/artists/19145926"><b class="btn bp"></b>Boomplay</a>
+			<a class="plaque" href="https://music.yandex.com/artist/10521437"><b class="btn yx"></b>Yandex Music</a>
+			<a class="plaque" href="https://www.deezer.com/en/artist/116666602"><b class="btn dz"></b>Deezer</a>
+		</div>
+		These symbols are hand-crafted by me (with inkscape) and are meant to represent the respective services.<br/>
+		<br/>
 		<input type="checkbox" checked id="rcb"/><label for="rcb" class="r">Riedlerfiziert</label>
 		<input type="checkbox" checked id="rcommcb"/><label for="rcommcb" class="rcomm">Riedlerfiziert Requests</label>
 		<input type="checkbox" checked id="ocb"/><label for="ocb" class="o">Originals</label>
@@ -254,6 +255,7 @@
 		<input type="checkbox" checked id="stat2cb"/><label for="stat2cb">Drafted</label>
 		<input type="checkbox" checked id="stat3cb"/><label for="stat3cb">Finished</label>
 		<input type="checkbox" checked id="stat4cb"/><label for="stat4cb">Uploaded</label>
+		<br/><br/>
 		<input type="radio" name="tabs" id="tab_1" checked/>
 		<input type="radio" name="tabs" id="tab_2"/>
 		<input type="radio" name="tabs" id="tab_3"/>
