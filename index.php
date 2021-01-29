@@ -2,6 +2,10 @@
 <?php
 	$json=file_get_contents("./data.json");
 	$data=json_decode($json,true);
+	$json=file_get_contents("./wishlist_data.json");
+	$wldata=json_decode($json,true);
+	$json=file_get_contents("./rejected_data.json");
+	$rjdata=json_decode($json,true);
 	$json=file_get_contents("./linking_data.json");
 	$linking_data=json_decode($json,true);
 ?>
@@ -17,42 +21,41 @@
 				background-color:#000;
 				color:#EEE;
 				font-family:sans-serif;}
-			#maintable{
+			.maintable{
 				display:table;
-				width:calc(100% + 1rem);
-				margin-left:-0.5rem;
-				margin-bottom:1em;
-				margin-top:0.5rem;
+				width:100%;
 				color:#000;}
-			#maintable>a{
+			.maintable>a:link,
+			.maintable>a:visited,
+			.maintable>a:link:hover,
+			.maintable>a:visited:hover,
+			.maintable>a{
 				display:table-row;
 				text-decoration:none;
 				color:#000;}
-			#maintable>a:first-child>div{
+			.maintable>a:first-child>div{
 				background:linear-gradient(to bottom,#151515 0%,#333 10%,#151515 80%,#000 100%);
 				color:#EEE;
 				border:none;}
-			#maintable>a>:nth-child(4){
+			.maintable>a>:nth-child(4){
 				border-right:none;}
-			#maintable>a>:last-child{
-				border-left:none;}
-			#maintable>a:not(:first-child):hover{
+			.maintable.pub>a:not(:first-child):hover{
 				filter:brightness(1.2);
 				box-shadow:-0.5em 0 0.5em 0 #000;}
-			#maintable>a:not(:first-child):hover>*{
+			.maintable>.pub:a:not(:first-child):hover>*{
 				filter:brightness(0.9);}
-			#maintable>a>div{
+			.maintable>a>div{
 				display:table-cell;
 				padding:0 0 0.1em 0;
 				white-space:nowrap;}
-			#maintable>a>div:first-child{
+			.maintable.pub>a>div:first-child{
 				width:0;}
-			#maintable>a>div:last-child{
+			.maintable.pub>a>div:last-child{
 				vertical-align:middle;}
-			#maintable>a:first-child>div{
+			.maintable.pub>a:first-child>div{
 				text-align:center;
 				font-weight:bold;}
-			#maintable a>div>object{
+			.maintable a>div>object{
 				display:flex;
 				align-items:baseline;
 				flex-direction:row-reverse;
@@ -63,30 +66,30 @@
 			a:link:hover,
 			a:visited:hover{
 				color:#6AC;}
-			label{
+			input+label{
 				padding:0.2em;
 				border-radius:0.2em;
 				line-height:2em;
 				color:#000;
 				background-color:#CCC;}
-			#ocb:not(:checked)~#maintable .o,
-			#rcb:not(:checked)~#maintable .r,
-			#rcommcb:not(:checked)~#maintable .rcomm,
-			#ocommcb:not(:checked)~#maintable .ocomm,
-			#stat0cb:not(:checked)~#maintable .stat0,
-			#stat1cb:not(:checked)~#maintable .stat1,
-			#stat2cb:not(:checked)~#maintable .stat2,
-			#stat3cb:not(:checked)~#maintable .stat3,
-			#stat4cb:not(:checked)~#maintable .stat4{
+			#ocb:not(:checked)~.tabbed>.maintable .o,
+			#rcb:not(:checked)~.tabbed>.maintable .r,
+			#rcommcb:not(:checked)~.tabbed>.maintable .rcomm,
+			#ocommcb:not(:checked)~.tabbed>.maintable .ocomm,
+			#stat0cb:not(:checked)~.tabbed>.maintable .stat0,
+			#stat1cb:not(:checked)~.tabbed>.maintable .stat1,
+			#stat2cb:not(:checked)~.tabbed>.maintable .stat2,
+			#stat3cb:not(:checked)~.tabbed>.maintable .stat3,
+			#stat4cb:not(:checked)~.tabbed>.maintable .stat4{
 				display:none;}
 			.o{
-				background:linear-gradient(to right,#383 10vw,#464 90vw,#121 95vw,#000 98vw);}
+				background:linear-gradient(to right,#383 10vw,#464 100vw);}
 			.r{
-				background:linear-gradient(to right,#AA0 10vw,#883 90vw,#331 95vw,#000 98vw);}
+				background:linear-gradient(to right,#AA0 10vw,#883 100vw);}
 			.rcomm{
-				background:linear-gradient(to right,#C60 10vw,#A43 90vw,#321 95vw,#000 98vw);}
+				background:linear-gradient(to right,#C60 10vw,#A43 100vw);}
 			.ocomm{
-				background:linear-gradient(to right,#638 10vw,#436 90vw,#112 95vw,#000 98vw);}
+				background:linear-gradient(to right,#638 10vw,#436 100vw);}
 			.btn{
 				height:1em;
 				width:1em;
@@ -94,9 +97,9 @@
 				padding:0;
 				background-size:1em 1em;
 				cursor:pointer;}
-			#maintable .btn:first-child{
+			.maintable .btn:first-child{
 				margin-right:0.2em;}
-			#maintable .btn:last-child{
+			.maintable .btn:last-child{
 				margin-left:0.2em;}
 			<?php
 				if($linking_data!=NULL){
@@ -122,7 +125,8 @@
 				text-decoration:none;
 				color:#FFF;
 				cursor:pointer;
-				vertical-align:sub;}
+				vertical-align:sub;
+				margin:0.25rem;}
 			.plaque>.btn{
 				margin-right:0.2em;
 				height:1.25rem;
@@ -162,6 +166,57 @@
 				border:none;
 				appearance:none;
 				background-color:#0000;}
+			.tabbed{
+				display:flex;
+				flex-wrap:nowrap;
+				width:100%;
+				overflow:hidden;
+				box-shadow:inset 0 0 1em #000;}
+			.tabbed>.maintable{
+				width:100%;
+				transform:translate(0);
+				transition:transform 0.2s;
+				transition-timing-function:cubic-bezier(.77,0,.18,1);}
+			#tab_2:checked~.tabbed>.maintable{
+				transform:translateX(-100%);}
+			#tab_3:checked~.tabbed>.maintable{
+				transform:translateX(-200%);}
+			input[name="tabs"]{
+				display:none;}
+			.tabnav{
+				display:flex;
+				align-items:baseline;
+				border-radius:1rem;
+				height:1.5rem;
+				margin:0.5rem 0;
+				background-color:#151515;}
+			.tnhl{
+				background-color:#333;
+				background-clip:content-box;
+				box-sizing:border-box;
+				padding:0 0.1rem;
+				transform:translateX(0);
+				transition:transform 0.2s;
+				transition-timing-function:cubic-bezier(.77,0,.18,1);
+				width:calc(100% / 3);
+				height:1.2rem;
+				margin-bottom:-1.85rem;
+				margin-top:0.5rem;
+				border-radius:1.2rem;
+				z-index:1;}
+			#tab_2:checked~.tnhl{
+				transform:translateX(100%);}
+			#tab_3:checked~.tnhl{
+				transform:translateX(200%);}
+			.tabnav>label{
+				display:flex;
+				width:100%;
+				height:100%;
+				align-items:center;
+				justify-content:center;
+				cursor:pointer;
+				z-index:2;}
+			
 		</style>
 	</head>
 	<body>
@@ -199,56 +254,92 @@
 		<input type="checkbox" checked id="stat2cb"/><label for="stat2cb">Drafted</label>
 		<input type="checkbox" checked id="stat3cb"/><label for="stat3cb">Finished</label>
 		<input type="checkbox" checked id="stat4cb"/><label for="stat4cb">Uploaded</label>
-		<div id="maintable">
-			<a>
-				<div>▶️</div>
-				<div>Name</div>
-				<div>Status</div>
-				<div>Requestor</div>
-				<div>Release Date</div>
-				<div>Links</div>
-			</a>
-			<?php
-				if($data==NULL){
-					echo "<a><div><b style='color:red'>Error reading json file, please be patient until this is fixed</b></div></a>\n";
-				}else if($linking_data==NULL){
-					echo "<a><div><b style='color:red'>Error reading linking information, please be patient until this is fixed</b></div></a>\n";
-				}else{
-					$stati=["Requested","Planned","Drafted","Finished","Uploaded"];
-					$i=count($data);
-					foreach($data as $row){
-						$i-=1;
-						$lnks="";
-						foreach($row[5] as $type => $lnk){
-							if(array_key_exists($type,$linking_data)){
-								list($tpre,$tpost,$tdesc)=$linking_data[$type];
-								$lnks.="<a class=\"btn $type\" href=\"https://$tpre$lnk$tpost\"></a>";
-							}
-						}
-						if($lnks!="" or array_key_exists(6,$row)){
-							$lnks="<a class=\"btn rw\" href=\"./play?id=$i\"></a>".$lnks;
-						}
-						$stat=$row[2];
-						$anysource=false;
-						if(array_key_exists("dl",$row[5])){
-							$sources="<div class=\"miniplayer\"><button type=\"submit\" class=\"btn play\"></button><audio controls preload=none>";
-							foreach($row[5]["dl"] as $fn => $fexts){
-								foreach($fexts as $fext){
-									$urlfn=urlencode($fn);
-									$sources.="<source src=\"./download/?id=$i&fn=$urlfn&ext=$fext\"/>";
-									$anysource=true;
+		<input type="radio" name="tabs" id="tab_1" checked/>
+		<input type="radio" name="tabs" id="tab_2"/>
+		<input type="radio" name="tabs" id="tab_3"/>
+		<div class="tnhl"></div>
+		<div class="tabnav">
+			<label for="tab_1">Approved</label>
+			<label for="tab_2">Queued</label>
+			<label for="tab_3">Rejected</label>
+		</div>
+		<div class="tabbed">
+			<div class="maintable pub">
+				<a>
+					<div>▶️</div>
+					<div>Name</div>
+					<div>Status</div>
+					<div>Requestor</div>
+					<div>Release Date</div>
+					<div>Links</div>
+				</a>
+				<?php
+					function create_table($data,$linking_data,$ispub){
+						if($data==NULL){
+							echo "<a><div><b style='color:red'>Error reading json file, please be patient until this is fixed</b></div></a>\n";
+						}else if($linking_data==NULL){
+							echo "<a><div><b style='color:red'>Error reading linking information, please be patient until this is fixed</b></div></a>\n";
+						}else{
+							$stati=["Requested","Planned","Drafted","Finished","Uploaded"];
+							$i=count($data);
+							foreach($data as $row){
+								$i-=1;
+								if($ispub){
+									$lnks="";
+									foreach($row[5] as $type => $lnk){
+										if(array_key_exists($type,$linking_data)){
+											list($tpre,$tpost,$tdesc)=$linking_data[$type];
+											$lnks.="<a class=\"btn $type\" href=\"https://$tpre$lnk$tpost\"></a>";
+										}
+									}
+									if($lnks!="" or array_key_exists(6,$row)){
+										$lnks="<a class=\"btn rw\" href=\"./play?id=$i\"></a>".$lnks;
+									}
+									$stat=$row[2];
+									$anysource=false;
+									if(array_key_exists("dl",$row[5])){
+										$sources="<div class=\"miniplayer\"><button type=\"submit\" class=\"btn play\"></button><audio controls preload=none>";
+										foreach($row[5]["dl"] as $fn => $fexts){
+											foreach($fexts as $fext){
+												$urlfn=urlencode($fn);
+												$sources.="<source src=\"./download/?id=$i&fn=$urlfn&ext=$fext\"/>";
+												$anysource=true;
+											}
+										}
+									}
+									if(!$anysource){
+										$sources="";
+									}else{
+										$sources.="</audio></div>";
+									}
+									echo "<a class=\"$row[0] stat$stat\" href=\"./play/?id=$i\"><div>$sources</div><div>$row[1]</div><div>$stati[$stat]</div><div>$row[3]&nbsp;</div><div>$row[4]&nbsp;</div><div><object>$lnks</object></div></a>";
+								}else{
+									echo "<a class=\"$row[0] stat$stat\"><div>$row[1]</div><div>$row[2]&nbsp;</div></a>";
 								}
 							}
 						}
-						if(!$anysource){
-							$sources="";
-						}else{
-							$sources.="</audio></div>";
-						}
-						echo "<a class=\"$row[0] stat$stat\" href=\"./play/?id=$i\"><div>$sources</div><div>$row[1]</div><div>$stati[$stat]</div><div>$row[3]&nbsp;</div><div>$row[4]&nbsp;</div><div><object>$lnks</object></div></a>";
 					}
-				}
-			?>
+					create_table($data,$linking_data,true);
+				?>
+			</div>
+			<div class="maintable queue">
+				<a>
+					<div>Name</div>
+					<div>Requestor</div>
+				</a>
+				<?php
+					create_table($wldata,$linking_data,false);
+				?>
+			</div>
+			<div class="maintable reject">
+				<a>
+					<div>Name</div>
+					<div>Requestor</div>
+				</a>
+				<?php
+					create_table($rjdata,$linking_data,false);
+				?>
+			</div>
 		</div>
 	</body>
 </html>
