@@ -66,12 +66,30 @@
 			a:link:hover,
 			a:visited:hover{
 				color:#6AC;}
-			input+label{
-				padding:0.2em;
-				border-radius:0.2em;
+			input.filter{
+				display:none;}
+			input.filter+label::before{
+				content:"☐";
+				font-size:1.2em;
+				color:#CCC;
+				width:1em;
+				padding:0;
+				margin-right:0.4em;}
+			input.filter:checked+label::before{
+				content:"☑";}
+			input.filter+label{
 				line-height:2em;
+				background-color:#333;
+				background-position:1.4em 0;
+				background-repeat:no-repeat;
+				margin:0.2em;
+				padding:0.2em;
+				padding-left:0.4em;
+				border-radius:0.2em;
 				color:#000;
-				background-color:#CCC;}
+				cursor:pointer;}
+			input.filter+label:not([class]){
+				background-image:linear-gradient(to right,#CCC,#CCC);}
 			#ocb:not(:checked)~.tabbed>.maintable .o,
 			#rcb:not(:checked)~.tabbed>.maintable .r,
 			#rcommcb:not(:checked)~.tabbed>.maintable .rcomm,
@@ -83,9 +101,9 @@
 			#stat4cb:not(:checked)~.tabbed>.maintable .stat4{
 				display:none;}
 			.o{
-				background:linear-gradient(to right,#383 10vw,#464 100vw);}
+				background-image:linear-gradient(to right,#383 10vw,#464 100vw);}
 			.r{
-				background:linear-gradient(to right,#AA0 10vw,#883 100vw);}
+				background-image:linear-gradient(to right,#AA0 10vw,#883 100vw);}
 			.rcomm{
 				background:linear-gradient(to right,#C60 10vw,#A43 100vw);}
 			.ocomm{
@@ -216,7 +234,6 @@
 				justify-content:center;
 				cursor:pointer;
 				z-index:2;}
-			
 		</style>
 	</head>
 	<body>
@@ -245,16 +262,16 @@
 		</div>
 		These symbols are hand-crafted by me (with inkscape) and are meant to represent the respective services.<br/>
 		<br/>
-		<input type="checkbox" checked id="rcb"/><label for="rcb" class="r">Riedlerfiziert</label>
-		<input type="checkbox" checked id="rcommcb"/><label for="rcommcb" class="rcomm">Riedlerfiziert Requests</label>
-		<input type="checkbox" checked id="ocb"/><label for="ocb" class="o">Originals</label>
-		<input type="checkbox" checked id="ocommcb"/><label for="ocommcb" class="ocomm">Commissions</label>
+		<input type="checkbox" class="filter" checked id="rcb"/><label for="rcb" class="r">Riedlerfiziert</label>
+		<input type="checkbox" class="filter" checked id="rcommcb"/><label for="rcommcb" class="rcomm">Riedlerfiziert Requests</label>
+		<input type="checkbox" class="filter" checked id="ocb"/><label for="ocb" class="o">Originals</label>
+		<input type="checkbox" class="filter" checked id="ocommcb"/><label for="ocommcb" class="ocomm">Commissions</label>
 		<br/>
-		<input type="checkbox" checked id="stat0cb"/><label for="stat0cb">Requested</label>
-		<input type="checkbox" checked id="stat1cb"/><label for="stat1cb">Planned</label>
-		<input type="checkbox" checked id="stat2cb"/><label for="stat2cb">Drafted</label>
-		<input type="checkbox" checked id="stat3cb"/><label for="stat3cb">Finished</label>
-		<input type="checkbox" checked id="stat4cb"/><label for="stat4cb">Uploaded</label>
+		<input type="checkbox" class="filter" checked id="stat0cb"/><label for="stat0cb">Requested</label>
+		<input type="checkbox" class="filter" checked id="stat1cb"/><label for="stat1cb">Planned</label>
+		<input type="checkbox" class="filter" checked id="stat2cb"/><label for="stat2cb">Drafted</label>
+		<input type="checkbox" class="filter" checked id="stat3cb"/><label for="stat3cb">Finished</label>
+		<input type="checkbox" class="filter" checked id="stat4cb"/><label for="stat4cb">Uploaded</label>
 		<br/><br/>
 		<input type="radio" name="tabs" id="tab_1" checked/>
 		<input type="radio" name="tabs" id="tab_2"/>
