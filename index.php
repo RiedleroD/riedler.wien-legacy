@@ -22,8 +22,7 @@
 				color:#EEE;
 				font-family:sans-serif;}
 			.maintable{
-				display:table;
-				width:100%;
+				display:inline-table;
 				color:#000;}
 			.maintable>a:link,
 			.maintable>a:visited,
@@ -185,8 +184,8 @@
 				appearance:none;
 				background-color:#0000;}
 			.tabbed{
-				display:flex;
-				flex-wrap:nowrap;
+				display:block;
+				white-space:nowrap;
 				width:100%;
 				overflow:hidden;
 				box-shadow:inset 0 0 1em #000;}
@@ -340,8 +339,8 @@
 					}
 					create_table($data,$linking_data,true);
 				?>
-			</div>
-			<div class="maintable queue">
+			</div><!--
+			--><div class="maintable queue">
 				<a>
 					<div>Name</div>
 					<div>Requestor</div>
@@ -349,8 +348,8 @@
 				<?php
 					create_table($wldata,$linking_data,false);
 				?>
-			</div>
-			<div class="maintable reject">
+			</div><!--
+			--><div class="maintable reject">
 				<a>
 					<div>Name</div>
 					<div>Requestor</div>
