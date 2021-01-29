@@ -102,36 +102,15 @@
 				height:2em;
 				display:inline-block;
 				padding-right:0.2em;}
-			a.btn.pt{
-				content:url("/sfto/patreon.svg");}
-			a.btn.yt{
-				content:url("/sfto/youtube.svg");}
-			a.btn.lmms{
-				content:url("/sfto/lmms.svg");}
-			a.btn.sc{
-				content:url("/sfto/soundcloud.svg");}
-			a.btn.bl{
-				content:url("/sfto/bandlab.svg");}
-			a.btn.vimeo{
-				content:url("/sfto/vimeo.svg");}
 			a.btn.rw{
 				content:url("/favicon.svg");}
-			a.btn.az{
-				content:url("/sfto/amazon.svg");}
-			a.btn.am{
-				content:url("/sfto/amazon_music.svg");}
-			a.btn.apm{
-				content:url("/sfto/apple.svg");}
-			a.btn.bp{
-				content:url("/sfto/boomplay.svg");}
-			a.btn.yx{
-				content:url("/sfto/yandex_music.svg")}
-			a.btn.dz{
-				content:url("/sfto/deezer.svg");}
-			a.btn.sy{
-				content:url("/sfto/spotify.svg");}
 			a.btn.dl{
 				content:url("/sfto/download.svg");}
+			<?php
+				foreach($linking_data as $serviceid => $servicedata){
+					echo "a.btn.$serviceid{content:url(\"/sfto/rwicons/$serviceid.svg\")}";
+				}
+			?>
 			.verweis{
 				display:flex;
 				align-items:center;

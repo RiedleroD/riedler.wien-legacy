@@ -1,4 +1,10 @@
 <!DOCTYPE html>
+<?php
+	$json=file_get_contents("./data.json");
+	$data=json_decode($json,true);
+	$json=file_get_contents("./linking_data.json");
+	$linking_data=json_decode($json,true);
+?>
 <html>
 	<head>
 		<meta charset="UTF-8" />
@@ -92,32 +98,13 @@
 				margin-right:0.2em;}
 			#maintable .btn:last-child{
 				margin-left:0.2em;}
-			.btn.yt{
-				content:url("/sfto/youtube.svg");}
-			.btn.lmms{
-				content:url("/sfto/lmms.svg");}
-			.btn.sc{
-				content:url("/sfto/soundcloud.svg");}
-			.btn.bl{
-				content:url("/sfto/bandlab.svg");}
-			.btn.vimeo{
-				content:url("/sfto/vimeo.svg");}
-			.btn.az{
-				content:url("/sfto/amazon.svg");}
-			.btn.am{
-				content:url("/sfto/amazon_music.svg");}
-			.btn.apm{
-				content:url("/sfto/apple.svg")}
-			.btn.bp{
-				content:url("/sfto/boomplay.svg");}
-			.btn.yx{
-				content:url("/sfto/yandex_music.svg");}
-			.btn.dz{
-				content:url("/sfto/deezer.svg");}
-			.btn.sy{
-				content:url("/sfto/spotify.svg");}
-			.btn.pt{
-				content:url("/sfto/patreon.svg")}
+			<?php
+				if($linking_data!=NULL){
+					foreach($linking_data as $serviceid => $servicedata){
+						echo ".btn.$serviceid{content:url(\"/sfto/rwicons/$serviceid.svg\")}";
+					}
+				}
+			?>
 			.btn.rw{
 				content:url("/favicon.svg");}
 			.btn.play{
@@ -222,10 +209,6 @@
 				<div>Links</div>
 			</a>
 			<?php
-				$json=file_get_contents("./data.json");
-				$data=json_decode($json,true);
-				$json=file_get_contents("./linking_data.json");
-				$linking_data=json_decode($json,true);
 				if($data==NULL){
 					echo "<a><div><b style='color:red'>Error reading json file, please be patient until this is fixed</b></div></a>\n";
 				}else if($linking_data==NULL){
