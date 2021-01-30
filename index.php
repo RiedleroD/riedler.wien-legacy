@@ -129,7 +129,8 @@
 			.rcomm{
 				background:linear-gradient(to right,#C60 10vw,#A43 100vw);}
 			.ocomm{
-				background:linear-gradient(to right,#638 10vw,#436 100vw);}
+				background:linear-gradient(to right,#638 10vw,#436 100vw);
+				color:#CCC !important;}
 			.btn{
 				height:1em;
 				width:1em;
