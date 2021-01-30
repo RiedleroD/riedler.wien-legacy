@@ -50,7 +50,8 @@
 			.maintable>a{
 				display:table-row;
 				text-decoration:none;
-				color:#000;}
+				color:#000;
+				position:relative;}
 			.maintable>a:first-child>div{
 				background:linear-gradient(to bottom,#151515 0%,#333 10%,#151515 80%,#000 100%);
 				color:#EEE;
@@ -59,7 +60,8 @@
 				border-right:none;}
 			.maintable.pub>a:not(:first-child):hover{
 				filter:brightness(1.2);
-				box-shadow:-0.5em 0 0.5em 0 #000;}
+				box-shadow:0 0 0.5em 0 #000;
+				z-index:1;}
 			.maintable>.pub:a:not(:first-child):hover>*{
 				filter:brightness(0.9);}
 			.maintable>a>div{
