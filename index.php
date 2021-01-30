@@ -26,6 +26,14 @@
 				60%{transform:scale(0,1)}
 				100%{transform:scale(1,1)}
 			}
+			@keyframes vanish{
+				0%{transform:scale(1,1);visibility:visible}
+				100%{transform:scale(0,1);visibility:collapse}
+			}
+			@keyframes appear{
+				0%{transform:scale(0,1);visibility:visible}
+				100%{transform:scale(1,1)}
+			}
 			body{
 				margin:0;
 				padding:0.5rem;
@@ -112,6 +120,10 @@
 				animation-delay:0.05s;
 				transition-delay:0s;
 				transition-duration:0.05s;}
+			.maintable>a{
+				transform-origin:left;
+				animation:appear 0.2s 1;
+				animation-fill-mode:forwards;}
 			#ocb:not(:checked)~.tabbed>.maintable .o,
 			#rcb:not(:checked)~.tabbed>.maintable .r,
 			#rcommcb:not(:checked)~.tabbed>.maintable .rcomm,
@@ -121,7 +133,8 @@
 			#stat2cb:not(:checked)~.tabbed>.maintable .stat2,
 			#stat3cb:not(:checked)~.tabbed>.maintable .stat3,
 			#stat4cb:not(:checked)~.tabbed>.maintable .stat4{
-				display:none;}
+				animation:vanish 0.2s 1;
+				animation-fill-mode:forwards;}
 			.o{
 				background-image:linear-gradient(to right,#383 10vw,#464 100vw);}
 			.r{
