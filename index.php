@@ -15,6 +15,17 @@
 		<title>Riedler's Music</title>
 		<link rel="icon" type="image/png" href="/favicon.png"/>
 		<style>
+			@keyframes stretch{
+				0%{transform:scale(1,1)}
+				50%{transform:scale(1.4,1)}
+				100%{transform:scale(1,1)}
+			}
+			@keyframes squash{
+				0%{transform:scale(1,1)}
+				30%{transform:scale(0,1)}
+				60%{transform:scale(0,1)}
+				100%{transform:scale(1,1)}
+			}
 			body{
 				margin:0;
 				padding:0.5rem;
@@ -67,28 +78,40 @@
 				color:#6AC;}
 			input.filter{
 				display:none;}
-			input.filter+label::before{
-				content:"☐";
-				font-size:1.2em;
-				color:#CCC;
-				width:1em;
-				padding:0;
-				margin-right:0.4em;}
-			input.filter:checked+label::before{
-				content:"☑";}
 			input.filter+label{
-				line-height:2em;
+				display:inline-flex;
+				align-items:center;
+				margin:0.5em 0.2em;
 				background-color:#333;
-				background-position:1.4em 0;
-				background-repeat:no-repeat;
-				margin:0.2em;
-				padding:0.2em;
-				padding-left:0.4em;
 				border-radius:0.2em;
-				color:#000;
+				overflow:hidden;
 				cursor:pointer;}
-			input.filter+label:not([class]){
-				background-image:linear-gradient(to right,#CCC,#CCC);}
+			input.filter+label>span{
+				padding:0.2em;
+				background-color:#CCC;
+				color:#000;}
+			input.filter+label>b{
+				display:inline-block;
+				width:0.75em;
+				height:0.75em;
+				box-sizing:border-box;
+				margin:0 0.3em;
+				background-size:0;
+				background-repeat:no-repeat;
+				background-position:center center;
+				background-image:linear-gradient(#CCC,#CCC);
+				transition:background-size 0s;
+				transition-delay:0.1s;
+				background-clip:content-box;
+				border:solid 1px #0000;
+				outline:solid 1px #CCC;
+				animation:squash 0.2s 1;}
+			input.filter:checked+label>b{
+				background-size:100%;
+				animation:stretch 0.15s 1;
+				animation-delay:0.05s;
+				transition-delay:0s;
+				transition-duration:0.05s;}
 			#ocb:not(:checked)~.tabbed>.maintable .o,
 			#rcb:not(:checked)~.tabbed>.maintable .r,
 			#rcommcb:not(:checked)~.tabbed>.maintable .rcomm,
@@ -261,16 +284,16 @@
 		</div>
 		These symbols are hand-crafted by me (with inkscape) and are meant to represent the respective services.<br/>
 		<br/>
-		<input type="checkbox" class="filter" checked id="rcb"/><label for="rcb" class="r">Riedlerfiziert</label>
-		<input type="checkbox" class="filter" checked id="rcommcb"/><label for="rcommcb" class="rcomm">Riedlerfiziert Requests</label>
-		<input type="checkbox" class="filter" checked id="ocb"/><label for="ocb" class="o">Originals</label>
-		<input type="checkbox" class="filter" checked id="ocommcb"/><label for="ocommcb" class="ocomm">Commissions</label>
+		<input type="checkbox" class="filter" checked id="rcb"/><label for="rcb"><b></b><span class="r">Riedlerfiziert</span></label>
+		<input type="checkbox" class="filter" checked id="rcommcb"/><label for="rcommcb"><b></b><span class="rcomm">Riedlerfiziert Requests</span></label>
+		<input type="checkbox" class="filter" checked id="ocb"/><label for="ocb"><b></b><span class="o">Originals</span></label>
+		<input type="checkbox" class="filter" checked id="ocommcb"/><label for="ocommcb"><b></b><span class="ocomm">Commissions</span></label>
 		<br/>
-		<input type="checkbox" class="filter" checked id="stat0cb"/><label for="stat0cb">Requested</label>
-		<input type="checkbox" class="filter" checked id="stat1cb"/><label for="stat1cb">Planned</label>
-		<input type="checkbox" class="filter" checked id="stat2cb"/><label for="stat2cb">Drafted</label>
-		<input type="checkbox" class="filter" checked id="stat3cb"/><label for="stat3cb">Finished</label>
-		<input type="checkbox" class="filter" checked id="stat4cb"/><label for="stat4cb">Uploaded</label>
+		<input type="checkbox" class="filter" checked id="stat0cb"/><label for="stat0cb"><b></b><span>Requested</span></label>
+		<input type="checkbox" class="filter" checked id="stat1cb"/><label for="stat1cb"><b></b><span>Planned</span></label>
+		<input type="checkbox" class="filter" checked id="stat2cb"/><label for="stat2cb"><b></b><span>Drafted</span></label>
+		<input type="checkbox" class="filter" checked id="stat3cb"/><label for="stat3cb"><b></b><span>Finished</span></label>
+		<input type="checkbox" class="filter" checked id="stat4cb"/><label for="stat4cb"><b></b><span>Uploaded</span></label>
 		<br/><br/>
 		<input type="radio" name="tabs" id="tab_1" checked/>
 		<input type="radio" name="tabs" id="tab_2"/>
