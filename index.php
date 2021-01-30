@@ -13,7 +13,7 @@
 	<head>
 		<meta charset="UTF-8" />
 		<title>Riedler's Music</title>
-		<link rel="icon" type="image/png" href="/favicon.png"/>
+		<link rel="icon" type="image/svg" href="/favicon.svg"/>
 		<style>
 			@keyframes stretch{
 				0%{transform:scale(1,1)}

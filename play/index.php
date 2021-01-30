@@ -22,7 +22,7 @@
 		}
 		echo "<title>$title</title>";
 		?>
-		<link rel="icon" type="image/png" href="/favicon.png"/>
+		<link rel="icon" type="image/svg" href="/favicon.svg"/>
 		<style>
 			/*scrollbar*/
 			::-webkit-scrollbar,
