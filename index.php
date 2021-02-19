@@ -310,10 +310,10 @@
 		<input type="checkbox" class="filter" checked id="stat2cb"/><label for="stat2cb"><b></b><span>Drafted</span></label>
 		<input type="checkbox" class="filter" checked id="stat3cb"/><label for="stat3cb"><b></b><span>Finished</span></label>
 		<input type="checkbox" class="filter" checked id="stat4cb"/><label for="stat4cb"><b></b><span>Uploaded</span></label>
-		<br/><br/>
-		<input type="radio" name="tabs" id="tab_1" checked/>
-		<input type="radio" name="tabs" id="tab_2"/>
-		<input type="radio" name="tabs" id="tab_3"/>
+		<br/><br/><?php $seltab=$_GET["t"] ?>
+		<input type="radio" name="tabs" id="tab_1" <?php if($seltab!=2 and $seltab!=3){echo "checked";}?>/>
+		<input type="radio" name="tabs" id="tab_2" <?php if($seltab==2){echo "checked";}?>/>
+		<input type="radio" name="tabs" id="tab_3" <?php if($seltab==3){echo "checked";}?>/>
 		<div class="tnhl"></div>
 		<div class="tabnav">
 			<label for="tab_1">Approved</label>
