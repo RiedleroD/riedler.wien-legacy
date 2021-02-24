@@ -11,5 +11,7 @@
 "sc":["soundcloud.com/riedler-musics/","","Listen to on Soundcloud"],
 "lmms":["lmms.io/lsp/?action=show&file=","","Get the project file"],
 "sy":["open.spotify.com/track/","","Listen to on Spotify"],
-"yt":["youtu.be/","","Watch on Youtube"]
+"yt":["youtu.be/","","Watch on Youtube"],
+"lbry":["@Riedler:6/","","Watch on LBRY"],
+"oy":["odysee.com/@Riedler:6/","","Watch on Odysee"]
 }

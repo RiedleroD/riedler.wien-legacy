@@ -161,6 +161,9 @@
 				if($linking_data!=NULL){
 					foreach($linking_data as $serviceid => $servicedata){
 						echo ".btn.$serviceid{content:url(\"/sfto/rwicons/$serviceid.svg\")}";
+						if($serviceid=="lbry"){
+							echo ".btn.oy{content:ulr(\"/sfto/rwicons/oy.svg\")}";
+						}
 					}
 				}
 			?>
@@ -297,6 +300,8 @@
 			<a class="plaque" href="https://www.boomplay.com/artists/19145926"><b class="btn bp"></b>Boomplay</a>
 			<a class="plaque" href="https://music.yandex.com/artist/10521437"><b class="btn yx"></b>Yandex Music</a>
 			<a class="plaque" href="https://www.deezer.com/en/artist/116666602"><b class="btn dz"></b>Deezer</a>
+			<a class="plaque" href="https://odysee.com/@Riedler:6"><b class="btn oy"></b>Odysee</a>
+			<a class="plaque" href="lbry://@Riedler:6"><b class="btn lbry"></b>LBRY</a>
 		</div>
 		These symbols are hand-crafted by me (with inkscape) and are meant to represent the respective services.<br/>
 		<br/>
@@ -346,7 +351,13 @@
 									foreach($row[5] as $type => $lnk){
 										if(array_key_exists($type,$linking_data)){
 											list($tpre,$tpost,$tdesc)=$linking_data[$type];
-											$lnks.="<a class=\"btn $type\" href=\"https://$tpre$lnk$tpost\"></a>";
+											if($type=="lbry"){
+												$lnks.="<a class=\"btn $type\" href=\"lbry://$tpre$lnk$tpost\"></a>";
+												list($tpre,$tpost,$tdesc)=$linking_data["oy"];
+												$lnks.="<a class=\"btn oy\" href=\"https://$tpre$lnk$tpost\"></a>";
+											}else{
+												$lnks.="<a class=\"btn $type\" href=\"https://$tpre$lnk$tpost\"></a>";
+											}
 										}
 									}
 									if($lnks!="" or array_key_exists(6,$row)){

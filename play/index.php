@@ -194,7 +194,13 @@
 					}
 				}else if(array_key_exists($type,$linking_data)){
 					list($tpre,$tpost,$tdesc)=$linking_data[$type];
-					$links.="<span class=\"verweis\"><a class=\"btn $type\" href=\"https://$tpre$lnk$tpost\"></a> $tdesc</span>";
+					if($type=="lbry"){
+						$links.="<span class=\"verweis\"><a class=\"btn $type\" href=\"lbry://$tpre$lnk$tpost\"></a> $tdesc</span>";
+						list($tpre,$tpost,$tdesc)=$linking_data["oy"];
+						$links.="<span class=\"verweis\"><a class=\"btn oy\" href=\"https://$tpre$lnk$tpost\"></a> $tdesc</span>";
+					}else{
+						$links.="<span class=\"verweis\"><a class=\"btn $type\" href=\"https://$tpre$lnk$tpost\"></a> $tdesc</span>";
+					}
 				}
 			}
 			if(!empty($flinks)){
