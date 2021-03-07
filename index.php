@@ -361,7 +361,7 @@
 										}
 									}
 									if($lnks!="" or array_key_exists(6,$row)){
-										$lnks="<a class=\"btn rw\" href=\"./play?id=$i\"></a>".$lnks;
+										$lnks="<object><a class=\"btn rw\" href=\"./play?id=$i\"></a>".$lnks."</object>";
 									}
 									$stat=$row[2];
 									$anysource=false;
@@ -380,7 +380,7 @@
 									}else{
 										$sources.="</audio></div>";
 									}
-									echo "<a class=\"$row[0] stat$stat\" href=\"./play/?id=$i\"><div>$sources</div><div>$row[1]</div><div>$stati[$stat]</div><div>$row[3]&nbsp;</div><div>$row[4]&nbsp;</div><div><object>$lnks</object></div></a>";
+									echo "<a class=\"$row[0] stat$stat\" href=\"./play/?id=$i\"><div>$sources</div><div>$row[1]</div><div>$stati[$stat]</div><div>$row[3]&nbsp;</div><div>$row[4]&nbsp;</div><div>$lnks</div></a>";
 								}else{
 									if(array_key_exists(3,$row)){
 										$lnk=" href=\"$row[3]\"";
