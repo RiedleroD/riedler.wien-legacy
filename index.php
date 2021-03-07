@@ -58,11 +58,11 @@
 				border:none;}
 			.maintable>a>:nth-child(4){
 				border-right:none;}
-			.maintable.pub>a:not(:first-child):hover{
+			.maintable>a[href]:not(:first-child):hover{
 				filter:brightness(1.2);
 				box-shadow:0 0 0.5em 0 #000;
 				z-index:1;}
-			.maintable>.pub:a:not(:first-child):hover>*{
+			.maintable>a[href]:not(:first-child):hover>*{
 				filter:brightness(0.9);}
 			.maintable>a>div{
 				display:table-cell;
@@ -75,7 +75,7 @@
 			.maintable.pub>a:first-child>div{
 				text-align:center;
 				font-weight:bold;}
-			.maintable a>div>object{
+			.maintable.pub a>div>object{
 				display:flex;
 				align-items:baseline;
 				flex-direction:row-reverse;
@@ -382,7 +382,12 @@
 									}
 									echo "<a class=\"$row[0] stat$stat\" href=\"./play/?id=$i\"><div>$sources</div><div>$row[1]</div><div>$stati[$stat]</div><div>$row[3]&nbsp;</div><div>$row[4]&nbsp;</div><div><object>$lnks</object></div></a>";
 								}else{
-									echo "<a class=\"$row[0] stat$stat\"><div>$row[1]</div><div>$row[2]&nbsp;</div></a>";
+									if(array_key_exists(3,$row)){
+										$lnk=" href=\"$row[3]\"";
+									}else{
+										$lnk="";
+									}
+									echo "<a class=\"$row[0] stat$stat\"$lnk><div>$row[1]</div><div>$row[2]&nbsp;</div></a>";
 								}
 							}
 						}
