@@ -3,11 +3,10 @@
 	<head>
 		<meta charset="UTF-8" />
 		<?php
+		chdir("../");
 		function get_data($fn){
 			GLOBAL $CONF;
-			chdir("../");
 			$json=file_get_contents($CONF["data_dir"].$fn.".json");
-			chdir("./play/");
 			return json_decode($json,true);
 		}
 		if(array_key_exists("id",$_GET)){
@@ -29,7 +28,7 @@
 				$track=NULL;
 				$title="Play: Invalid";
 			}
-			$json=file_get_contents("../linking_data.json");
+			$json=file_get_contents($CONF["data_dir"]."linking_data.json");
 			$linking_data=json_decode($json,true);
 		}
 		echo "<title>$title</title>";

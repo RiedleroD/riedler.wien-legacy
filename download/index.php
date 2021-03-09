@@ -6,15 +6,22 @@ $err=NULL;
 if($id==NULL or $fn==NULL or $fext==NULL){
 	$err="Missing parameters: at least id, fn and ext are required.";
 }else{
-	$json=file_get_contents("../data.json");
-	$data=json_decode($json,true);
+	chdir("../");
+	function get_data($fn){
+		GLOBAL $CONF;
+		$json=file_get_contents($CONF["data_dir"].$fn.".json");
+		return json_decode($json,true);
+	}
+	$CONF=array("data_dir"=>"./");
+	$CONF=get_data("conf");
+	$data=get_data("data");
 	if(array_key_exists($id,$data)){
 		$track=$data[count($data)-$id-1];
 		$lnks=$track[5];
 		if(array_key_exists("dl",$lnks)){
 			if(array_key_exists($fn,$lnks["dl"])){
 				if(in_array($fext,$lnks["dl"][$fn])){
-					$fp="../HosenToastKönig/".$fn.'.'.$fext;
+					$fp=$CONF["dl_dir"].$fn.'.'.$fext;
 					$fs=filesize($fp);
 					if($fs>0){
 						header('Content-Description: File Transfer');
