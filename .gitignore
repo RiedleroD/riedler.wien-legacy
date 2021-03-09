@@ -4,4 +4,5 @@
 !*.css
 !*.js
 !.gitignore
+!.md
 !linking_data.json

@@ -3,13 +3,25 @@
 	<head>
 		<meta charset="UTF-8" />
 		<?php
-		$id=$_GET["id"];
+		function get_data($fn){
+			GLOBAL $CONF;
+			chdir("../");
+			$json=file_get_contents($CONF["data_dir"].$fn.".json");
+			chdir("./play/");
+			return json_decode($json,true);
+		}
+		if(array_key_exists("id",$_GET)){
+			$id=$_GET["id"];
+		}else{
+			$id=NULL;
+		}
 		if($id==NULL){
 			$title="Play: Nothing";
 			$track=NULL;
 		}else{
-			$json=file_get_contents("../data.json");
-			$data=json_decode($json);
+			$CONF=array("data_dir"=>"./");
+			$CONF=get_data("conf");
+			$data=get_data("data");
 			if(array_key_exists($id,$data)){
 				$track=$data[count($data)-$id-1];
 				$title="Play: ".$track[1];
@@ -103,12 +115,12 @@
 				display:inline-block;
 				padding-right:0.2em;}
 			a.btn.rw{
-				content:url("/favicon.svg");}
+				content:url(<?php echo $CONF["root_dir"]."favicon.svg"; ?>);}
 			a.btn.dl{
-				content:url("/sfto/download.svg");}
+				content:url(<?php echo $CONF["root_dir"]."sfto/download.svg"; ?>);}
 			<?php
 				foreach($linking_data as $serviceid => $servicedata){
-					echo "a.btn.$serviceid{content:url(\"/sfto/rwicons/$serviceid.svg\")}";
+					echo "a.btn.$serviceid{content:url(\"".$CONF["icon_dir"]."$serviceid.svg\")}";
 				}
 			?>
 			.verweis{
@@ -181,10 +193,13 @@
 					foreach($lnk as $fn => $fexts){
 						foreach($fexts as $fext){
 							$flink="../download/?id=$id&fn=".urlencode($fn)."&ext=$fext";
-							$thisfile="../HosenToastKönig/".$fn.'.'.$fext;
+							$thisfile=$CONF["dl_dir"].$fn.'.'.$fext;
 							if(file_exists($thisfile)){
 								$fs=number_format(filesize($thisfile)/1048576,2,".","");
 								$fss="[${fs}MiB]";
+							}else if(preg_match("/^(https?|ftp)\:\/\//i", $thisfile)){
+								$fss="Remote file";
+								$flink=$thisfile;
 							}else{
 								$fss="File not found";
 							}

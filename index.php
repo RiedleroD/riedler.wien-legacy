@@ -1,13 +1,15 @@
 <!DOCTYPE html>
 <?php
-	$json=file_get_contents("./data.json");
-	$data=json_decode($json,true);
-	$json=file_get_contents("./wishlist_data.json");
-	$wldata=json_decode($json,true);
-	$json=file_get_contents("./rejected_data.json");
-	$rjdata=json_decode($json,true);
-	$json=file_get_contents("./linking_data.json");
-	$linking_data=json_decode($json,true);
+	function get_data($fn){
+		GLOBAL $CONF;
+		return json_decode(file_get_contents($CONF["data_dir"].$fn.".json"),true);
+	}
+	$CONF=array("data_dir"=>"./");
+	$CONF=get_data("conf");
+	$data=get_data("data");
+	$wldata=get_data("wishlist_data");
+	$rjdata=get_data("rejected_data");
+	$linking_data=get_data("linking_data");
 ?>
 <html>
 	<head>
@@ -160,17 +162,14 @@
 			<?php
 				if($linking_data!=NULL){
 					foreach($linking_data as $serviceid => $servicedata){
-						echo ".btn.$serviceid{content:url(\"/sfto/rwicons/$serviceid.svg\")}";
-						if($serviceid=="lbry"){
-							echo ".btn.oy{content:ulr(\"/sfto/rwicons/oy.svg\")}";
-						}
+						echo ".btn.$serviceid{content:url(\"".$CONF["icon_dir"]."$serviceid.svg\")}";
 					}
 				}
 			?>
 			.btn.rw{
-				content:url("/favicon.svg");}
+				content:url(<?php echo $CONF["root_dir"]."favicon.svg"; ?>);}
 			.btn.play{
-				background-image:url("/sfto/arrleft.svg");}
+				background-image:url(<?php echo $CONF["root_dir"]."sfto/arrleft.svg"; ?>);}
 			.plaque,
 			a.plaque:link,
 			a.plaque:visited{
@@ -315,7 +314,7 @@
 		<input type="checkbox" class="filter" checked id="stat2cb"/><label for="stat2cb"><b></b><span>Drafted</span></label>
 		<input type="checkbox" class="filter" checked id="stat3cb"/><label for="stat3cb"><b></b><span>Finished</span></label>
 		<input type="checkbox" class="filter" checked id="stat4cb"/><label for="stat4cb"><b></b><span>Uploaded</span></label>
-		<br/><br/><?php $seltab=$_GET["t"] ?>
+		<br/><br/><?php if(array_key_exists("t",$_GET)){$seltab=$_GET["t"];}else{$seltab=1;}?>
 		<input type="radio" name="tabs" id="tab_1" <?php if($seltab!=2 and $seltab!=3){echo "checked";}?>/>
 		<input type="radio" name="tabs" id="tab_2" <?php if($seltab==2){echo "checked";}?>/>
 		<input type="radio" name="tabs" id="tab_3" <?php if($seltab==3){echo "checked";}?>/>
