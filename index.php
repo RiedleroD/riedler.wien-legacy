@@ -117,6 +117,7 @@
 		</style>
 	</head>
 	<body>
+		<!--TODO: generate this bullcrap from a json file-->
 		<nav>
 			<a class="badge" href="../">↑Back</a>
 		</nav>
@@ -124,11 +125,22 @@
 		<h2 class="divisor">Relatively new stuff<div></div></h2>
 		<div class="lefthand secsec">
 			<section>
+				<h3>Rastar</h3>
+				<div class="pocket">
+					<a class="badge" href="https://github.com/RiedleroD/rastar">GitHub</a>
+				</div>
+				<span class="survival">08.2020</span>
+				<p>
+					Rastar is a tiny program written with pyglet that demonstrates the use of the A* pathfinding algorithm in a grid. (raster + A star = rastar)<br/>
+					The original code stems from someone that asked in the pyglet discord why his code was so slow - I basically rewrote it so he could learn from someone that suffered more than him.
+				</p>
+			</section>
+			<section>
 				<h3>BASAV</h3>
 				<div class="pocket">
 					<a class="badge" href="https://github.com/RiedleroD/BASAV">GitHub</a>
 				</div>
-				<span class="survival">06.2020 - now</span>
+				<span class="survival">06.2020 - 01.2021</span>
 				<p>
 					BASAV stands for <b>B</b>ucket-<b>a</b>ware <b>S</b>orting <b>A</b>lgorithm <b>V</b>isualizer, and is basically that. A sorting algorithm visualizer that displays every bucket.<br/>
 				</p>
@@ -136,16 +148,10 @@
 					This project came to be through my frustration that many sorting algorithms <a href="https://youtu.be/QmOtL6pPcI0?t=48">seemed like magic</a> by completely disregarding the operations outside the main array.
 					So I made my own visualisation program that shows every operation, with an API that would guarantee that every step is countent and properly displayed while also simplifying the steps to add a new algorithm.
 				</p>
-			</section>
-			<section>
-				<h3>Dark Userstyles</h3>
-				<div class="pocket">
-					<a class="badge" href="https://github.com/RiedleroD/userstyles-riedler">GitHub</a>
-					<a class="badge" href="https://stylebase.cc/RiedleroD">StyleBase</a>
-				</div>
-				<span class="survival">04.2019 - now</span>
 				<p>
-					I'm very fond of the idea of a dark themed internet. That's why I actively try to create new dark themes for websites I visit often.
+					Right now, it's in a kind of limbo since It's kinda slow because… well, it's python. I also don't have the time to work on it anymore, and don't really know a compiled language well enough yet.<br/>
+					I do plan on learning Rust soon though, and I <i>will</i> completely rewrite BASAV from scratch once I have some free time again. That's a promise.<br/>
+					I already have some plans for a new compiled version, including a DSL for creating algorithms, which would give me better control of what the algorithms are doing.
 				</p>
 			</section>
 			<section>
@@ -166,14 +172,30 @@
 		</div><!--
 		--><div class="righthand secsec">
 			<section>
-				<h3>Rastar</h3>
+				<h3>Dark Userstyles</h3>
 				<div class="pocket">
-					<a class="badge" href="https://github.com/RiedleroD/rastar">GitHub</a>
+					<a class="badge" href="https://github.com/RiedleroD/userstyles-riedler">GitHub</a>
+					<a class="badge" href="https://stylebase.cc/RiedleroD">StyleBase</a>
 				</div>
-				<span class="survival">08.2020</span>
+				<span class="survival">04.2019 - now</span>
 				<p>
-					Rastar is a tiny program written with pyglet that demonstrates the use of the A* pathfinding algorithm in a grid. (raster + A star = rastar)<br/>
-					The original code stems from someone that asked in the pyglet discord why his code was so slow - I basically rewrote it so he could learn from someone that suffered more than him.
+					I'm very fond of the idea of a dark themed internet. That's why I actively try to create new dark themes for websites I visit often.
+				</p>
+			</section>
+			<section>
+				<h3>RYTD</h3>
+				<div class="pocket">
+					<a class="badge" href="https://github.com/RiedleroD/RYTD">GitHub</a>
+				</div>
+				<span class="survival">03.2019 - now</span>
+				<p>
+					A YouTube downloader using the popular youtube-dl tool. It dumps all videos from a specified playlist into your music folder, so you don't have to manually download every single track.
+				</p>
+				<p>
+					This is a controversial one… it's so old that the codebase is complete and utter crap, and despite it being probably the most helpful tool I've ever created,
+					I don't want to touch the code to add new features or fix one of the hundred of bugs… I kinda do still maintain it, but only for myself since my whole music library is built on top of it.
+					The repo said it's in the middle of being rewritten, but I've stopped rewriting it a long time ago & it'd need another one now.
+					It still kinda works, and as long as that's the case, I don't see a reason to rewrite it properly.
 				</p>
 			</section>
 			<section>
@@ -237,40 +259,8 @@
 					Despite it being not perfectly professional, it's available on <a href="https://pypi.org/project/commoncodes/">pypi</a>.
 				</p>
 			</section>
-			<section>
-				<h3>RPong</h3>
-				<div class="pocket">
-					<a class="badge" href="https://github.com/RiedleroD/RPong">GitHub</a>
-				</div>
-				<span class="survival">03.2019</span>
-				<p>
-					A Pong implementation with RGraphics.
-				</p>
-				<p>
-					It's not just pong, but the most advanced demo of RGraphics I have - which is saying more about RGraphics than RPong.
-				</p>
-				<p>
-					I've had some issues regarding the ball sometimes flying right through the bats. I'm not sure if I ever fixed this, but to check, I'd have to read the code, and I'm not willing to do that.
-				</p>
-			</section>
 		</div><!--
 		--><div class="righthand secsec">
-			<section>
-				<h3>RYTD</h3>
-				<div class="pocket">
-					<a class="badge" href="https://github.com/RiedleroD/RYTD">GitHub</a>
-				</div>
-				<span class="survival">03.2019 - 07.2020</span>
-				<p>
-					A YouTube downloader using the popular youtube-dl tool. It dumps all videos from a specified playlist into your music folder, so you don't have to manually download every single track.
-				</p>
-				<p>
-					This is a controversial one… it's so old that the codebase is complete and utter crap, and despite it being probably the most helpful tool I've ever created,
-					I don't want to touch the code to add new features or fix one of the hundred of bugs… It's basically abandonware at this point (though I did remove the pytube dependency in July 2020 because it completely broke).
-					The repo says it's in the middle of being rewritten, but I've stopped rewriting it a long time ago & it'd need another one now.
-					It just works, and as long as that's the case, I don't see a reason to rewrite it properly.
-				</p>
-			</section>
 			<section>
 				<h3>Snek</h3>
 				<div class="pocket">
@@ -291,6 +281,22 @@
 				</p>
 				<p>
 					<b>Update</b>: I've found RPong which might or might not be even older than Snek, also written with rgraphics.
+				</p>
+			</section>
+			<section>
+				<h3>RPong</h3>
+				<div class="pocket">
+					<a class="badge" href="https://github.com/RiedleroD/RPong">GitHub</a>
+				</div>
+				<span class="survival">03.2019</span>
+				<p>
+					A Pong implementation with RGraphics.
+				</p>
+				<p>
+					It's not just pong, but the most advanced demo of RGraphics I have - which is saying more about RGraphics than RPong.
+				</p>
+				<p>
+					I've had some issues regarding the ball sometimes flying right through the bats. I'm not sure if I ever fixed this, but to check, I'd have to read the code, and I'm not willing to do that.
 				</p>
 			</section>
 		</div>
