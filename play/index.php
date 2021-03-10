@@ -35,6 +35,11 @@
 		?>
 		<link rel="icon" type="image/svg" href="/favicon.svg"/>
 		<style>
+			/*animations*/
+			@keyframes loading_wave{
+				0%{background-position:0 center;}
+				100%{background-position:5em center;}
+			}
 			/*scrollbar*/
 			::-webkit-scrollbar,
 			::-webkit-scrollbar-track-piece{
@@ -81,7 +86,16 @@
 			iframe{
 				border:none;
 				width:49.5%;
-				height:40vh}
+				height:40vh;
+				border-radius:0.25rem;
+				box-shadow:0 0 0.2rem #000;
+				background-image:url("https://riedler.wien/sfto/squarewave_better.svg");
+				background-repeat:repeat-x;
+				background-size:5em;
+				animation-name:loading_wave;
+				animation-duration:0.5s;
+				animation-iteration-count:infinite;
+				animation-timing-function:linear;}
 			iframe:nth-child(2n){
 				margin-right:1%;}
 			/*single column on mobile*/
