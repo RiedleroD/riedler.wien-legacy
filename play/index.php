@@ -207,7 +207,7 @@
 				}else if ($type=="vimeo"){
 					$iframes.="<iframe src=\"https://player.vimeo.com/video/$lnk\" frameborder=\"0\" allow=\"autoplay; fullscreen\" sandbox=\"allow-scripts allow-same-origin allow-popups\" allowfullscreen load=\"lazy\"></iframe>";
 				}else if ($type=="sy"){
-					$iframes.="<iframe src=\"https://open.spotify.com/embed/track/$lnk\" load=\"lazy\"></iframe>";
+					$iframes.="<iframe src=\"https://open.spotify.com/embed/track/$lnk\" sandbox=\"allow-scripts allow-same-origin\" load=\"lazy\"></iframe>";
 				}
 			}
 			if($iframes!=""){
