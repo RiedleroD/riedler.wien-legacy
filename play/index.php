@@ -98,7 +98,7 @@
 				padding:0.5rem;
 				margin:0 0.5rem;
 				background-color:#222;
-				box-shadow:0 0 0.1rem #222,inset 0.15rem 0.2rem 0.2rem -0.2rem #444,inset -0.15rem -0.2rem 0.2rem -0.2rem #151515;}
+				box-shadow:-0.05rem -0.05rem 0.15rem #1a1a1a,inset 0.15rem 0.2rem 0.2rem -0.2rem #383838,inset -0.15rem -0.2rem 0.2rem -0.2rem #151515;}
 			summary{
 				font-size:1.5rem;
 				margin-left:0.25rem;
