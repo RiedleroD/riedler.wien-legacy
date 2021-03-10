@@ -85,12 +85,12 @@
 			iframe:nth-child(2n){
 				margin-right:1%;}
 			/*single column on mobile*/
-			@media(hover:none){
+			@media (orientation:portrait){
 				iframe{
 					width:100%;
-					margin-right:0;
-					height:25vh;
-				}
+					height:25vh;}
+				iframe:nth-child(2n){
+					margin-right:0;}
 			}
 			iframe.invers{
 				filter:invert(1) hue-rotate(180deg) brightness(0.6) saturate(1.5);}
@@ -105,7 +105,8 @@
 				cursor:pointer;}
 			details[open]>summary{
 				margin-bottom:0.25rem;}
-			summary:focus-visible{
+			summary:focus-visible,
+			summary:focus{
 				outline:none;}
 			.wtyp{
 				background-color:#FFF;
