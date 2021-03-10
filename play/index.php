@@ -213,15 +213,15 @@
 			$iframes="";
 			foreach($track[5] as $type => $lnk){
 				if($type=="yt"){
-					$iframes.="<iframe src=\"https://www.youtube-nocookie.com/embed/$lnk\" allowfullscreen load=\"lazy\"></iframe>";
+					$iframes.="<iframe src=\"https://www.youtube-nocookie.com/embed/$lnk\" allowfullscreen loading=\"lazy\"></iframe>";
 				}else if ($type=="sci"){
-					$iframes.="<iframe class=\"invers\" scrolling=\"no\" src=\"https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/$lnk\" sandbox=\"allow-scripts allow-same-origin\" load=\"lazy\"></iframe>";
+					$iframes.="<iframe class=\"invers\" scrolling=\"no\" src=\"https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/$lnk\" sandbox=\"allow-scripts allow-same-origin\" loading=\"lazy\"></iframe>";
 				}else if ($type=="bli"){
-					$iframes.="<iframe class=\"invers\" src=\"https://www.bandlab.com/embed/?id=$lnk&blur=true\" allowfullscreen load=\"lazy\"></iframe>";
+					$iframes.="<iframe class=\"invers\" src=\"https://www.bandlab.com/embed/?id=$lnk&blur=true\" allowfullscreen loading=\"lazy\"></iframe>";
 				}else if ($type=="vimeo"){
-					$iframes.="<iframe src=\"https://player.vimeo.com/video/$lnk\" frameborder=\"0\" allow=\"autoplay; fullscreen\" sandbox=\"allow-scripts allow-same-origin allow-popups\" allowfullscreen load=\"lazy\"></iframe>";
+					$iframes.="<iframe src=\"https://player.vimeo.com/video/$lnk\" frameborder=\"0\" allow=\"autoplay; fullscreen\" sandbox=\"allow-scripts allow-same-origin allow-popups\" allowfullscreen loading=\"lazy\"></iframe>";
 				}else if ($type=="sy"){
-					$iframes.="<iframe src=\"https://open.spotify.com/embed/track/$lnk\" sandbox=\"allow-scripts allow-same-origin\" load=\"lazy\"></iframe>";
+					$iframes.="<iframe src=\"https://open.spotify.com/embed/track/$lnk\" sandbox=\"allow-scripts allow-same-origin\" loading=\"lazy\"></iframe>";
 				}
 			}
 			if($iframes!=""){
