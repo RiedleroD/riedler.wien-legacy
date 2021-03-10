@@ -79,10 +79,34 @@
 			button:hover{
 				cursor:pointer;/*because it isn't by standard for some reason*/}
 			iframe{
-				padding-right:0.2em;
-				border:none;}
+				border:none;
+				width:49.5%;
+				height:40vh}
+			iframe:nth-child(2n){
+				margin-right:1%;}
+			/*single column on mobile*/
+			@media(hover:none){
+				iframe{
+					width:100%;
+					margin-right:0;
+					height:25vh;
+				}
+			}
 			iframe.invers{
 				filter:invert(1) hue-rotate(180deg) brightness(0.6) saturate(1.5);}
+			details{
+				padding:0.5rem;
+				margin:0 0.5rem;
+				background-color:#222;
+				box-shadow:0 0 0.1rem #222,inset 0.15rem 0.2rem 0.2rem -0.2rem #444,inset -0.15rem -0.2rem 0.2rem -0.2rem #151515;}
+			summary{
+				font-size:1.5rem;
+				margin-left:0.25rem;
+				cursor:pointer;}
+			details[open]>summary{
+				margin-bottom:0.25rem;}
+			summary:focus-visible{
+				outline:none;}
 			.wtyp{
 				background-color:#FFF;
 				padding:0.2em;
@@ -171,18 +195,22 @@
 			}else{
 				echo "<br/>";
 			}
+			$iframes="";
 			foreach($track[5] as $type => $lnk){
 				if($type=="yt"){
-					echo "<iframe width=\"560\" height=\"315\" src=\"https://www.youtube-nocookie.com/embed/$lnk\" allowfullscreen></iframe>";
+					$iframes.="<iframe src=\"https://www.youtube-nocookie.com/embed/$lnk\" allowfullscreen load=\"lazy\"></iframe>";
 				}else if ($type=="sci"){
-					echo "<iframe class=\"invers\" width=\"560\" height=\"315\" scrolling=\"no\" src=\"https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/$lnk\" sandbox=\"allow-scripts allow-same-origin\"></iframe>";
+					$iframes.="<iframe class=\"invers\" scrolling=\"no\" src=\"https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/$lnk\" sandbox=\"allow-scripts allow-same-origin\" load=\"lazy\"></iframe>";
 				}else if ($type=="bli"){
-					echo "<iframe class=\"invers\" width=\"560\" height=\"315\" src=\"https://www.bandlab.com/embed/?id=$lnk&blur=true\" allowfullscreen></iframe>";
+					$iframes.="<iframe class=\"invers\" src=\"https://www.bandlab.com/embed/?id=$lnk&blur=true\" allowfullscreen load=\"lazy\"></iframe>";
 				}else if ($type=="vimeo"){
-					echo "<iframe src=\"https://player.vimeo.com/video/$lnk\" width=\"560\" height=\"315\" frameborder=\"0\" allow=\"autoplay; fullscreen\" sandbox=\"allow-scripts allow-same-origin allow-popups\" allowfullscreen></iframe>";
+					$iframes.="<iframe src=\"https://player.vimeo.com/video/$lnk\" frameborder=\"0\" allow=\"autoplay; fullscreen\" sandbox=\"allow-scripts allow-same-origin allow-popups\" allowfullscreen load=\"lazy\"></iframe>";
 				}else if ($type=="sy"){
-					echo "<iframe src=\"https://open.spotify.com/embed/track/$lnk\" width=\"560\" height=\"315\" sandbox=\"allow-scripts\"></iframe>";
+					$iframes.="<iframe src=\"https://open.spotify.com/embed/track/$lnk\" load=\"lazy\"></iframe>";
 				}
+			}
+			if($iframes!=""){
+				echo "<details><summary>Embeds</summary>$iframes</details>";
 			}
 			echo "<br/>";
 			$flinks=array();
