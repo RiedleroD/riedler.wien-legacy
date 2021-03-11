@@ -166,6 +166,9 @@
 					}
 				}
 			?>
+			.btn.fv{
+				content:url("https://www.fiverr.com/favicon.ico");
+				background-color:#1dbf73;}
 			.btn.rw{
 				content:url(<?php echo $CONF["root_dir"]."favicon.svg"; ?>);}
 			.btn.play{
@@ -179,16 +182,17 @@
 				overflow:hidden;
 				align-items:center;
 				height:1.25rem;
-				padding-right:0.2em;
+				padding:0 0.2em;
 				text-decoration:none;
 				color:#FFF;
 				cursor:pointer;
 				vertical-align:sub;
-				margin:0.25rem;}
+				margin-bottom:0.25rem;}
 			.plaque>.btn{
-				margin-right:0.2em;
 				height:1.25rem;
-				width:1.25rem;}
+				width:1.25rem;
+				margin-right:0.2rem;
+				margin-left:-0.2rem;}
 			.patreon{
 				background-color:#E34;
 				color:#FFF !important;
@@ -280,7 +284,7 @@
 		<h1>Riedler's Music</h1>
 		<p>
 			You can request any song for Riedlerfiziert <a href="https://forms.gle/poA5LsSr8HwNEV3a9">here</a>. It's completely free! <br/>
-			You can also comission me to make original music, but in that case, please email me at comm@riedler.wien and describe precisely what you want. I usually respond within 1 to 3 days. If I don't, please re–send the mail.
+			You can also comission me to make original music. In that case, please contact me on <a class="plaque" href="https://www.fiverr.com/s2/1e37f97239"><b class="btn fv"></b>Fiverr</a>
 		</p>
 		<p>
 			I've also got a patreon page now, so please <a class="patreon" href="https://www.patreon.com/bePatron?u=36947670"><b class="btn pt"></b>Become a patreon</a>. All patrons are visible in the <a class="plaque" href="./patrons/"><b class="btn pt"></b>patron list</a>.
