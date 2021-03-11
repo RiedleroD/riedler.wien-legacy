@@ -22,7 +22,15 @@ if($id==NULL or $fn==NULL or $fext==NULL){
 			if(array_key_exists($fn,$lnks["dl"])){
 				if(in_array($fext,$lnks["dl"][$fn])){
 					$fp=$CONF["dl_dir"].$fn.'.'.$fext;
-					$fs=filesize($fp);
+					$fs=-1;
+					if(file_exists($fp)){
+						$fs=filesize($fp);
+					}else if(preg_match("/^(https?|ftp)\:\/\//i", $fp)){
+						header("Location: $fp");
+						exit();
+					}else{
+						$err="File not found";
+					}
 					if($fs>0){
 						header('Content-Description: File Transfer');
 						header('Content-Type: application/octet-stream');
@@ -33,8 +41,8 @@ if($id==NULL or $fn==NULL or $fext==NULL){
 						header('Content-Length: '.$fs);
 						flush();
 						readfile($fp);
-					}else{
-						$err="File $fn.$fext is empty or doesn't exists";
+					}else if($fs==0){
+						$err="File $fn.$fext is empty";
 					}
 				}else{
 					$err="File $fn in track $id doesn't have an .$fext extension.</span><br/><span>Existing extensions include .".implode($lnks["dl"][$fn],", .");
