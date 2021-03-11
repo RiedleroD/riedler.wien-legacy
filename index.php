@@ -349,6 +349,7 @@
 							$i=count($data);
 							foreach($data as $row){
 								$i-=1;
+								$stat=$row[2];
 								if($ispub){
 									$lnks="";
 									foreach($row[5] as $type => $lnk){
@@ -366,7 +367,6 @@
 									if($lnks!="" or array_key_exists(6,$row)){
 										$lnks="<object><a class=\"btn rw\" href=\"./play?id=$i\"></a>".$lnks."</object>";
 									}
-									$stat=$row[2];
 									$anysource=false;
 									if(array_key_exists("dl",$row[5])){
 										$sources="<div class=\"miniplayer\"><button type=\"submit\" class=\"btn play\"></button><audio controls preload=none>";
