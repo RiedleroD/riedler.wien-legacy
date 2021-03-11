@@ -28,14 +28,6 @@
 				60%{transform:scale(0,1)}
 				100%{transform:scale(1,1)}
 			}
-			@keyframes vanish{
-				0%{transform:scale(1,1);visibility:visible}
-				100%{transform:scale(0,1);visibility:collapse}
-			}
-			@keyframes appear{
-				0%{transform:scale(0,1);visibility:visible}
-				100%{transform:scale(1,1)}
-			}
 			body{
 				margin:0;
 				padding:0.5rem;
@@ -43,45 +35,54 @@
 				color:#EEE;
 				font-family:sans-serif;}
 			.maintable{
-				display:inline-table;
-				color:#000;}
-			.maintable>a:link,
-			.maintable>a:visited,
-			.maintable>a:link:hover,
-			.maintable>a:visited:hover,
-			.maintable>a{
-				display:table-row;
-				text-decoration:none;
-				color:#000;
-				position:relative;}
-			.maintable>a:first-child>div{
+				width:100%;
+				overflow:hidden;
+				display:inline-grid;}
+			.maintable.pub>span>a:nth-child(2n+1){
+				justify-content:center;}
+			.maintable:is(.queue,.rejected)>span>a:last-child{
+				justify-content:flex-end;}
+			.maintable.pub{
+				grid-template-columns:min-content auto auto auto auto min-content;}
+			.maintable:is(.queue,.reject){
+				grid-template-columns:auto auto;}
+			.maintable>div{
 				background:linear-gradient(to bottom,#151515 0%,#333 10%,#151515 80%,#000 100%);
 				color:#EEE;
-				border:none;}
-			.maintable>a>:nth-child(4){
-				border-right:none;}
-			.maintable>a[href]:not(:first-child):hover{
-				filter:brightness(1.2);
-				box-shadow:0 0 0.5em 0 #000;
-				z-index:1;}
-			.maintable>a[href]:not(:first-child):hover>*{
-				filter:brightness(0.9);}
-			.maintable>a>div{
-				display:table-cell;
-				padding:0 0 0.1em 0;
-				white-space:nowrap;}
-			.maintable.pub>a>div:first-child{
-				width:0;}
-			.maintable.pub>a>div:last-child{
-				vertical-align:middle;}
-			.maintable.pub>a:first-child>div{
+				border:none;
 				text-align:center;
 				font-weight:bold;}
-			.maintable.pub a>div>object{
+			.maintable>span{
+				display:contents;}
+			.maintable>span>a{
 				display:flex;
-				align-items:baseline;
+				padding:0 0 0.1em 0.1em;
+				background:inherit;
+				color:#000;
+				text-decoration:none;}
+			.maintable>span>a.ocomm{
+				color:#CCC;}
+			.maintable>span>:first-child{
+				margin-left:-0.5rem;
+				padding-left:0.7rem;
+				align-items:center;}
+			.maintable.pub>span:hover>a[href]:first-child{
+				filter:none;}
+			.maintable>span:hover>a[href]{
+				filter:brightness(1.2);
+				box-shadow:0.5em 0 0.5em 0 #000;
+				z-index:1;
+				color:#000;}
+			.maintable>span:hover>a[href]>*:not(audio){
+				filter:brightness(0.9);}
+			.maintable.pub>span>a:last-child{
+				align-self:stretch;}
+			.maintable>span>a>object{
+				display:flex;
+				align-items:center;
 				flex-direction:row-reverse;
-				justify-content:flex-start;}
+				justify-content:flex-start;
+				width:100%;}
 			a:link,
 			a:visited{
 				color:#418BA4;}
@@ -96,12 +97,13 @@
 				margin:0.5em 0.2em;
 				background-color:#333;
 				border-radius:0.2em;
-				overflow:hidden;
-				cursor:pointer;}
+				cursor:pointer;
+				overflow:hidden;}
 			input.filter+label>span{
 				padding:0.2em;
-				background-color:#CCC;
 				color:#000;}
+			input.filter+label>span:not(.r,.o,.rcomm,.ocomm){
+				background-color:#CCC;}
 			input.filter+label>b{
 				display:inline-block;
 				width:0.75em;
@@ -124,30 +126,24 @@
 				animation-delay:0.05s;
 				transition-delay:0s;
 				transition-duration:0.05s;}
-			.maintable>a{
-				transform-origin:left;
-				animation:appear 0.2s 1;
-				animation-fill-mode:forwards;}
-			#ocb:not(:checked)~.tabbed>.maintable .o,
-			#rcb:not(:checked)~.tabbed>.maintable .r,
-			#rcommcb:not(:checked)~.tabbed>.maintable .rcomm,
-			#ocommcb:not(:checked)~.tabbed>.maintable .ocomm,
-			#stat0cb:not(:checked)~.tabbed>.maintable .stat0,
-			#stat1cb:not(:checked)~.tabbed>.maintable .stat1,
-			#stat2cb:not(:checked)~.tabbed>.maintable .stat2,
-			#stat3cb:not(:checked)~.tabbed>.maintable .stat3,
-			#stat4cb:not(:checked)~.tabbed>.maintable .stat4{
-				animation:vanish 0.2s 1;
-				animation-fill-mode:forwards;}
+			#ocb:not(:checked)~.tabbed>.maintable>.o>a,
+			#rcb:not(:checked)~.tabbed>.maintable>.r>a,
+			#rcommcb:not(:checked)~.tabbed>.maintable>.rcomm>a,
+			#ocommcb:not(:checked)~.tabbed>.maintable>.ocomm>a,
+			#stat0cb:not(:checked)~.tabbed>.maintable>.stat0>a,
+			#stat1cb:not(:checked)~.tabbed>.maintable>.stat1>a,
+			#stat2cb:not(:checked)~.tabbed>.maintable>.stat2>a,
+			#stat3cb:not(:checked)~.tabbed>.maintable>.stat3>a,
+			#stat4cb:not(:checked)~.tabbed>.maintable>.stat4>a{
+				display:none;}
 			.o{
-				background-image:linear-gradient(to right,#383 10vw,#464 100vw);}
+				background-color:#383;}
 			.r{
-				background-image:linear-gradient(to right,#AA0 10vw,#883 100vw);}
+				background-color:#AA0;}
 			.rcomm{
-				background:linear-gradient(to right,#C60 10vw,#A43 100vw);}
+				background-color:#C60;}
 			.ocomm{
-				background:linear-gradient(to right,#638 10vw,#436 100vw);
-				color:#CCC !important;}
+				background-color:#638;}
 			.btn{
 				height:1em;
 				width:1em;
@@ -206,25 +202,21 @@
 				width:1.25rem;
 				padding-right:0.2em;
 				display:inline-block;}
-			.miniplayer{
-				display:inline-flex;
-				width:auto;
-				margin:0 0.2em;
-				z-index:2;
-				position:relative;
-				vertical-align:super;}
-			.miniplayer audio{
-				height:1em;
-				width:auto;
+			.mpip{
+				display:none;}
+			.mpip+label{
+				margin:0 0.2em 0 0;}
+			.mpip+label+audio{
+				position:fixed;
+				top:0.2rem;
+				left:0.2rem;
 				cursor:pointer;
 				display:none;}
-			.miniplayer:focus-within>audio{
-				display:inline-block;}
-			.miniplayer:focus-within>.play{
+			.mpip:checked+label+audio{
+				display:block;}
+			.mpip:checked+label{
 				display:none;}
-			.miniplayer:focus-within{
-				vertical-align:sub;/*don't ask*/}
-			.miniplayer>.btn{
+			.mpip+.btn{
 				border:none;
 				appearance:none;
 				background-color:#0000;}
@@ -236,13 +228,13 @@
 				box-shadow:inset 0 0 1em #000;}
 			.tabbed>.maintable{
 				width:100%;
-				transform:translate(0);
-				transition:transform 0.2s;
+				margin-left:0;
+				transition:margin-left 0.2s;
 				transition-timing-function:cubic-bezier(.77,0,.18,1);}
-			#tab_2:checked~.tabbed>.maintable{
-				transform:translateX(-100%);}
-			#tab_3:checked~.tabbed>.maintable{
-				transform:translateX(-200%);}
+			#tab_2:checked~.tabbed>.maintable:first-child{
+				margin-left:-100%;}
+			#tab_3:checked~.tabbed>.maintable:first-child{
+				margin-left:-200%;}
 			input[name="tabs"]{
 				display:none;}
 			.tabnav{
@@ -330,20 +322,18 @@
 		</div>
 		<div class="tabbed">
 			<div class="maintable pub">
-				<a>
-					<div>▶️</div>
-					<div>Name</div>
-					<div>Status</div>
-					<div>Requestor</div>
-					<div>Release Date</div>
-					<div>Links</div>
-				</a>
+				<div>▶️</div>
+				<div>Name</div>
+				<div>Status</div>
+				<div>Requestor</div>
+				<div>Release Date</div>
+				<div>Links</div>
 				<?php
 					function create_table($data,$linking_data,$ispub){
 						if($data==NULL){
-							echo "<a><div><b style='color:red'>Error reading json file, please be patient until this is fixed</b></div></a>\n";
+							echo "<a><b style='color:red'>Error reading json file, please be patient until this is fixed</b></a>\n";
 						}else if($linking_data==NULL){
-							echo "<a><div><b style='color:red'>Error reading linking information, please be patient until this is fixed</b></div></a>\n";
+							echo "<a><b style='color:red'>Error reading linking information, please be patient until this is fixed</b></a>\n";
 						}else{
 							$stati=["Requested","Planned","Drafted","Finished","Uploaded"];
 							$i=count($data);
@@ -369,7 +359,7 @@
 									}
 									$anysource=false;
 									if(array_key_exists("dl",$row[5])){
-										$sources="<div class=\"miniplayer\"><button type=\"submit\" class=\"btn play\"></button><audio controls preload=none>";
+										$sources="<audio controls preload=none>";
 										foreach($row[5]["dl"] as $fn => $fexts){
 											foreach($fexts as $fext){
 												$urlfn=urlencode($fn);
@@ -380,17 +370,19 @@
 									}
 									if(!$anysource){
 										$sources="";
+										$mpip="";
 									}else{
-										$sources.="</audio></div>";
+										$mpip="<input type=\"radio\" id=\"mp$i\" class=\"mpip\" name=\"miniplayer\"></input><label for=\"mp$i\" class=\"btn play\"></label>";
+										$sources.="</audio>";
 									}
-									echo "<a class=\"$row[0] stat$stat\" href=\"./play/?id=$i\"><div>$sources</div><div>$row[1]</div><div>$stati[$stat]</div><div>$row[3]&nbsp;</div><div>$row[4]&nbsp;</div><div>$lnks</div></a>";
+									echo "<span class=\"$row[0] stat$stat\"><a href=\"./play/?id=$i\">$mpip$sources</a><a href=\"./play/?id=$i\">$row[1]</a><a href=\"./play/?id=$i\">$stati[$stat]</a><a href=\"./play/?id=$i\">$row[3]&nbsp;</a><a href=\"./play/?id=$i\">$row[4]&nbsp;</a><a href=\"./play/?id=$i\">$lnks</a></span>";
 								}else{
 									if(array_key_exists(3,$row)){
 										$lnk=" href=\"$row[3]\"";
 									}else{
 										$lnk="";
 									}
-									echo "<a class=\"$row[0] stat$stat\"$lnk><div>$row[1]</div><div>$row[2]&nbsp;</div></a>";
+									echo "<span class=\"$row[0] stat$stat\"><a$lnk>$row[1]</a><a$lnk>$row[2]&nbsp;</a></span>";
 								}
 							}
 						}
@@ -399,19 +391,15 @@
 				?>
 			</div><!--
 			--><div class="maintable queue">
-				<a>
-					<div>Name</div>
-					<div>Requestor</div>
-				</a>
+				<div>Name</div>
+				<div>Requestor</div>
 				<?php
 					create_table($wldata,$linking_data,false);
 				?>
 			</div><!--
 			--><div class="maintable reject">
-				<a>
-					<div>Name</div>
-					<div>Requestor</div>
-				</a>
+				<div>Name</div>
+				<div>Requestor</div>
 				<?php
 					create_table($rjdata,$linking_data,false);
 				?>
