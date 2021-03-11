@@ -60,7 +60,7 @@
 				background:inherit;
 				color:#000;
 				text-decoration:none;}
-			.maintable>span>a.ocomm{
+			.maintable>span.ocomm>a{
 				color:#CCC;}
 			.maintable>span>:first-child{
 				margin-left:-0.5rem;
@@ -73,6 +73,8 @@
 				box-shadow:0.5em 0 0.5em 0 #000;
 				z-index:1;
 				color:#000;}
+			.maintable>span.ocomm:hover>a[href]{
+				color:#CCC;}
 			.maintable>span:hover>a[href]>*:not(audio){
 				filter:brightness(0.9);}
 			.maintable.pub>span>a:last-child{
