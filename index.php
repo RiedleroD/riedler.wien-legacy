@@ -176,6 +176,7 @@
 				<div class="pocket">
 					<a class="badge" href="https://github.com/RiedleroD/userstyles-riedler">GitHub</a>
 					<a class="badge" href="https://stylebase.cc/RiedleroD">StyleBase</a>
+					<a class="badge" href="https://userstyles.world/user/Riedler">Userstyles.world</a>
 				</div>
 				<span class="survival">04.2019 - now</span>
 				<p>
@@ -194,7 +195,7 @@
 				<p>
 					This is a controversial one… it's so old that the codebase is complete and utter crap, and despite it being probably the most helpful tool I've ever created,
 					I don't want to touch the code to add new features or fix one of the hundred of bugs… I kinda do still maintain it, but only for myself since my whole music library is built on top of it.
-					The repo said it's in the middle of being rewritten, but I've stopped rewriting it a long time ago & it'd need another one now.
+					The repo said it's in the middle of being rewritten, but I've stopped rewriting it a long time ago &amp; it'd need another one now.
 					It still kinda works, and as long as that's the case, I don't see a reason to rewrite it properly.
 				</p>
 			</section>
