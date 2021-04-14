@@ -1,38 +1,39 @@
+<?php
+chdir("../");
+function get_data($fn){
+	GLOBAL $CONF;
+	$json=file_get_contents($CONF["data_dir"].$fn.".json");
+	return json_decode($json,true);
+}
+if(array_key_exists("id",$_GET)){
+	$id=$_GET["id"];
+}else{
+	$id=NULL;
+}
+if($id==NULL){
+	$title="Play: Nothing";
+	$track=NULL;
+}else{
+	$CONF=array("data_dir"=>"./");
+	$CONF=get_data("conf");
+	$data=get_data("data");
+	if(array_key_exists($id,$data)){
+		$track=$data[count($data)-$id-1];
+		$title="Play: ".$track[1];
+	}else{
+		header($_SERVER["SERVER_PROTOCOL"]." 404 Not Found", true, 404);
+		$track=NULL;
+		$title="Play: Invalid";
+	}
+	$json=file_get_contents($CONF["data_dir"]."linking_data.json");
+	$linking_data=json_decode($json,true);
+}
+?>
 <!DOCTYPE html>
 <html>
 	<head>
-		<meta charset="UTF-8" />
-		<?php
-		chdir("../");
-		function get_data($fn){
-			GLOBAL $CONF;
-			$json=file_get_contents($CONF["data_dir"].$fn.".json");
-			return json_decode($json,true);
-		}
-		if(array_key_exists("id",$_GET)){
-			$id=$_GET["id"];
-		}else{
-			$id=NULL;
-		}
-		if($id==NULL){
-			$title="Play: Nothing";
-			$track=NULL;
-		}else{
-			$CONF=array("data_dir"=>"./");
-			$CONF=get_data("conf");
-			$data=get_data("data");
-			if(array_key_exists($id,$data)){
-				$track=$data[count($data)-$id-1];
-				$title="Play: ".$track[1];
-			}else{
-				$track=NULL;
-				$title="Play: Invalid";
-			}
-			$json=file_get_contents($CONF["data_dir"]."linking_data.json");
-			$linking_data=json_decode($json,true);
-		}
-		echo "<title>$title</title>";
-		?>
+		<meta charset="UTF-8"/>
+		<title><?php echo $title ?></title>
 		<link rel="icon" type="image/svg" href="/favicon.svg"/>
 		<style>
 			/*animations*/
@@ -184,7 +185,11 @@
 		if($id==NULL){
 			echo "<p>No id specified</p>";
 		}else if($track==NULL){
-			echo "<p>Invalid id specified</p>";
+			if($id=="xx"){
+				echo "<h2>This is so sad,</h2><p>Alexa, play Despacito<br/><br/>Riedler forgot to replace the placeholder link again. You can still <a href=\"/music/\">go home</a> though.</p>";
+			}else{
+				echo "<p>Invalid id specified</p>";
+			}
 		}else{
 			$work=[
 				"r" => "Riedlerfiziert",
