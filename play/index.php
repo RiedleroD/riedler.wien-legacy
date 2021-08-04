@@ -27,6 +27,7 @@ if($id==NULL){
 	}
 	$json=file_get_contents($CONF["data_dir"]."linking_data.json");
 	$linking_data=json_decode($json,true);
+	$ext_data=get_data("formats");
 }
 ?>
 <!DOCTYPE html>
@@ -250,7 +251,12 @@ if($id==NULL){
 							}else{
 								$fss="File not found";
 							}
-							$links.="<span class=\"verweis\"><a class=\"btn dl\" title=\"$fn.$fext\" href=\"$flink\"></a> Download .$fext File<i>$fss</i></span>";
+							if(array_key_exists($fext,$ext_data)){
+								$fextdesc=$ext_data[$fext][0];
+							}else{
+								$fextdesc='.'.$fext;
+							}
+							$links.="<span class=\"verweis\"><a class=\"btn dl\" title=\"$fn.$fext\" href=\"$flink\"></a> Download $fextdesc File<i>$fss</i></span>";
 							$flinks[$flink]=$fext;
 						}
 					}

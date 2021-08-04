@@ -2,6 +2,7 @@
 $id=$_GET["id"];
 $fn=$_GET["fn"];
 $fext=$_GET["ext"];
+$redirect=$_GET["redirect"];
 $err=NULL;
 if($id==NULL or $fn==NULL or $fext==NULL){
 	$err="Missing parameters: at least id, fn and ext are required.";
@@ -26,15 +27,25 @@ if($id==NULL or $fn==NULL or $fext==NULL){
 					if(file_exists($fp)){
 						$fs=filesize($fp);
 					}else if(preg_match("/^(https?|ftp)\:\/\//i", $fp)){
-						header("Location: $fp");
+						header("Location: $fp");//if fp is an url, redirect to it
 						exit();
 					}else{
 						$err="File not found";
 					}
-					if($fs>0){
+					if($redirect!=NULL){
+						header("Location: ../$fp");//if redirect is specified, redirect that fucker
+						exit();
+					}else if($fs>0){
+						$ext_data=get_data("formats");
+						$mime="application/octet-stream";
+						if(array_key_exists($fext,$ext_data)){
+							if($ext_data[$fext][1]!=null){
+								$mime="audio/".$ext_data[$fext][1];
+							}
+						}
 						header('Content-Description: File Transfer');
-						header('Content-Type: application/octet-stream');
-						header('Content-Disposition: attachment; filename="'.$lnks[$dlt].'"');
+						header('Content-Type: '.$mime);
+						header('Content-Disposition: attachment; filename="'.$fn.'.'.$fext.'"');
 						header('Expires: 0');
 						header('Cache-Control: must-revalidate');
 						header('Pragma: public');
