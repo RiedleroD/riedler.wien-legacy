@@ -37,6 +37,33 @@ if($id==NULL){
 		<title><?php echo $title ?></title>
 		<link rel="icon" type="image/svg" href="/favicon.svg"/>
 		<style>
+			/*custom font*/
+			@font-face{
+				font-family:"Libertinus Sans";
+				font-display: swap;
+				unicode-range: U+000-5FF;
+				src:local("Libertinus Sans Regular"),
+					local("Linux Biolinum O Regular"),
+					url("/sfto/fonts/LibertinusSans-Regular.woff2") format("woff2");
+			}
+			@font-face{
+				font-family:"Libertinus Sans";
+				font-display: swap;
+				font-style: italic;
+				unicode-range: U+000-5FF;
+				src:local("Libertinus Sans Italic"),
+					local("Linux Biolinum O Italic"),
+					url("/sfto/fonts/LibertinusSans-Italic.woff2") format("woff2");
+			}
+			@font-face{
+				font-family:"Libertinus Sans";
+				font-display: swap;
+				font-weight: bold;
+				unicode-range: U+000-5FF;
+				src:local("Libertinus Sans Bold"),
+					local("Linux Biolinum O Bold"),
+					url("/sfto/fonts/LibertinusSans-Bold.woff2") format("woff2");
+			}
 			/*animations*/
 			@keyframes loading_wave{
 				0%{background-position:0 center;}
@@ -81,7 +108,7 @@ if($id==NULL){
 				margin-top:2em;
 				padding:0.2em;
 				padding-bottom:0.1em;
-				font-family:sans-serif;
+				font-family:Libertinus Sans,sans-serif;
 				background:linear-gradient(to bottom,#000 0em,#333 0.2em,#333 calc(100% - 0.2em),#000 100%);}
 			button:hover{
 				cursor:pointer;/*because it isn't by standard for some reason*/}
@@ -220,8 +247,6 @@ if($id==NULL){
 			foreach($track[5] as $type => $lnk){
 				if($type=="yt"){
 					$iframes.="<iframe src=\"https://www.youtube-nocookie.com/embed/$lnk\" allowfullscreen loading=\"lazy\"></iframe>";
-				}else if ($type=="sci"){
-					$iframes.="<iframe class=\"invers\" scrolling=\"no\" src=\"https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/$lnk\" sandbox=\"allow-scripts allow-same-origin\" loading=\"lazy\"></iframe>";
 				}else if ($type=="bli"){
 					$iframes.="<iframe class=\"invers\" src=\"https://www.bandlab.com/embed/?id=$lnk&blur=true\" allowfullscreen loading=\"lazy\"></iframe>";
 				}else if ($type=="vimeo"){

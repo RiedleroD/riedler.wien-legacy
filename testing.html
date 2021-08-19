@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8"/>
+		<style>
+			body{background-color:#EEE;color:#000}
+			#a{--color:#000}
+			#b{--color:#800}
+			#c{--color:#FFF}
+			#d{--color:#AAA}
+			#e{--color:blue}
+			#f{--color:#0F0}
+			#g{--color:yellow}
+			#h{--color:brown}
+			#i>div{background:linear-gradient(to right,#000,var(--color));width:100%;height:1em}
+			a{color:var(--color)}
+			a::after{
+				background-color:var(--color);
+				margin-left:1ex;
+				content:"and here the bg";
+				color:#Fa00;
+			}
+			a::before{
+				content:"This should be "
+			}
+			#grid{
+				display:grid;
+				grid-template-columns:repeat(256,0.25em);
+			}
+			#grid>div{width:1em;height:1em;font-size:0.25em}
+			table{border-collapse:collapse}
+			td{padding:0.25em}
+		</style>
+		<script async>
+			let hex=function(color){
+				return color.toString(16).padStart(2,'0');
+			}
+			let makeRainbow=function(){
+				let btn=document.getElementsByTagName("button")[0];
+				btn.remove();
+				let grid=document.getElementById("grid");
+				let grev=false;
+				let brev=false;
+				for(let r=0;r<256;r+=8){
+					for(let g=(grev?255:0);(g>=0 && grev) || (g<256 && !grev);grev?g-=8:g+=8){
+						for(let b=(brev?255:0);(b>=0 && brev) || (b<256 && !brev);brev?b-=8:b+=8){
+							let child=document.createElement("div");
+							let color="#"+hex(r)+hex(g)+hex(b);
+							child.style.backgroundColor=color;
+							child.style.color=color;
+							let text=document.createTextNode("x");
+							child.appendChild(text);
+							grid.appendChild(child);
+						}
+						brev=!brev;
+					}
+					grev=!grev;
+				}
+			}
+		</script>
+	</head>
+	<body>
+		<span id="0">This should be Text</span><span style="margin-left:1ex">and here the bg</span>
+		<br/>
+		<a id="a">#000</a>
+		<a id="b">#800</a><br/>
+		<a id="c">#FFF</a>
+		<a id="d">#AAA</a><br/>
+		<a id="e">blue</a>
+		<a id="f">#0F0</a><br/>
+		<a id="g">yellow</a>
+		<a id="h">brown</a><br/>
+		<span>The body's background color is set to #EEE btw</span><br/>
+		<h3>Color Gradients work as expected</h3>
+		<div id="i">
+			<div style="--color:#F00"></div>
+			<div style="--color:#0F0"></div>
+			<div style="--color:#00F"></div>
+			<div style="--color:#FF0"></div>
+			<div style="--color:#F0F"></div>
+			<div style="--color:#0FF"></div>
+			<div style="--color:#FFF"></div>
+		</div>
+		<br/>
+		<span style="text-shadow:0 0 0.25em #000">Text-shadows</span>
+		<span style="text-shadow:0 0 0.25em #FFF">seem to</span>
+		<span style="text-shadow:0 0 0.25em blue">work normally</span>
+		<h3>js-generated color grid - colored div with colored text inside</h3>
+		<div id="grid"></div>
+		<button onclick="makeRainbow();">Generate Table</button>
+		<h1>Mobile Browsers I tested</h1>
+		<table border="1">
+			<tr>
+				<th>Browser</th>
+				<th>State</th>
+				<th>Tester</th>
+			</tr>
+			<tr>
+				<td>Firefox</td>
+				<td>Works flawlessly</td>
+				<td>Tested myself</td>
+			</tr>
+			<tr>
+				<td>Tor</td>
+				<td>↑</td>
+				<td>Tested myself</td>
+			</tr>
+			<tr>
+				<td>Avast Secure Browser</td>
+				<td>Only minor rendering inaccuracies between sharp edges<br/>background-clip isn't implemented</td>
+				<td>Tested myself</td>
+			</tr>
+			<tr>
+				<td>Chrome</td>
+				<td>Rendering inaccuracies between sharp edges<br/>background-clip isn't implemented</td>
+				<td>Tested myself</td>
+			</tr>
+			<tr>
+				<td>Vivaldi</td>
+				<td>↑</td>
+				<td>Tested myself</td>
+			</tr>
+			<tr>
+				<td>Samsung Internet</td>
+				<td>↑</td>
+				<td>Tested myself</td>
+			</tr>
+			<tr>
+				<td>Edge</td>
+				<td>↑</td>
+				<td>Tested myself</td>
+			</tr>
+			<tr>
+				<td>Opera</td>
+				<td>↑</td>
+				<td>Tested myself</td>
+			</tr>
+			<tr>
+				<td>Puffin</td>
+				<td>↑</td>
+				<td>Tested myself</td>
+			</tr>
+			<tr>
+				<td>UC Turbo</td>
+				<td>↑</td>
+				<td>Tested myself</td>
+			</tr>
+			<tr>
+				<td>UC Browser</td>
+				<td>↑</td>
+				<td>Tested myself</td>
+			</tr>
+			<tr>
+				<td>Aloha Turbo</td>
+				<td>↑</td>
+				<td>Tested myself</td>
+			</tr>
+			<tr>
+				<td>Ecosia</td>
+				<td>↑</td>
+				<td>Tested myself</td>
+			</tr>
+			<tr>
+				<td>Kiwi</td>
+				<td>↑</td>
+				<td>Tested myself</td>
+			</tr>
+			<tr>
+				<td>Opera Mini</td>
+				<td>Both text and background coloration is brightness-inverted in some color-regions<br/>Only minor rendering inaccuracies between sharp edges<br/>Background-clip not implemented</td>
+				<td>Tested myself</td>
+			</tr>
+			<tr>
+				<td>Opera Touch</td>
+				<td>↑</td>
+				<td>Tested myself</td>
+			</tr>
+			<tr>
+				<td>Opera GX</td>
+				<td>↑</td>
+				<td>Tested myself</td>
+			</tr>
+			<tr>
+				<td>Mint Browser</td>
+				<td>↑</td>
+				<td>Tested myself</td>
+			</tr>
+			<tr>
+				<td>OceanHero</td>
+				<td>↑</td>
+				<td>Tested myself</td>
+			</tr>
+			<tr>
+				<td>Dolphin</td>
+				<td>↑</td>
+				<td>Tested myself</td>
+			</tr>
+			<tr>
+				<td>DuckDuckGo</td>
+				<td>Both text and background coloration is brightness-inverted in some color-regions<br/>Rendering inaccuracies between sharp edges<br/>Background-clip not implemented</td>
+				<td>Tested myself</td>
+			</tr>
+			<tr>
+				<td>Brave</td>
+				<td>↑</td>
+				<td>Tested by friend</td>
+			</tr>
+		</table>
+		<h1>Workarounds</h1>
+		<span>Since both text shadows and gradients seem to work normally, we can force the wanted color by making the text transparent, and either adding a</span>
+		<span style="color:#0000;text-shadow:0 0 #000;background:linear-gradient(#FFF,#FFF)">text shadow with 0 offset and glow</span>
+		<span>or creating a flat gradient and</span>
+		<span style="background:linear-gradient(#FFF,#FFF)"><span style="background:linear-gradient(#000,#000);background-clip:text;color:#0000">setting the text as the clip</span></span><!--
+		--><span>. The latter isn't implemented everywhere though, so we can for now only use the first workaround.</span>
+		<br/>
+		<span>Anyway, Android Webview is shit and whoever implemented this behaviour is a fucking idiot.</span>
+	</body>
+</html>

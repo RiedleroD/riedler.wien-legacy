@@ -11,12 +11,13 @@
 	$rjdata=get_data("rejected_data");
 	$linking_data=get_data("linking_data");
 ?>
-<html>
+<html lang="en">
 	<head>
 		<meta charset="UTF-8" />
 		<title>Riedler's Music</title>
 		<link rel="icon" type="image/svg" href="/favicon.svg"/>
 		<style>
+			/*animation*/
 			@keyframes stretch{
 				0%{transform:scale(1,1)}
 				50%{transform:scale(1.4,1)}
@@ -28,12 +29,39 @@
 				60%{transform:scale(0,1)}
 				100%{transform:scale(1,1)}
 			}
+			/*custom font*/
+			@font-face{
+				font-family:"Libertinus Sans";
+				font-display: swap;
+				unicode-range: U+000-5FF;
+				src:local("Libertinus Sans Regular"),
+					local("Linux Biolinum O Regular"),
+					url("/sfto/fonts/LibertinusSans-Regular.woff2") format("woff2");
+			}
+			@font-face{
+				font-family:"Libertinus Sans";
+				font-display: swap;
+				font-style: italic;
+				unicode-range: U+000-5FF;
+				src:local("Libertinus Sans Italic"),
+					local("Linux Biolinum O Italic"),
+					url("/sfto/fonts/LibertinusSans-Italic.woff2") format("woff2");
+			}
+			@font-face{
+				font-family:"Libertinus Sans";
+				font-display: swap;
+				font-weight: bold;
+				unicode-range: U+000-5FF;
+				src:local("Libertinus Sans Bold"),
+					local("Linux Biolinum O Bold"),
+					url("/sfto/fonts/LibertinusSans-Bold.woff2") format("woff2");
+			}
 			body{
 				margin:0;
 				padding:0.5rem;
 				background-color:#000;
 				color:#EEE;
-				font-family:sans-serif;}
+				font-family:Libertinus Sans, sans-serif;}
 			.maintable{
 				width:100%;
 				overflow:hidden;
@@ -289,7 +317,7 @@
 			<a class="plaque" href="https://lmms.io/lsp/?action=browse&user=Riedler"><b class="btn lmms"></b>LMMS Sharing Platform</a>
 			<a class="plaque" href="https://bandlab.com/riedler"><b class="btn bl"></b>BandLab</a>
 			<a class="plaque" href="https://open.spotify.com/artist/7k9sRjqYP68ZI8Bw8BwmuG"><b class="btn sy"></b>Spotify</a>
-			<a class="plaque" href="https://soundcloud.com/riedler-musics"><b class="btn sc"></b>SoundCloud</a>
+			<a class="plaque" href="https://soundcloud.com/riedler-music"><b class="btn sc"></b>SoundCloud</a>
 			<a class="plaque" href="https://vimeo.com/user125791194"><b class="btn vimeo"></b>Vimeo</a>
 			<a class="plaque" href="https://www.amazon.com/s?k=Riedler&i=digital-music&search-type=ss"><b class="btn az"></b>Amazon</a>
 			<a class="plaque" href="https://music.amazon.com/artists/B08QG41MYN/riedler"><b class="btn am"></b>Amazon Music</a>
@@ -297,13 +325,17 @@
 			<a class="plaque" href="https://www.boomplay.com/artists/19145926"><b class="btn bp"></b>Boomplay</a>
 			<a class="plaque" href="https://music.yandex.com/artist/10521437"><b class="btn yx"></b>Yandex Music</a>
 			<a class="plaque" href="https://www.deezer.com/en/artist/116666602"><b class="btn dz"></b>Deezer</a>
+			<a class="plaque" href="https://tidal.com/browse/artist/22622017"><b class="btn td"></b>Tidal</a>
+			<a class="plaque" href="https://music.163.com/#/artist?id=46345905"><b class="btn ne"></b>NetEase</a>
+			<a class="plaque" href="https://y.qq.com/n/ryqq/singer/0031Xw4m1zLAUa"><b class="btn qq"></b>QQ</a>
 			<a class="plaque" href="https://odysee.com/@Riedler:6"><b class="btn oy"></b>Odysee</a>
 			<a class="plaque" href="lbry://@Riedler:6"><b class="btn lbry"></b>LBRY</a>
+			<a class="plaque" href="https://push.fm/"><b class="btn psh"></b>push.fm</a>
 		</div>
 		These symbols are hand-crafted by me (with inkscape) and are meant to represent the respective services.<br/>
 		<br/>
-		<input type="checkbox" class="filter" checked id="rcb"/><label for="rcb"><b></b><span class="r">Riedlerfiziert</span></label>
-		<input type="checkbox" class="filter" checked id="rcommcb"/><label for="rcommcb"><b></b><span class="rcomm">Riedlerfiziert Requests</span></label>
+		<input type="checkbox" class="filter" checked id="rcb"/><label for="rcb"><b></b><span class="r">RRemixes</span></label>
+		<input type="checkbox" class="filter" checked id="rcommcb"/><label for="rcommcb"><b></b><span class="rcomm">RRemix Requests</span></label>
 		<input type="checkbox" class="filter" checked id="ocb"/><label for="ocb"><b></b><span class="o">Originals</span></label>
 		<input type="checkbox" class="filter" checked id="ocommcb"/><label for="ocommcb"><b></b><span class="ocomm">Commissions</span></label>
 		<br/>
@@ -384,7 +416,7 @@
 									}else{
 										$lnk="";
 									}
-									echo "<span class=\"$row[0] stat$stat\"><a$lnk>$row[1]</a><a$lnk>$row[2]&nbsp;</a></span>";
+									echo "<span class=\"$row[0] stat0\"><a$lnk>$row[1]</a><a$lnk>$row[2]&nbsp;</a></span>";
 								}
 							}
 						}

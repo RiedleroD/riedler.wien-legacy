@@ -4,12 +4,38 @@
 		<meta charset="UTF-8" />
 		<title>Riedler Patrons</title>
 		<style>
+			@font-face{
+				font-family:"Libertinus Sans";
+				font-display: swap;
+				unicode-range: U+000-5FF;
+				src:local("Libertinus Sans Regular"),
+					local("Linux Biolinum O Regular"),
+					url("/sfto/fonts/LibertinusSans-Regular.woff2") format("woff2");
+			}
+			@font-face{
+				font-family:"Libertinus Sans";
+				font-display: swap;
+				font-style: italic;
+				unicode-range: U+000-5FF;
+				src:local("Libertinus Sans Italic"),
+					local("Linux Biolinum O Italic"),
+					url("/sfto/fonts/LibertinusSans-Italic.woff2") format("woff2");
+			}
+			@font-face{
+				font-family:"Libertinus Sans";
+				font-display: swap;
+				font-weight: bold;
+				unicode-range: U+000-5FF;
+				src:local("Libertinus Sans Bold"),
+					local("Linux Biolinum O Bold"),
+					url("/sfto/fonts/LibertinusSans-Bold.woff2") format("woff2");
+			}
 			:root,body{
 				background-color:#000;
 				color:#CCC;
 				padding:0;
 				margin:0;
-				font-family:sans-serif}
+				font-family:Libertinus Sans,sans-serif}
 			h1{
 				margin-top:0.5em;
 				margin-bottom:0.5em;}
@@ -98,7 +124,7 @@
 			<h1>My Patrons :)</h1>
 		</div>
 		<div class="card">
-			<h2>Riedler Muses</h2><sub>30€+</sub>
+			<h2>Riedler Enthusiasts</h2><sub>30€+</sub>
 			<ul class="tier S">
 <?php
 	if($S==NULL){
@@ -111,7 +137,7 @@
 ?>
 			</ul>
 			<hr/>
-			<h2>Riedler Enthusiasts</h2><sub>10€+</sub>
+			<h2>Riedler Enjoyers</h2><sub>10€+</sub>
 			<ul class="tier A">
 <?php
 	if($A==NULL){
@@ -124,7 +150,7 @@
 ?>
 			</ul>
 			<hr/>
-			<h2>Riedler Supporters</h2><sub>5€+</sub>
+			<h2>Riedler Fans</h2><sub>5€+</sub>
 			<ul class="tier B">
 <?php
 	if($B==NULL){
