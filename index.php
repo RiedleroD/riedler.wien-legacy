@@ -186,7 +186,6 @@
 				<h3>Dark Userstyles</h3>
 				<div class="pocket">
 					<a class="badge" href="https://github.com/RiedleroD/userstyles-riedler">GitHub</a>
-					<a class="badge" href="https://stylebase.cc/RiedleroD">StyleBase</a>
 					<a class="badge" href="https://userstyles.world/user/Riedler">Userstyles.world</a>
 				</div>
 				<span class="survival">04.2019 - now</span>
