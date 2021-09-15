@@ -155,21 +155,6 @@
 				</p>
 			</section>
 			<section>
-				<h3>Dodge to Drums</h3>
-				<div class="pocket">
-					<a class="badge" href="https://github.com/RiedleroD/DodgeToDrums">GitHub</a>
-				</div>
-				<span class="survival">07.2020 - 08.2020 (tiny update on 29.12.2020)</span>
-				<p>
-					Dodge to Drums is a rythm-based bullet hell. A lot of inspiration came from Just shapes and Beats.
-				</p>
-				<p>
-					Sadly, the development of this project is completely halted due to the suicide of its co-founder and artist, Sage.
-					It's not that I can't find another artist to get a few sprites, but I can't get myself to finish it.
-					I just hope I will eventually be able to finish it, because it <i>was</i> the most ambitious project I've ever started.
-				</p>
-			</section>
-			<section>
 				<h3>Rastar</h3>
 				<div class="pocket">
 					<a class="badge" href="https://github.com/RiedleroD/rastar">GitHub</a>
@@ -215,27 +200,19 @@
 				</p>
 			</section>
 			<section>
-				<h3>Rtris</h3>
+				<h3>Dodge to Drums</h3>
 				<div class="pocket">
 					<a class="badge" href="https://github.com/RiedleroD/DodgeToDrums">GitHub</a>
 				</div>
-				<span class="survival">10.2019 - 07.2020</span>
+				<span class="survival">07.2020 - 08.2020 (tiny update on 29.12.2020)</span>
 				<p>
-					Rtris is very similar to Tetris, but not the same because else I would get a nice little lawsuit from Nintendo.
+					Dodge to Drums is a rythm-based bullet hell. A lot of inspiration came from Just shapes and Beats.
 				</p>
 				<p>
-					I didn't like the way that modern Tetris variants handled the tetris formula. I wanted something that feels more like classic tetris, like on the gameboy.
-					So I made that. Except it's not Tetris, it's Rtris. Not afilliated with Nintendo or the Tetris company.
+					Sadly, the development of this project is completely halted due to the suicide of its co-founder and artist, Sage.
+					It's not that I can't find another artist to get a few sprites, but I can't get myself to finish it.
+					I just hope I will eventually be able to finish it, because it <i>was</i> the most ambitious project I've ever started.
 				</p>
-				<p>
-					Also, I included a track that is also known as the 'main tetris theme', which is also Korobeiniki, a russian folk song, which has been in the public domain for a long time.
-					The other tracks I included with the game are also either in the public domain or original compositions:
-				</p>
-				<ul>
-					<li>Flight of the Bumblebee</li>
-					<li>Moonlight Sonata</li>
-					<li>The Four Seasons - Summer</li>
-				</ul>
 			</section>
 		</div>
 		<h2 class="divisor">
@@ -243,22 +220,6 @@
 			<div></div>
 		</h2>
 		<div class="lefthand secsec">
-			<section>
-				<h3>RGraphics</h3>
-				<div class="pocket">
-					<a class="badge" href="https://github.com/RiedleroD/rgraphics">GitHub</a>
-				</div>
-				<span class="survival">12.2018 - 04.2019</span>
-				<p>
-					RGraphics is a graphical engine made for and with python. It's moderately fast, but you won't get 60fps even with low resolution, let me tell you that.
-					<del>Apparrently I've never bothered to upload it to github or pypi, so it's lost to time.</del> It has nothing to do with the hundreds of other project called rgraphics.
-					In hindsight, that's a pretty stupid name for a graphics engine written with <i>python</i> and not Rust. I don't think I've known Rust at that time though.
-				</p>
-				<p>
-					<b>Update</b>: 5 minutes after writing the above, I've found a super old repository containing the whole project.
-					I've now uploaded it to github, along with the other repositories I found.
-				</p>
-			</section>
 			<section>
 				<h3>commoncodes.py</h3>
 				<div class="pocket">
@@ -275,8 +236,6 @@
 					Despite it being not perfectly professional, it's available on <a href="https://pypi.org/project/commoncodes/">pypi</a>.
 				</p>
 			</section>
-		</div><!--
-		--><div class="righthand secsec">
 			<section>
 				<h3>Snek</h3>
 				<div class="pocket">
@@ -313,6 +272,47 @@
 				</p>
 				<p>
 					I've had some issues regarding the ball sometimes flying right through the bats. I'm not sure if I ever fixed this, but to check, I'd have to read the code, and I'm not willing to do that.
+				</p>
+			</section>
+		</div><!--
+		--><div class="righthand secsec">
+			<section>
+				<h3>Rtris</h3>
+				<div class="pocket">
+					<a class="badge" href="https://github.com/RiedleroD/DodgeToDrums">GitHub</a>
+				</div>
+				<span class="survival">10.2019 - 07.2020</span>
+				<p>
+					Rtris is very similar to Tetris, but not the same because else I would get a nice little lawsuit from Nintendo.
+				</p>
+				<p>
+					I didn't like the way that modern Tetris variants handled the tetris formula. I wanted something that feels more like classic tetris, like on the gameboy.
+					So I made that. Except it's not Tetris, it's Rtris. Not afilliated with Nintendo or the Tetris company.
+				</p>
+				<p>
+					Also, I included a track that is also known as the 'main tetris theme', which is also Korobeiniki, a russian folk song, which has been in the public domain for a long time.
+					The other tracks I included with the game are also either in the public domain or original compositions:
+				</p>
+				<ul>
+					<li>Flight of the Bumblebee</li>
+					<li>Moonlight Sonata</li>
+					<li>The Four Seasons - Summer</li>
+				</ul>
+			</section>
+			<section>
+				<h3>RGraphics</h3>
+				<div class="pocket">
+					<a class="badge" href="https://github.com/RiedleroD/rgraphics">GitHub</a>
+				</div>
+				<span class="survival">12.2018 - 04.2019</span>
+				<p>
+					RGraphics is a graphical engine made for and with python. It's moderately fast, but you won't get 60fps even with low resolution, let me tell you that.
+					<del>Apparrently I've never bothered to upload it to github or pypi, so it's lost to time.</del> It has nothing to do with the hundreds of other project called rgraphics.
+					In hindsight, that's a pretty stupid name for a graphics engine written with <i>python</i> and not Rust. I don't think I've known Rust at that time though.
+				</p>
+				<p>
+					<b>Update</b>: 5 minutes after writing the above, I've found a super old repository containing the whole project.
+					I've now uploaded it to github, along with the other repositories I found.
 				</p>
 			</section>
 		</div>
