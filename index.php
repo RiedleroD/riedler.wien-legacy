@@ -125,18 +125,7 @@
 		<h2 class="divisor">Relatively new stuff<div></div></h2>
 		<div class="lefthand secsec">
 			<section>
-				<h3>Rastar</h3>
-				<div class="pocket">
-					<a class="badge" href="https://github.com/RiedleroD/rastar">GitHub</a>
-				</div>
-				<span class="survival">08.2020</span>
-				<p>
-					Rastar is a tiny program written with pyglet that demonstrates the use of the A* pathfinding algorithm in a grid. (raster + A star = rastar)<br/>
-					The original code stems from someone that asked in the pyglet discord why his code was so slow - I basically rewrote it so he could learn from someone that suffered more than him.
-				</p>
-			</section>
-			<section>
-				<h3>BASAV</h3>
+				<h3>BASAV Legacy</h3>
 				<div class="pocket">
 					<a class="badge" href="https://github.com/RiedleroD/BASAV">GitHub</a>
 				</div>
@@ -149,9 +138,20 @@
 					So I made my own visualisation program that shows every operation, with an API that would guarantee that every step is countent and properly displayed while also simplifying the steps to add a new algorithm.
 				</p>
 				<p>
+					<b>UPDATE</b> <span class="survival">01.2021</span><br/>
 					Right now, it's in a kind of limbo since It's kinda slow because… well, it's python. I also don't have the time to work on it anymore, and don't really know a compiled language well enough yet.<br/>
 					I do plan on learning Rust soon though, and I <i>will</i> completely rewrite BASAV from scratch once I have some free time again. That's a promise.<br/>
 					I already have some plans for a new compiled version, including a DSL for creating algorithms, which would give me better control of what the algorithms are doing.
+				</p>
+				<p>
+					<b>UPDATE</b> <span class="survival">08.2021</span><br/>
+					BASAV is actively being rewritten. I have learned Rust and the UI is already half finished.
+					The bulk of the work will go into the new DSL and its interpreter. Keep your ears peeled!
+				</p>
+				<p>
+					<b>UPDATE</b> <span class="survival">09.2021</span><br/>
+					Well, so school is taking away my time again, so there'll be another hiatus, probably until <span class="survival">12.2021</span>.
+					I think it's still going to take at least a year until I can publish the first stable version though.
 				</p>
 			</section>
 			<section>
@@ -167,6 +167,17 @@
 					Sadly, the development of this project is completely halted due to the suicide of its co-founder and artist, Sage.
 					It's not that I can't find another artist to get a few sprites, but I can't get myself to finish it.
 					I just hope I will eventually be able to finish it, because it <i>was</i> the most ambitious project I've ever started.
+				</p>
+			</section>
+			<section>
+				<h3>Rastar</h3>
+				<div class="pocket">
+					<a class="badge" href="https://github.com/RiedleroD/rastar">GitHub</a>
+				</div>
+				<span class="survival">08.2020</span>
+				<p>
+					Rastar is a tiny program written with pyglet that demonstrates the use of the A* pathfinding algorithm in a grid. (raster + A star = rastar)<br/>
+					The original code stems from someone that asked in the pyglet discord why his code was so slow - I basically rewrote it so he could learn from someone that suffered more than him.
 				</p>
 			</section>
 		</div><!--
@@ -188,15 +199,20 @@
 				<div class="pocket">
 					<a class="badge" href="https://github.com/RiedleroD/RYTD">GitHub</a>
 				</div>
-				<span class="survival">03.2019 - now</span>
+				<span class="survival">03.2019 - 02.2021</span>
 				<p>
 					A YouTube downloader using the popular youtube-dl tool. It dumps all videos from a specified playlist into your music folder, so you don't have to manually download every single track.
 				</p>
 				<p>
-					This is a controversial one… it's so old that the codebase is complete and utter crap, and despite it being probably the most helpful tool I've ever created,
+					This is a controversial one… it's so old that the codebase is complete and utter crap, and despite it being probably the most helpful tool I've ever created.
 					I don't want to touch the code to add new features or fix one of the hundred of bugs… I kinda do still maintain it, but only for myself since my whole music library is built on top of it.
 					The repo said it's in the middle of being rewritten, but I've stopped rewriting it a long time ago &amp; it'd need another one now.
 					It still kinda works, and as long as that's the case, I don't see a reason to rewrite it properly.
+				</p>
+				<p>
+					<b>UPDATE</b> <span class="survival">09.2021</span><br/>
+					I've decided to stop maintaining this project since it's shitty, works for my usecase though, and my last commit was 7 months ago anyway.
+					Maybe one day I'll rewrite it.
 				</p>
 			</section>
 			<section>
