@@ -320,6 +320,7 @@
 			<a class="plaque" href="https://www.boomplay.com/artists/19145926"><b class="btn bp"></b>Boomplay</a>
 			<a class="plaque" href="https://music.yandex.com/artist/10521437"><b class="btn yx"></b>Yandex Music</a>
 			<a class="plaque" href="https://www.deezer.com/en/artist/116666602"><b class="btn dz"></b>Deezer</a>
+			<a class="plaque" href="https://www.shazam.com/gb/artist/211983431"><b class="btn sz"></b>Shazam</a>
 			<a class="plaque" href="https://tidal.com/browse/artist/22622017"><b class="btn td"></b>Tidal</a>
 			<a class="plaque" href="https://music.163.com/#/artist?id=46345905"><b class="btn ne"></b>NetEase</a>
 			<a class="plaque" href="https://y.qq.com/n/ryqq/singer/0031Xw4m1zLAUa"><b class="btn qq"></b>QQ</a>
