@@ -195,6 +195,9 @@
 			.btn.fv{
 				content:url("https://www.fiverr.com/favicon.ico");
 				background-color:#1dbf73;}
+			.btn.lp{
+				content:url("https://github.githubassets.com/images/modules/site/icons/funding_platforms/liberapay.svg");
+				filter:invert(1) hue-rotate(180deg) brightness(3.5) saturate(0.8);}
 			.btn.rw{
 				content:url(<?php echo $CONF["root_dir"]."favicon.svg"; ?>);}
 			.btn.play{
@@ -219,19 +222,11 @@
 				width:1.25rem;
 				margin-right:0.2rem;
 				margin-left:-0.2rem;}
-			.patreon{
-				background-color:#E34;
-				color:#FFF !important;
-				text-decoration:none;
-				border-radius:1em;
-				padding:0.2em 0.5em 0.2em 0.5em;
-				font-weight:bold;}
-			.patreon>b{
-				vertical-align:sub;
-				height:1.25rem;
-				width:1.25rem;
-				padding-right:0.2em;
-				display:inline-block;}
+			#donatebtn>img{
+				vertical-align:bottom;
+				height:1.75em;}
+			#donatebtn:hover{
+				filter:brightness(1.1);}
 			.mpip{
 				display:none;}
 			.mpip+label{
@@ -309,7 +304,7 @@
 			You can also comission me to make original music. In that case, please contact me on <a class="plaque" href="https://www.fiverr.com/s2/1e37f97239"><b class="btn fv"></b>Fiverr</a>
 		</p>
 		<p>
-			I've also got a patreon page now, so please <a class="patreon" href="https://www.patreon.com/bePatron?u=36947670"><b class="btn pt"></b>Become a patreon</a>. All patrons are visible in the <a class="plaque" href="./patrons/"><b class="btn pt"></b>patron list</a>.
+			I've got a liberapay page now, so please <a id="donatebtn" href="https://liberapay.com/Riedler/donate"><img alt="Donate using Liberapay" src="https://liberapay.com/assets/widgets/donate.svg"></a> if you can. All patrons are visible in the <a class="plaque" href="./patrons/"><b class="btn lp"></b>patron list</a>.
 		</p>
 		<div style="user-select:none;">
 			<a class="plaque" href="#"><b class="btn rw"></b>riedler.wien</a>

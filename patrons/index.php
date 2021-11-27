@@ -124,6 +124,12 @@
 			<h1>My Patrons :)</h1>
 		</div>
 		<div class="card">
+			<img src="https://img.shields.io/liberapay/receives/Riedler.svg?logo=liberapay"/>
+			<img src="https://img.shields.io/liberapay/patrons/Riedler.svg?logo=liberapay"/>
+			<img src="https://img.shields.io/badge/dynamic/json?color=%23e85b46&amp;label=Patreon&amp;query=data.attributes.campaign_pledge_sum&amp;suffix=%20EUR%20cents/Month&amp;url=https%3A%2F%2Fwww.patreon.com%2Fapi%2Fcampaigns%2F5474585"/>
+			<img src="https://img.shields.io/badge/dynamic/json?color=%23e85b46&amp;label=Patreon&amp;query=data.attributes.patron_count&amp;suffix=%20patrons&amp;url=https%3A%2F%2Fwww.patreon.com%2Fapi%2Fcampaigns%2F5474585"/>
+		</div>
+		<div class="card">
 			<h2>Riedler Enthusiasts</h2><sub>30€+</sub>
 			<ul class="tier S">
 <?php
