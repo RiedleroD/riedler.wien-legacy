@@ -310,24 +310,25 @@
 			<a class="plaque" href="#"><b class="btn rw"></b>riedler.wien</a>
 			<a class="plaque" href="https://www.youtube.com/channel/UC0aIZx6FIHB5Fq_sr0TMXSw"><b class="btn yt"></b>YouTube</a>
 			<a class="plaque" href="https://lmms.io/lsp/?action=browse&user=Riedler"><b class="btn lmms"></b>LMMS Sharing Platform</a>
+			<a class="plaque" href="https://patreon.com/RiedlerM"><b class="btn pt"></b>Patreon</a>
+			<a class="plaque" href="lbry://@Riedler:6"><b class="btn lbry"></b>LBRY</a>
+			<a class="plaque" href="https://odysee.com/@Riedler:6"><b class="btn oy"></b>Odysee</a>
 			<a class="plaque" href="https://at.napster.com/artist/riedler"><b class="btn npstr"></b>Napster</a>
 			<a class="plaque" href="https://bandlab.com/riedler"><b class="btn bl"></b>BandLab</a>
 			<a class="plaque" href="https://open.spotify.com/artist/7k9sRjqYP68ZI8Bw8BwmuG"><b class="btn sy"></b>Spotify</a>
-			<a class="plaque" href="https://soundcloud.com/riedler-music"><b class="btn sc"></b>SoundCloud</a>
-			<a class="plaque" href="https://vimeo.com/user125791194"><b class="btn vimeo"></b>Vimeo</a>
+			<a class="plaque" href="https://www.boomplay.com/artists/19145926"><b class="btn bp"></b>Boomplay</a>
 			<a class="plaque" href="https://www.amazon.com/s?k=Riedler&i=digital-music&search-type=ss"><b class="btn az"></b>Amazon</a>
 			<a class="plaque" href="https://music.amazon.com/artists/B08QG41MYN/riedler"><b class="btn am"></b>Amazon Music</a>
+			<a class="plaque" href="https://soundcloud.com/riedler-music"><b class="btn sc"></b>SoundCloud</a>
 			<a class="plaque" href="https://music.apple.com/gb/artist/riedler/1544612571"><b class="btn apm"></b>Apple Music</a>
-			<a class="plaque" href="https://www.boomplay.com/artists/19145926"><b class="btn bp"></b>Boomplay</a>
 			<a class="plaque" href="https://music.yandex.com/artist/10521437"><b class="btn yx"></b>Yandex Music</a>
 			<a class="plaque" href="https://sber-zvuk.com/artist/157131"><b class="btn sbzv"></b>СберЗвук</a>
 			<a class="plaque" href="https://www.deezer.com/en/artist/116666602"><b class="btn dz"></b>Deezer</a>
 			<a class="plaque" href="https://www.shazam.com/gb/artist/211983431"><b class="btn sz"></b>Shazam</a>
+			<a class="plaque" href="https://vimeo.com/user125791194"><b class="btn vimeo"></b>Vimeo</a>
 			<a class="plaque" href="https://tidal.com/browse/artist/22622017"><b class="btn td"></b>Tidal</a>
 			<a class="plaque" href="https://music.163.com/#/artist?id=46345905"><b class="btn ne"></b>NetEase</a>
 			<a class="plaque" href="https://y.qq.com/n/ryqq/singer/0031Xw4m1zLAUa"><b class="btn qq"></b>QQ</a>
-			<a class="plaque" href="https://odysee.com/@Riedler:6"><b class="btn oy"></b>Odysee</a>
-			<a class="plaque" href="lbry://@Riedler:6"><b class="btn lbry"></b>LBRY</a>
 			<a class="plaque" href="https://push.fm/"><b class="btn psh"></b>push.fm</a>
 		</div>
 		These symbols are hand-crafted by me (with inkscape) and are meant to represent the respective services.<br/>
