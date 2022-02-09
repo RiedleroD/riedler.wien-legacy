@@ -316,6 +316,7 @@
 			<a class="plaque" href="https://at.napster.com/artist/riedler"><b class="btn npstr"></b>Napster</a>
 			<a class="plaque" href="https://bandlab.com/riedler"><b class="btn bl"></b>BandLab</a>
 			<a class="plaque" href="https://open.spotify.com/artist/7k9sRjqYP68ZI8Bw8BwmuG"><b class="btn sy"></b>Spotify</a>
+			<a class="plaque" href="https://hearthis.at/riedler/"><b class="btn ht"></b>Hearthis</a>
 			<a class="plaque" href="https://www.boomplay.com/artists/19145926"><b class="btn bp"></b>Boomplay</a>
 			<a class="plaque" href="https://www.amazon.com/s?k=Riedler&i=digital-music&search-type=ss"><b class="btn az"></b>Amazon</a>
 			<a class="plaque" href="https://music.amazon.com/artists/B08QG41MYN/riedler"><b class="btn am"></b>Amazon Music</a>
