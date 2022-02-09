@@ -329,6 +329,7 @@
 			<a class="plaque" href="https://tidal.com/browse/artist/22622017"><b class="btn td"></b>Tidal</a>
 			<a class="plaque" href="https://music.163.com/#/artist?id=46345905"><b class="btn ne"></b>NetEase</a>
 			<a class="plaque" href="https://y.qq.com/n/ryqq/singer/0031Xw4m1zLAUa"><b class="btn qq"></b>QQ</a>
+			<a class="plaque" href="https://vibe.naver.com/artist/4810478"><b class="btn vn"></b>Vibe/Naver</a>
 			<a class="plaque" href="https://push.fm/"><b class="btn psh"></b>push.fm</a>
 		</div>
 		These symbols are hand-crafted by me (with inkscape) and are meant to represent the respective services.<br/>
