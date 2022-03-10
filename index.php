@@ -320,6 +320,7 @@
 			<a class="plaque" href="https://www.boomplay.com/artists/19145926"><b class="btn bp"></b>Boomplay</a>
 			<a class="plaque" href="https://www.amazon.com/s?k=Riedler&i=digital-music&search-type=ss"><b class="btn az"></b>Amazon</a>
 			<a class="plaque" href="https://music.amazon.com/artists/B08QG41MYN/riedler"><b class="btn am"></b>Amazon Music</a>
+			<a class="plaque" href="https://www.iheart.com/artist/riedler-36682916/"><b class="btn ih"></b>iHeartRadio</a>
 			<a class="plaque" href="https://soundcloud.com/riedler-music"><b class="btn sc"></b>SoundCloud</a>
 			<a class="plaque" href="https://music.apple.com/gb/artist/riedler/1544612571"><b class="btn apm"></b>Apple Music</a>
 			<a class="plaque" href="https://music.yandex.com/artist/10521437"><b class="btn yx"></b>Yandex Music</a>
