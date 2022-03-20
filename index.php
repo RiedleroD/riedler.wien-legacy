@@ -34,7 +34,9 @@
 				padding:0.5rem;
 				background-color:#000;
 				color:#EEE;
-				font-family:Arial, Helvetica, sans-serif}
+				font-family:Arial, Helvetica, sans-serif;
+				font-size:11pt;
+			}
 			.maintable{
 				width:100%;
 				overflow:hidden;
