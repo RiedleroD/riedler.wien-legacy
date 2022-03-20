@@ -29,39 +29,12 @@
 				60%{transform:scale(0,1)}
 				100%{transform:scale(1,1)}
 			}
-			/*custom font*/
-			@font-face{
-				font-family:"Libertinus Sans";
-				font-display: swap;
-				unicode-range: U+000-5FF;
-				src:local("Libertinus Sans Regular"),
-					local("Linux Biolinum O Regular"),
-					url("/sfto/fonts/LibertinusSans-Regular.woff2") format("woff2");
-			}
-			@font-face{
-				font-family:"Libertinus Sans";
-				font-display: swap;
-				font-style: italic;
-				unicode-range: U+000-5FF;
-				src:local("Libertinus Sans Italic"),
-					local("Linux Biolinum O Italic"),
-					url("/sfto/fonts/LibertinusSans-Italic.woff2") format("woff2");
-			}
-			@font-face{
-				font-family:"Libertinus Sans";
-				font-display: swap;
-				font-weight: bold;
-				unicode-range: U+000-5FF;
-				src:local("Libertinus Sans Bold"),
-					local("Linux Biolinum O Bold"),
-					url("/sfto/fonts/LibertinusSans-Bold.woff2") format("woff2");
-			}
 			body{
 				margin:0;
 				padding:0.5rem;
 				background-color:#000;
 				color:#EEE;
-				font-family:Libertinus Sans, sans-serif;}
+				font-family:Arial, Helvetica, sans-serif}
 			.maintable{
 				width:100%;
 				overflow:hidden;
